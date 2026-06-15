@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import CompanyCompare from '@/components/CompanyCompare';
 import PageShell from '@/components/ui/page-shell';
 import { Button } from '@/components/ui/button';
-import { compareCompanies, getHistory } from '@/lib/api';
+import { getDemoCompare, getDemoHistory } from '@/lib/demo-data';
 
 export default function ComparePage() {
   const [items, setItems] = useState<Array<{ document_id: string; company_name: string }>>([]);
@@ -14,25 +14,22 @@ export default function ComparePage() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getHistory().then((data) => {
-      const completed = (data.items || []).filter(
-        (i: { processing_status: string }) => i.processing_status === 'complete'
-      );
-      setItems(completed);
-      if (completed.length >= 2) {
-        setDoc1(completed[0].document_id);
-        setDoc2(completed[1].document_id);
-      }
-    }).catch(() => {});
+    const completed = (getDemoHistory().items || []).filter(
+      (i) => i.processing_status === 'complete'
+    );
+    setItems(completed);
+    if (completed.length >= 2) {
+      setDoc1(completed[0].document_id);
+      setDoc2(completed[1].document_id);
+    }
   }, []);
 
-  const runCompare = async () => {
+  const runCompare = () => {
     if (!doc1 || !doc2) return;
     setLoading(true);
     try {
-      setComparison(await compareCompanies(doc1, doc2));
-    } catch {
-      alert('Comparison failed');
+      const data = getDemoCompare(doc1, doc2);
+      if (data) setComparison(data);
     } finally {
       setLoading(false);
     }

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import DataQualityBadge from '@/components/DataQualityBadge';
 import PageShell from '@/components/ui/page-shell';
-import { deleteAnalysis, getHistory } from '@/lib/api';
+import { getDemoHistory } from '@/lib/demo-data';
 
 interface HistoryItem {
   document_id: string;
@@ -21,28 +21,17 @@ export default function HistoryPage() {
   const router = useRouter();
   const [items, setItems] = useState<HistoryItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
 
-  const load = async () => {
-    try {
-      const data = await getHistory();
-      setItems(data.items || []);
-      setError('');
-    } catch {
-      setItems([]);
-      setError('Could not load history. Please try again in a moment.');
-    } finally {
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    const data = getDemoHistory();
+    setItems(data.items || []);
+    setLoading(false);
+  }, []);
 
-  useEffect(() => { load(); }, []);
-
-  const handleDelete = async (e: React.MouseEvent, id: string) => {
+  const handleDelete = (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
     if (!confirm('Delete this analysis?')) return;
-    await deleteAnalysis(id);
-    load();
+    setItems((prev) => prev.filter((i) => i.document_id !== id));
   };
 
   const openAnalysis = (item: HistoryItem) => {
@@ -61,15 +50,10 @@ export default function HistoryPage() {
     >
       {loading ? (
         <div className="glass-card p-10 text-center text-white/60">Loading...</div>
-      ) : error ? (
-        <div className="glass-card space-y-3 p-10 text-center">
-          <p className="text-white/70">{error}</p>
-          <button onClick={load} className="text-sm text-sky-300 hover:text-sky-200">Retry</button>
-        </div>
       ) : items.length === 0 ? (
         <div className="glass-card p-10 text-center">
           <p className="text-white/50">No analyses yet.</p>
-          <Link href="/" className="mt-6 inline-flex h-10 items-center rounded-full bg-gradient-to-r from-sky-500 to-amber-500 px-6 text-sm font-medium text-white">
+          <Link href="/upload" className="mt-6 inline-flex h-10 items-center rounded-full bg-gradient-to-r from-sky-500 to-amber-500 px-6 text-sm font-medium text-white">
             Upload a 10-K
           </Link>
         </div>

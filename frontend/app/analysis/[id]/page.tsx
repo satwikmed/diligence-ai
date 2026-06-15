@@ -16,6 +16,7 @@ import PageShell from '@/components/ui/page-shell';
 import SectionHeading from '@/components/ui/section-heading';
 import { Button } from '@/components/ui/button';
 import { getAnalysis, getAnalysisStatus, getSuggestedQuestions } from '@/lib/api';
+import { getDemoAnalysis } from '@/lib/demo-data';
 import { WebSocketManager } from '@/lib/websocket';
 
 type LoadState = 'loading' | 'processing' | 'complete' | 'error';
@@ -85,6 +86,12 @@ export default function AnalysisPage() {
 
     async function init() {
       try {
+        const demo = getDemoAnalysis(documentId);
+        if (demo?.report) {
+          if (!cancelled) await applyAnalysis(demo);
+          return;
+        }
+
         const analysis = await getAnalysis(documentId);
         if (cancelled) return;
 

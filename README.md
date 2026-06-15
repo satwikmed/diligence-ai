@@ -1,5 +1,9 @@
 # Diligence AI: Autonomous Due Diligence Platform
 
+**Live demo:** https://diligence-ai-nine.vercel.app
+
+> **Important:** `diligence-ai.vercel.app` is a different app (not this project). Use the link above.
+
 **Upload a 10-K. Six AI agents analyze it. Get a consulting-grade report in minutes.**
 
 What takes a junior consultant two weeks, Diligence AI does in two minutes.
