@@ -1,0 +1,14 @@
+# Optional full stack — SLOW install (10-30+ min, heavy RAM)
+# Only install if you need the actual framework packages, not demo mode.
+# Install AFTER requirements.txt:
+#   pip install -r requirements-full.txt
+
+langchain>=0.2.0
+langchain-community>=0.2.0
+langgraph>=0.1.0
+crewai>=0.30.0
+pydantic-ai>=0.0.14
+unstructured[pdf]>=0.13.0
+ragas>=0.1.0
+mcp>=1.0.0
+plotly>=5.20.0

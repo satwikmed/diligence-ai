@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: diligence-ai-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile.backend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DEMO_MODE
+        value: "true"
+      - key: DATABASE_URL
+        value: sqlite:///diligence.db
+      - key: PYTHONUNBUFFERED
+        value: "1"

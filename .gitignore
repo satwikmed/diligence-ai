@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.env
+diligence.db
+uploads/
+*.egg-info/
+.pytest_cache/
+node_modules/
+.next/
+out/
+.DS_Store
