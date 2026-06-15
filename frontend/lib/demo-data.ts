@@ -148,7 +148,13 @@ export function getDemoCompare(doc1: string, doc2: string) {
   };
 }
 
-/** Use built-in demo API routes when no external backend URL is configured at build time. */
+/** Use built-in demo data when no real backend URL is configured (Vercel default). */
+export function shouldUseDemoData(): boolean {
+  const url = process.env.NEXT_PUBLIC_API_URL?.trim();
+  return !url || url.includes('localhost') || url.includes('127.0.0.1');
+}
+
+/** @deprecated use shouldUseDemoData */
 export function useDemoApi(): boolean {
-  return !process.env.NEXT_PUBLIC_API_URL?.trim();
+  return shouldUseDemoData();
 }
