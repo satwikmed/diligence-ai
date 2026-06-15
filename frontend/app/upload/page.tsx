@@ -26,7 +26,7 @@ export default function UploadPage() {
       const result = await uploadDocument(file);
       router.push(`/analysis/${result.document_id}`);
     } catch {
-      alert('Upload failed. Is the backend running on port 8000?');
+      alert('Upload failed. A live backend is required for uploads in production.');
       setUploading(false);
     }
   };

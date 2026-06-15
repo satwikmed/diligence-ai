@@ -1,6 +1,6 @@
 type MessageHandler = (data: Record<string, unknown>) => void;
 
-const WS_URL = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:8000';
+import { getWsUrl } from '@/lib/api';
 
 export class WebSocketManager {
   private ws: WebSocket | null = null;
@@ -14,7 +14,7 @@ export class WebSocketManager {
   connect() {
     if (this.ws?.readyState === WebSocket.OPEN) return;
 
-    this.ws = new WebSocket(`${WS_URL}/ws/${this.documentId}`);
+    this.ws = new WebSocket(`${getWsUrl()}/ws/${this.documentId}`);
 
     this.ws.onmessage = (event) => {
       try {

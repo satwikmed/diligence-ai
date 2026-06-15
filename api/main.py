@@ -16,6 +16,7 @@ from api.routes import analysis, compare, dashboard, qa, reports, samples, uploa
 from api.websocket import websocket_endpoint
 from data.db import init_db
 from data.pinecone_setup import init_pinecone_index
+from data.quick_seed import seed_if_empty
 from fastapi import WebSocket
 from protocols.a2a.registry import init_default_registry
 
@@ -23,6 +24,9 @@ from protocols.a2a.registry import init_default_registry
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
+    seeded = seed_if_empty()
+    if seeded:
+        print(f"Auto-seeded {seeded} demo companies")
     init_pinecone_index()
     init_default_registry()
     yield

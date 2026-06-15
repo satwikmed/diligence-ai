@@ -30,7 +30,7 @@ export default function HistoryPage() {
       setError('');
     } catch {
       setItems([]);
-      setError('Could not load history. Is the backend running on port 8000?');
+      setError('Could not load history. Please try again in a moment.');
     } finally {
       setLoading(false);
     }

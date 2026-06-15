@@ -98,7 +98,7 @@ export default function AnalysisPage() {
       } catch {
         if (!cancelled) {
           setLoadState('error');
-          setErrorMsg('Could not load this analysis. Make sure the backend is running on port 8000.');
+          setErrorMsg('Could not load this analysis. Please try again.');
         }
       }
     }
