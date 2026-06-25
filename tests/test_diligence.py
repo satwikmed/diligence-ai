@@ -215,3 +215,63 @@ class TestMemoGenerator:
         }
         pdf = generate_investment_memo_pdf(report, "Test Co")
         assert pdf[:4] == b"%PDF"
+
+
+class TestResearchFilingSections:
+    def test_paragraph_splitting(self):
+        from data.filing_sections import _paragraphs
+
+        text = "First risk paragraph about competition and market share. " * 3
+        text += "Second risk paragraph about regulation and antitrust scrutiny. " * 3
+        paras = _paragraphs(text, min_len=40)
+        assert len(paras) >= 1
+
+    def test_extract_sections_fallback_keywords(self):
+        from data.filing_sections import extract_sections_from_pdf
+        import tempfile
+        from reportlab.pdfgen import canvas
+
+        with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
+            path = Path(tmp.name)
+        c = canvas.Canvas(str(path))
+        c.drawString(50, 750, "RISK FACTORS Competition is intense and antitrust scrutiny is increasing globally.")
+        c.drawString(50, 730, "MANAGEMENT DISCUSSION Revenue grew but macro uncertainty may slow demand.")
+        c.save()
+
+        result = extract_sections_from_pdf(path)
+        path.unlink()
+        assert "risk" in result["risk_factors"].lower() or result["risk_paragraphs"]
+
+
+class TestTextFilingDelta:
+    def test_compute_text_filing_delta(self):
+        from agents.filing_delta.text_differ import compute_text_filing_delta
+
+        prior = {
+            "risk_paragraphs": ["Old regulatory risk paragraph about compliance."],
+            "mda_paragraphs": ["Prior year revenue discussion."],
+        }
+        current = {
+            "risk_paragraphs": [
+                "Old regulatory risk paragraph about compliance.",
+                "New AI infrastructure capex risk paragraph.",
+            ],
+            "mda_paragraphs": ["Current year revenue discussion with AI investments."],
+        }
+        delta = compute_text_filing_delta(prior, current)
+        assert delta["source"] == "sec_filing_text"
+        assert delta["overall_change_score"] >= 0
+        assert len(delta["sections"]) == 2
+
+
+class TestResearchContradictions:
+    def test_detect_from_filing_text(self):
+        from agents.contradiction.research import detect_contradictions_from_filing_text
+
+        sections = {
+            "risk_factors": "Antitrust and regulatory investigations may materially affect our business.",
+            "mda": "Macro uncertainty and elongated sales cycles remain a concern.",
+        }
+        result = detect_contradictions_from_filing_text(sections, "AAPL")
+        assert result["source"] == "transcript_vs_filing_text"
+        assert len(result["contradictions"]) >= 1

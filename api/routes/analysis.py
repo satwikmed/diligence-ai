@@ -7,7 +7,10 @@ from fastapi.responses import Response
 from pydantic import BaseModel
 
 from agents.contradiction.detector import detect_contradictions
+from agents.contradiction.research import detect_contradictions_from_filing_text
 from agents.filing_delta.differ import compute_filing_delta
+from agents.filing_delta.text_differ import compute_text_filing_delta
+from data.filing_sections import extract_sections_from_pdf, extract_ticker_pair, filing_paths_for_ticker
 from agents.memo_generator.generator import generate_investment_memo_pdf
 from agents.qa_agent.agent import SUGGESTED_QUESTIONS, answer_question
 from data.db import get_analysis, get_document
@@ -32,6 +35,28 @@ def _report_from_analysis(analysis: dict) -> dict:
         "industry_benchmarks": analysis.get("industry_benchmarks"),
         "data_quality_score": analysis.get("data_quality_score"),
     }
+
+
+def _research_filing_delta(ticker: str) -> dict | None:
+    pair = extract_ticker_pair(ticker)
+    if not pair or not pair.get("prior"):
+        return None
+    return compute_text_filing_delta(
+        pair["prior"],
+        pair["current"],
+        prior_label=f"Prior 10-K ({pair.get('prior_path', '').split('/')[-1]})",
+        current_label=f"Current 10-K ({pair.get('current_path', '').split('/')[-1]})",
+    )
+
+
+def _research_contradictions(ticker: str) -> dict | None:
+    current_path, _ = filing_paths_for_ticker(ticker)
+    if not current_path:
+        return None
+    sections = extract_sections_from_pdf(current_path)
+    if not sections.get("risk_factors") and not sections.get("mda"):
+        return None
+    return detect_contradictions_from_filing_text(sections, ticker)
 
 
 def _ticker_from_doc(doc: dict) -> str:
@@ -156,12 +181,15 @@ async def filing_delta(document_id: str, compare_id: str = Query(...)):
     if not analysis_current or not analysis_prior:
         raise HTTPException(status_code=404, detail="Analysis not complete for one or both documents")
 
-    delta = compute_filing_delta(
-        _report_from_analysis(analysis_prior),
-        _report_from_analysis(analysis_current),
-        prior_label=f"{doc_prior.get('company_name', 'Prior')} ({doc_prior.get('filing_year', '')})",
-        current_label=f"{doc_current.get('company_name', 'Current')} ({doc_current.get('filing_year', '')})",
-    )
+    ticker = _ticker_from_doc(doc_current)
+    delta = _research_filing_delta(ticker)
+    if not delta:
+        delta = compute_filing_delta(
+            _report_from_analysis(analysis_prior),
+            _report_from_analysis(analysis_current),
+            prior_label=f"{doc_prior.get('company_name', 'Prior')} ({doc_prior.get('filing_year', '')})",
+            current_label=f"{doc_current.get('company_name', 'Current')} ({doc_current.get('filing_year', '')})",
+        )
     return {
         "document_id": document_id,
         "compare_id": compare_id,
@@ -178,8 +206,11 @@ async def contradictions(document_id: str):
     if not analysis:
         raise HTTPException(status_code=404, detail="Analysis not found")
 
-    report = _report_from_analysis(analysis)
-    result = detect_contradictions(report, _ticker_from_doc(doc))
+    ticker = _ticker_from_doc(doc)
+    result = _research_contradictions(ticker)
+    if not result or not result.get("contradictions"):
+        report = _report_from_analysis(analysis)
+        result = detect_contradictions(report, ticker)
     return {"document_id": document_id, **result}
 
 

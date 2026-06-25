@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDemoContradictions } from '@/lib/demo-data';
+import { getResearchContradictions } from '@/lib/research-data';
 import { getBackendUrl } from '@/lib/server-backend';
 
 export async function GET(
@@ -11,6 +12,9 @@ export async function GET(
     const res = await fetch(`${backend}/api/analysis/${params.documentId}/contradictions`, { cache: 'no-store' });
     return NextResponse.json(await res.json(), { status: res.status });
   }
+  const research = getResearchContradictions(params.documentId);
+  if (research) return NextResponse.json(research);
+
   const data = getDemoContradictions(params.documentId);
   if (!data) return NextResponse.json({ detail: 'Not found' }, { status: 404 });
   return NextResponse.json(data);

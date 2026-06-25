@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDemoFilingDelta } from '@/lib/demo-data';
+import { getResearchFilingDelta } from '@/lib/research-data';
 import { getBackendUrl } from '@/lib/server-backend';
 
 export async function GET(
@@ -19,6 +20,9 @@ export async function GET(
     );
     return NextResponse.json(await res.json(), { status: res.status });
   }
+
+  const research = getResearchFilingDelta(params.documentId, compareId);
+  if (research) return NextResponse.json(research);
 
   const data = getDemoFilingDelta(params.documentId, compareId);
   if (!data) return NextResponse.json({ detail: 'Not found' }, { status: 404 });

@@ -1,0 +1,20 @@
+{
+  "ticker": "MSFT",
+  "company": "Microsoft Corporation",
+  "period": "Q4 FY2024 Earnings Call",
+  "source_note": "Representative management excerpts for diligence cross-check (demo).",
+  "turns": [
+    {
+      "speaker": "Satya Nadella, CEO",
+      "quote": "Azure AI demand continues to exceed our capacity; we are aggressively expanding data center footprint with confidence in returns."
+    },
+    {
+      "speaker": "Amy Hood, CFO",
+      "quote": "Cloud gross margin percentage decreased slightly due to scaling AI infrastructure investments."
+    },
+    {
+      "speaker": "Satya Nadella, CEO",
+      "quote": "We remain focused on helping customers realize ROI from Copilot and Azure AI services."
+    }
+  ]
+}

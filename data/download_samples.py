@@ -23,18 +23,21 @@ COMPANIES = [
         "ticker": "AAPL",
         "name": "Apple Inc.",
         "output": "AAPL_10K_FY2024.pdf",
+        "prior_output": "AAPL_10K_FY2023.pdf",
     },
     {
         "cik": 789019,
         "ticker": "MSFT",
         "name": "Microsoft Corporation",
         "output": "MSFT_10K_FY2024.pdf",
+        "prior_output": "MSFT_10K_FY2023.pdf",
     },
     {
         "cik": 1108524,
         "ticker": "CRM",
         "name": "Salesforce, Inc.",
         "output": "CRM_10K_FY2024.pdf",
+        "prior_output": "CRM_10K_FY2023.pdf",
     },
 ]
 
@@ -72,8 +75,8 @@ def _sec_get(url: str) -> str:
         return resp.read().decode("utf-8", errors="replace")
 
 
-def _latest_10k(cik: int) -> tuple[str, str, str]:
-    """Return accession, primary document filename, filing date."""
+def _nth_10k(cik: int, index: int = 0) -> tuple[str, str, str]:
+    """Return accession, primary document filename, filing date for the Nth-most-recent 10-K."""
     cik_padded = f"{cik:010d}"
     url = f"https://data.sec.gov/submissions/CIK{cik_padded}.json"
     import json
@@ -83,14 +86,21 @@ def _latest_10k(cik: int) -> tuple[str, str, str]:
     accessions = data["filings"]["recent"]["accessionNumber"]
     primaries = data["filings"]["recent"]["primaryDocument"]
     dates = data["filings"]["recent"]["filingDate"]
+    seen = 0
     for i, form in enumerate(forms):
         if form == "10-K":
-            return accessions[i], primaries[i], dates[i]
-    raise ValueError(f"No 10-K found for CIK {cik}")
+            if seen == index:
+                return accessions[i], primaries[i], dates[i]
+            seen += 1
+    raise ValueError(f"No 10-K at index {index} for CIK {cik}")
 
 
-def _download_10k_text(cik: int) -> tuple[str, str, str]:
-    accession, primary, filing_date = _latest_10k(cik)
+def _latest_10k(cik: int) -> tuple[str, str, str]:
+    return _nth_10k(cik, 0)
+
+
+def _download_10k_text(cik: int, index: int = 0) -> tuple[str, str, str]:
+    accession, primary, filing_date = _nth_10k(cik, index)
     accession_path = accession.replace("-", "")
     url = f"https://www.sec.gov/Archives/edgar/data/{cik}/{accession_path}/{primary}"
     html = _sec_get(url)
@@ -143,35 +153,42 @@ def _html_to_pdf(text: str, output: Path, title: str, source_url: str) -> None:
     c.save()
 
 
-def download_all(force: bool = False) -> list[Path]:
+def download_all(force: bool = False, prior: bool = False) -> list[Path]:
     SAMPLE_DIR.mkdir(parents=True, exist_ok=True)
     saved: list[Path] = []
 
     for company in COMPANIES:
-        out = SAMPLE_DIR / company["output"]
-        if out.exists() and not force and out.stat().st_size > 10_000:
-            print(f"  Skip (exists): {out.name}")
-            saved.append(out)
-            continue
+        jobs: list[tuple[str, int]] = [(company["output"], 0)]
+        if prior and company.get("prior_output"):
+            jobs.append((company["prior_output"], 1))
 
-        print(f"  Downloading {company['name']} ({company['ticker']}) from SEC EDGAR...")
-        try:
-            text, filing_date, source_url = _download_10k_text(company["cik"])
-            title = f"{company['name']} ({company['ticker']}) — Form 10-K — Filed {filing_date}"
-            _html_to_pdf(text, out, title, source_url)
-            print(f"  Saved: {out.name} ({out.stat().st_size // 1024} KB)")
-            saved.append(out)
-        except Exception as e:
-            print(f"  Failed {company['ticker']}: {e}")
-        time.sleep(0.2)  # SEC fair access
+        for output_name, filing_index in jobs:
+            out = SAMPLE_DIR / output_name
+            if out.exists() and not force and out.stat().st_size > 10_000:
+                print(f"  Skip (exists): {out.name}")
+                saved.append(out)
+                continue
+
+            label = "prior-year" if filing_index else "latest"
+            print(f"  Downloading {company['name']} ({company['ticker']}) {label} 10-K from SEC EDGAR...")
+            try:
+                text, filing_date, source_url = _download_10k_text(company["cik"], filing_index)
+                title = f"{company['name']} ({company['ticker']}) — Form 10-K — Filed {filing_date}"
+                _html_to_pdf(text, out, title, source_url)
+                print(f"  Saved: {out.name} ({out.stat().st_size // 1024} KB)")
+                saved.append(out)
+            except Exception as e:
+                print(f"  Failed {company['ticker']} ({label}): {e}")
+            time.sleep(0.2)  # SEC fair access
 
     return saved
 
 
 def main() -> None:
     force = "--force" in sys.argv
+    prior = "--prior" in sys.argv
     print("Downloading sample 10-K filings from SEC EDGAR...")
-    files = download_all(force=force)
+    files = download_all(force=force, prior=prior)
     print(f"\nDone. {len(files)} files in {SAMPLE_DIR}")
     for f in files:
         print(f"  - {f.name}")

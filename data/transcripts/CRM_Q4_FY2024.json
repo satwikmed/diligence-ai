@@ -1,0 +1,20 @@
+{
+  "ticker": "CRM",
+  "company": "Salesforce, Inc.",
+  "period": "Q4 FY2024 Earnings Call",
+  "source_note": "Representative management excerpts for diligence cross-check (demo).",
+  "turns": [
+    {
+      "speaker": "Marc Benioff, CEO",
+      "quote": "We are not seeing enterprise deal elongation; pipeline conversion remains healthy across all segments."
+    },
+    {
+      "speaker": "Marc Benioff, CEO",
+      "quote": "Agentforce is early but customers are excited about automation replacing repetitive seat-based workflows."
+    },
+    {
+      "speaker": "Amy Weaver, CFO",
+      "quote": "We remain committed to margin expansion while investing in AI product development."
+    }
+  ]
+}

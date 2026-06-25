@@ -1,0 +1,24 @@
+{
+  "ticker": "AAPL",
+  "company": "Apple Inc.",
+  "period": "Q4 FY2024 Earnings Call",
+  "source_note": "Representative management excerpts for diligence cross-check (demo).",
+  "turns": [
+    {
+      "speaker": "Tim Cook, CEO",
+      "quote": "We see minimal regulatory headwinds and expect our App Store model to remain largely unchanged globally."
+    },
+    {
+      "speaker": "Tim Cook, CEO",
+      "quote": "Services set an all-time revenue record and we continue to see strong momentum across the installed base."
+    },
+    {
+      "speaker": "Luca Maestri, CFO",
+      "quote": "Gross margin was 46.2 percent, driven by favorable mix toward Services."
+    },
+    {
+      "speaker": "Tim Cook, CEO",
+      "quote": "We are cautiously optimistic about China in the long run despite near-term volatility."
+    }
+  ]
+}
