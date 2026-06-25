@@ -172,24 +172,33 @@ async def suggested_questions(document_id: str):
 @router.get("/{document_id}/filing-delta")
 async def filing_delta(document_id: str, compare_id: str = Query(...)):
     doc_current = get_document(document_id)
-    doc_prior = get_document(compare_id)
-    if not doc_current or not doc_prior:
+    if not doc_current:
         raise HTTPException(status_code=404, detail="Document not found")
+
+    ticker = _ticker_from_doc(doc_current)
+    delta = _research_filing_delta(ticker)
+    if delta:
+        return {
+            "document_id": document_id,
+            "compare_id": compare_id,
+            **delta,
+        }
+
+    doc_prior = get_document(compare_id)
+    if not doc_prior:
+        raise HTTPException(status_code=404, detail="Prior document not found")
 
     analysis_current = get_analysis(document_id)
     analysis_prior = get_analysis(compare_id)
     if not analysis_current or not analysis_prior:
         raise HTTPException(status_code=404, detail="Analysis not complete for one or both documents")
 
-    ticker = _ticker_from_doc(doc_current)
-    delta = _research_filing_delta(ticker)
-    if not delta:
-        delta = compute_filing_delta(
-            _report_from_analysis(analysis_prior),
-            _report_from_analysis(analysis_current),
-            prior_label=f"{doc_prior.get('company_name', 'Prior')} ({doc_prior.get('filing_year', '')})",
-            current_label=f"{doc_current.get('company_name', 'Current')} ({doc_current.get('filing_year', '')})",
-        )
+    delta = compute_filing_delta(
+        _report_from_analysis(analysis_prior),
+        _report_from_analysis(analysis_current),
+        prior_label=f"{doc_prior.get('company_name', 'Prior')} ({doc_prior.get('filing_year', '')})",
+        current_label=f"{doc_current.get('company_name', 'Current')} ({doc_current.get('filing_year', '')})",
+    )
     return {
         "document_id": document_id,
         "compare_id": compare_id,

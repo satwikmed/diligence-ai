@@ -7,13 +7,14 @@ export async function GET(
   _request: NextRequest,
   { params }: { params: { documentId: string } }
 ) {
+  const research = getResearchContradictions(params.documentId);
+  if (research) return NextResponse.json(research);
+
   const backend = getBackendUrl();
   if (backend) {
     const res = await fetch(`${backend}/api/analysis/${params.documentId}/contradictions`, { cache: 'no-store' });
     return NextResponse.json(await res.json(), { status: res.status });
   }
-  const research = getResearchContradictions(params.documentId);
-  if (research) return NextResponse.json(research);
 
   const data = getDemoContradictions(params.documentId);
   if (!data) return NextResponse.json({ detail: 'Not found' }, { status: 404 });

@@ -13,6 +13,24 @@ export async function POST(
     return NextResponse.json({ detail: 'question required' }, { status: 400 });
   }
 
+  const isDemoDoc = params.documentId.includes('-demo-');
+
+  if (isDemoDoc) {
+    try {
+      const llm = await answerDemoQuestionWithOpenAI(params.documentId, question);
+      if (llm) {
+        return NextResponse.json(llm);
+      }
+    } catch (err) {
+      console.error('OpenAI Q&A error:', err);
+      return NextResponse.json(
+        { detail: 'Q&A temporarily unavailable. Check OPENAI_API_KEY on Vercel.' },
+        { status: 503 }
+      );
+    }
+    return NextResponse.json(getDemoAnswer(params.documentId, question));
+  }
+
   const backend = getBackendUrl();
   if (backend) {
     const res = await fetch(`${backend}/api/analysis/${params.documentId}/ask`, {
