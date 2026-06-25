@@ -1,0 +1,39 @@
+name: Deploy backend to Render
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api/**'
+      - 'agents/**'
+      - 'data/**'
+      - 'orchestrator/**'
+      - 'requirements.txt'
+      - 'Dockerfile.backend'
+      - 'render.yaml'
+      - 'scripts/**'
+      - 'config.py'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    if: ${{ secrets.RENDER_API_KEY != '' && secrets.RENDER_SERVICE_ID != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trigger Render deploy
+        uses: JorgeLNJunior/render-deploy@v1.5.0
+        with:
+          service_id: ${{ secrets.RENDER_SERVICE_ID }}
+          api_key: ${{ secrets.RENDER_API_KEY }}
+          wait_deploy: true
+
+  notify-missing-secrets:
+    if: ${{ secrets.RENDER_API_KEY == '' || secrets.RENDER_SERVICE_ID == '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip — add Render secrets to enable auto-deploy
+        run: |
+          echo "Add RENDER_API_KEY and RENDER_SERVICE_ID to GitHub repo secrets after creating the Render service."
+          echo "One-time setup: https://dashboard.render.com/blueprint/new?repo=https://github.com/satwikmed/diligence-ai"

@@ -17,8 +17,9 @@ PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "diligence-ai")
 APIFY_API_TOKEN = os.getenv("APIFY_API_TOKEN", "")
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///diligence.db")
 
-UPLOAD_DIR = ROOT / "uploads"
-UPLOAD_DIR.mkdir(exist_ok=True)
+_upload = os.getenv("UPLOAD_DIR", "").strip()
+UPLOAD_DIR = Path(_upload) if _upload else ROOT / "uploads"
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 DEMO_MODE = not OPENAI_API_KEY or os.getenv("DEMO_MODE", "").lower() in ("1", "true", "yes")
 

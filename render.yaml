@@ -1,14 +1,22 @@
+# Render Blueprint — https://dashboard.render.com/blueprint/new?repo=https://github.com/satwikmed/diligence-ai
 services:
   - type: web
     name: diligence-ai-api
     runtime: docker
     dockerfilePath: ./Dockerfile.backend
     plan: free
+    region: oregon
     healthCheckPath: /health
+    disk:
+      name: diligence-data
+      mountPath: /app/data
+      sizeGB: 1
     envVars:
       - key: DEMO_MODE
         value: "true"
       - key: DATABASE_URL
-        value: sqlite:///diligence.db
+        value: sqlite:////app/data/diligence.db
       - key: PYTHONUNBUFFERED
         value: "1"
+      - key: UPLOAD_DIR
+        value: /app/data/uploads

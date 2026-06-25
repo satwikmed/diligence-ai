@@ -41,17 +41,15 @@ Open https://diligence-ai-nine.vercel.app and check:
 
 ## Backend deploy (Render) — unlocks upload + full pipeline
 
-1. Push repo to GitHub (already connected).
-2. [Render Dashboard](https://dashboard.render.com) → **New** → **Blueprint** → connect `satwikmed/diligence-ai`.
-3. Render reads `render.yaml` and creates **diligence-ai-api** (Docker, free tier).
-4. Add env vars on Render:
-   - `OPENAI_API_KEY` (optional, for GPT analysis)
-   - `DEMO_MODE=true` (default in render.yaml)
-5. Copy the Render URL (e.g. `https://diligence-ai-api.onrender.com`).
-6. On Vercel, set `NEXT_PUBLIC_API_URL` to that URL (no trailing slash). Redeploy frontend.
-7. Verify: `curl https://YOUR-RENDER-URL/health` → `{"status":"ok"}`
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https://github.com/satwikmed/diligence-ai)
 
-Upload and WebSocket pipeline then work from the live site.
+1. Click **Deploy to Render** above and connect GitHub → approve the `render.yaml` blueprint.
+2. Wait for first deploy (~5–8 min). Copy the service URL (e.g. `https://diligence-ai-api.onrender.com`).
+3. Verify: `curl https://YOUR-SERVICE.onrender.com/health` → `{"status":"healthy","service":"diligence-ai"}`
+4. On **Vercel** → Environment Variables → add `NEXT_PUBLIC_API_URL` = Render URL (no trailing slash).
+5. **Redeploy** Vercel. Upload and WebSocket pipeline then work on the live site.
+
+Optional GitHub auto-deploy: add repo secrets `RENDER_API_KEY` + `RENDER_SERVICE_ID` (see `.github/workflows/render-deploy.yml`).
 
 ## Regenerate research JSON (after PDF updates)
 

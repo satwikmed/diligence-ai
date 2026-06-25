@@ -5,7 +5,12 @@ import {
   shouldUseDemoData,
 } from '@/lib/demo-data';
 
-/** Backend base URL when configured; empty string uses same-origin Next.js API routes. */
+/** Same-origin Next.js API routes (proxy to backend or demo data server-side). */
+function clientApiPath(path: string): string {
+  return path;
+}
+
+/** Direct backend URL for upload/WebSocket when configured. */
 export function getApiUrl(): string {
   const url = process.env.NEXT_PUBLIC_API_URL?.trim();
   if (!url) return '';
@@ -25,8 +30,7 @@ export function getWsUrl(): string | null {
 }
 
 function apiPath(path: string): string {
-  const base = getApiUrl();
-  return base ? `${base}${path}` : path;
+  return clientApiPath(path);
 }
 
 export interface UploadResponse {
@@ -52,15 +56,18 @@ export interface AnalysisReport {
 }
 
 export async function uploadDocument(file: File): Promise<UploadResponse> {
-  if (shouldUseDemoData()) {
+  if (!getApiUrl()) {
     throw new Error(
-      'Upload requires a backend. Run the FastAPI server locally and set NEXT_PUBLIC_API_URL=http://localhost:8000 in frontend/.env.local, or deploy the backend and set the URL on Vercel.'
+      'Upload requires a backend. Deploy the FastAPI service on Render and set NEXT_PUBLIC_API_URL on Vercel.'
     );
   }
   const formData = new FormData();
   formData.append('file', file);
   const res = await fetch(apiPath('/api/upload'), { method: 'POST', body: formData });
-  if (!res.ok) throw new Error('Upload failed');
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error((err as { detail?: string }).detail || 'Upload failed');
+  }
   return res.json();
 }
 

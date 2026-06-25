@@ -203,12 +203,12 @@ docker-compose up --build
 
 | Service | Platform |
 |---------|----------|
-| Frontend | Vercel (`frontend/` directory) |
-| Backend | Railway or Render |
+| Frontend | Vercel (`frontend/` directory) → https://diligence-ai-nine.vercel.app |
+| Backend | [Deploy to Render](https://dashboard.render.com/blueprint/new?repo=https://github.com/satwikmed/diligence-ai) (one-click blueprint) |
 | Vector DB | Pinecone free tier |
-| Database | SQLite (or migrate to PostgreSQL for production) |
+| Database | SQLite (persistent disk on Render) |
 
-Set environment variables on your hosting platform matching `.env.example`.
+After Render deploy, set `NEXT_PUBLIC_API_URL` on Vercel to your Render URL and redeploy. See [docs/DEPLOY.md](docs/DEPLOY.md).
 
 ## Tests
 
