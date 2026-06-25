@@ -67,7 +67,7 @@ const REPORT_SECTIONS = [
   },
   {
     title: "Interactive Q&A",
-    detail: "Ask anything about the analysis. Responses include RAGAS scores and citations to specific filing sections.",
+    detail: "Ask anything about the analysis. Retrieves filing paragraphs, cites Risk Factors / MD&A excerpts, and scores answers on faithfulness, relevancy, and precision.",
   },
 ]
 
@@ -93,8 +93,8 @@ const PLATFORM_FEATURES = [
     detail: "Select any two completed analyses and compare financial metrics, risk counts, insight counts, and red flags side by side.",
   },
   {
-    title: "Demo Mode",
-    detail: "Works on Vercel: SEC filing-text delta & contradictions, PDF memo export, and OpenAI Q&A over extracted filing chunks (set OPENAI_API_KEY).",
+    title: "Demo & deployment",
+    detail: "Live on Vercel with SEC filing-text delta, contradictions, memo export, and OpenAI Q&A (OPENAI_API_KEY). FastAPI backend on Render enables PDF upload and the WebSocket agent pipeline.",
   },
 ]
 
@@ -117,12 +117,12 @@ const TECH_STACK = [
 ]
 
 const PIPELINE_STEPS = [
-  "You upload a 10-K PDF (or use a bundled sample filing).",
+  "You upload a 10-K PDF (or open a pre-built AAPL / MSFT / CRM report from History).",
   "The Document Processor parses and embeds the filing into a searchable vector store.",
   "Financial Analyst and Risk Detective run in parallel — extracting metrics and identifying risks simultaneously.",
-  "Strategic Insights synthesizes both outputs into consultant-grade observations.",
+  "Strategic Insights synthesizes both outputs into equity-research-grade observations.",
   "Report Generator compiles everything into a structured due diligence report.",
-  "Q&A Agent becomes available — ask follow-up questions grounded in the filing with RAGAS scoring.",
+  "Q&A Agent becomes available — ask follow-up questions grounded in retrieved filing text with quality scoring.",
 ]
 
 const RAGAS_METRICS = [
@@ -171,6 +171,58 @@ export default function ProjectSummary() {
             <strong className="font-medium text-white">Diligence AI</strong> automates the first-pass diligence workflow:
             upload a 10-K, get a citation-backed report, QoQ filing delta, earnings-vs-10-K contradiction flags, and a
             one-page ER memo export — in minutes, not days.
+          </p>
+        </OverviewBlock>
+
+        {/* Live deployment */}
+        <OverviewBlock step="LIVE" title="Live & Deployed">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+              <h3 className="mb-1 font-medium text-white">Frontend (Vercel)</h3>
+              <a
+                href="https://diligence-ai-nine.vercel.app"
+                className="text-sm text-sky-300 hover:text-sky-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                diligence-ai-nine.vercel.app
+              </a>
+              <p className="mt-2 text-xs leading-relaxed text-white/55">
+                History, reports, filing delta, contradictions, memo, and Q&A work instantly — no upload required.
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+              <h3 className="mb-1 font-medium text-white">Backend (Render)</h3>
+              <a
+                href="https://diligence-ai-api.onrender.com/health"
+                className="text-sm text-sky-300 hover:text-sky-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                diligence-ai-api.onrender.com
+              </a>
+              <p className="mt-2 text-xs leading-relaxed text-white/55">
+                FastAPI + WebSocket pipeline. Enables live PDF upload from the frontend.
+              </p>
+            </div>
+          </div>
+          <p className="mt-4 text-sm leading-relaxed text-white/65">
+            <strong className="text-white">Source:</strong>{" "}
+            <a
+              href="https://github.com/satwikmed/diligence-ai"
+              className="text-sky-300 hover:text-sky-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github.com/satwikmed/diligence-ai
+            </a>
+            {" · "}
+            Real SEC 10-K PDFs in <code className="text-white/80">data/sample_docs/</code> · Research artifacts via{" "}
+            <code className="text-white/80">data/seed_research.py</code>
+            {" · "}
+            <a href="https://github.com/satwikmed/diligence-ai/blob/main/docs/case-studies/AAPL.md" className="text-sky-300 hover:text-sky-200" target="_blank" rel="noopener noreferrer">
+              AAPL case study
+            </a>
           </p>
         </OverviewBlock>
 
@@ -254,19 +306,23 @@ export default function ProjectSummary() {
             financial benchmarks, and analysis storage.
           </p>
           <div className="glass-card overflow-x-auto bg-black/20 p-4 font-mono text-xs leading-relaxed text-white/60">
-            <pre className="whitespace-pre">{`Document Processor (LangChain)
+            <pre className="whitespace-pre">{`Document Processor (pypdf + chunking)
        |
-       +-- A2A --> Financial Analyst (CrewAI) ----+
-       |                                          |
-       +-- A2A --> Risk Detective (LangGraph) ----+-- A2A --> Strategic Insights (OpenAI SDK)
-                                                   |
-                                                   v
-                                        Report Generator (Pydantic AI)
-                                                   |
-                                                   v
-                                        Q&A Agent (RAG + RAGAS)
-                                                   |
-                                          MCP Tools <--> SQLite / Vector Store`}</pre>
+       +-- A2A --> Financial Analyst (Python / GPT) ----+
+       |                                                |
+       +-- A2A --> Risk Detective (multi-step) ---------+-- A2A --> Strategic Insights
+                                                        |
+                                                        v
+                                             Report Generator (Pydantic)
+                                                        |
+                        Filing Delta (SEC text)  +  Contradictions (call vs 10-K)
+                                                        |
+                                                        v
+                                             Q&A Agent (chunk RAG + GPT)
+                                                        |
+                                          MCP Tools <--> SQLite / Vector Store
+
+Frontend: Next.js (Vercel)  ·  Backend: FastAPI + WebSocket (Render)`}</pre>
           </div>
         </OverviewBlock>
 
@@ -317,8 +373,8 @@ export default function ProjectSummary() {
               executive summary, risks, and financials.
             </li>
             <li>
-              <strong className="text-white">2. Filing Delta</strong> — Compare FY2024 vs prior-year 10-K; show Risk
-              Factors adds (e.g. DMA / App Store regulation).
+              <strong className="text-white">2. Filing Delta</strong> — Compare FY2024 vs prior-year 10-K; show SEC
+              extracted Risk Factors adds (badge: Item 1A / Item 7).
             </li>
             <li>
               <strong className="text-white">3. Contradictions</strong> — Show CEO call quote vs 10-K regulatory risk
@@ -331,8 +387,8 @@ export default function ProjectSummary() {
               <strong className="text-white">5. Compare</strong> — Apple vs Microsoft on growth, margins, and risk count.
             </li>
             <li>
-              <strong className="text-white">6. Q&A</strong> — Ask: &ldquo;What are the top 3 risks to the thesis?&rdquo;
-              and show cited answers.
+              <strong className="text-white">6. Q&A</strong> — Ask: &ldquo;What is gross margin and the top regulatory
+              risk?&rdquo; and show cited filing excerpts.
             </li>
           </ol>
         </OverviewBlock>
@@ -342,22 +398,23 @@ export default function ProjectSummary() {
           <div>
             <h2 className="text-2xl font-bold text-white">Ready to try it?</h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/60">
-              Upload a 10-K PDF or use one of the bundled sample filings. Pre-analyzed reports for Apple, Microsoft,
-              and Salesforce are already waiting in History.
+              <strong className="text-white/80">View History</strong> for instant AAPL, Microsoft, and Salesforce
+              reports. <strong className="text-white/80">Upload a 10-K</strong> to run the full agent pipeline (requires
+              the Render backend).
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/history"
+              className="rounded-full border border-white/25 px-8 py-3 text-sm font-medium text-white transition hover:border-sky-400/40 hover:bg-white/5"
+            >
+              View History (instant)
+            </Link>
             <Link
               href="/upload"
               className="rounded-full bg-gradient-to-r from-sky-500 to-amber-500 px-8 py-3 text-sm font-semibold text-white transition hover:from-sky-400 hover:to-amber-400"
             >
               Upload a 10-K
-            </Link>
-            <Link
-              href="/history"
-              className="rounded-full border border-white/25 px-8 py-3 text-sm font-medium text-white transition hover:border-sky-400/40 hover:bg-white/5"
-            >
-              View History
             </Link>
           </div>
         </section>
