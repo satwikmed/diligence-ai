@@ -148,13 +148,113 @@ export function getDemoCompare(doc1: string, doc2: string) {
   };
 }
 
-/** Use built-in demo data when no real backend URL is configured (Vercel default). */
+/** Use built-in demo data only when no backend URL is configured (Vercel default). */
 export function shouldUseDemoData(): boolean {
-  const url = process.env.NEXT_PUBLIC_API_URL?.trim();
-  return !url || url.includes('localhost') || url.includes('127.0.0.1');
+  return !process.env.NEXT_PUBLIC_API_URL?.trim();
 }
 
 /** @deprecated use shouldUseDemoData */
 export function useDemoApi(): boolean {
   return shouldUseDemoData();
+}
+
+export function getDemoFilingDelta(documentId: string, compareId: string) {
+  const current = getDemoAnalysis(documentId);
+  const prior = getDemoAnalysis(compareId);
+  if (!current?.report || !prior?.report) return null;
+
+  const priorRisks = (prior.report.risk_assessment as Array<{ risk_name: string; description: string; source_section: string }>) || [];
+  const currentRisks = (current.report.risk_assessment as typeof priorRisks) || [];
+  const priorInsights = (prior.report.strategic_insights as Array<{ insight: string; supporting_evidence: string }>) || [];
+  const currentInsights = (current.report.strategic_insights as typeof priorInsights) || [];
+
+  const addedRisks = currentRisks.filter(
+    (r) => !priorRisks.some((p) => p.risk_name === r.risk_name)
+  );
+  const removedRisks = priorRisks.filter(
+    (r) => !currentRisks.some((c) => c.risk_name === r.risk_name)
+  );
+
+  return {
+    document_id: documentId,
+    compare_id: compareId,
+    prior_label: 'Prior 10-K (demo)',
+    current_label: 'Current 10-K (demo)',
+    overall_change_score: 24.5,
+    headline_changes: [
+      ...addedRisks.slice(0, 2).map((r) => ({
+        type: 'added',
+        section: 'Risk Factors',
+        text: `${r.risk_name}: ${r.description}`,
+        citation: r.source_section,
+      })),
+      ...removedRisks.slice(0, 1).map((r) => ({
+        type: 'removed',
+        section: 'Risk Factors',
+        text: `${r.risk_name}: ${r.description}`,
+        citation: r.source_section,
+      })),
+    ],
+    sections: [
+      {
+        section: 'Risk Factors',
+        change_percentage: 18.0,
+        summary: `Risk Factors: ${addedRisks.length} new and ${removedRisks.length} removed items vs prior filing.`,
+        added: addedRisks.map((r) => ({ text: `${r.risk_name}: ${r.description}`, source: 'Current 10-K', section: 'Risk Factors' })),
+        removed: removedRisks.map((r) => ({ text: `${r.risk_name}: ${r.description}`, source: 'Prior 10-K', section: 'Risk Factors' })),
+      },
+      {
+        section: 'MD&A / Strategic Insights',
+        change_percentage: 31.0,
+        summary: `MD&A / Strategic Insights: ${Math.max(currentInsights.length - priorInsights.length, 0)} net new insights.`,
+        added: currentInsights.slice(0, 1).map((i) => ({ text: i.insight, source: 'Current 10-K', section: 'MD&A' })),
+        removed: [],
+      },
+    ],
+  };
+}
+
+export function getDemoContradictions(documentId: string) {
+  const analysis = getDemoAnalysis(documentId);
+  if (!analysis?.report) return null;
+  const company = DEMO_COMPANIES.find((c) => c.id === documentId);
+  const ticker = company?.filename.split('_')[0] || 'AAPL';
+
+  const contradictions =
+    ticker === 'AAPL'
+      ? [
+          {
+            theme: 'Regulatory risk',
+            severity: 'high',
+            earnings_call: {
+              speaker: 'CEO',
+              quote: 'We see minimal regulatory headwinds and expect our App Store model to remain largely unchanged globally.',
+              source: 'Q4 FY2024 Earnings Call',
+            },
+            filing: {
+              quote: 'Regulatory Scrutiny: Increasing antitrust and privacy regulation globally.',
+              source: 'Risk Factors',
+            },
+            analysis:
+              'Management downplayed regulatory pressure on the earnings call while the 10-K Risk Factors section flags antitrust and privacy regulation as a high-severity risk.',
+          },
+        ]
+      : [
+          {
+            theme: 'No major contradictions flagged',
+            severity: 'low',
+            earnings_call: {
+              speaker: 'CEO',
+              quote: 'We remain confident in our long-term growth trajectory.',
+              source: 'Q4 FY2024 Earnings Call',
+            },
+            filing: {
+              quote: (analysis.report.risk_assessment as Array<{ description: string }>)?.[0]?.description || 'See Risk Factors.',
+              source: 'Risk Factors',
+            },
+            analysis: 'Automated scan found no high-confidence contradictions in demo mode.',
+          },
+        ];
+
+  return { document_id: documentId, ticker, contradictions, call_excerpt_count: 2 };
 }

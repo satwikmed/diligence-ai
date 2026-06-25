@@ -159,3 +159,59 @@ class TestBenchmarkAgent:
         result = run_benchmark_analysis(metrics, "Technology")
         assert len(result["financial_metrics"]) == 1
         assert result["financial_metrics"][0].get("industry_average") is not None
+
+
+class TestFilingDelta:
+    def test_compute_filing_delta(self):
+        from agents.filing_delta.differ import compute_filing_delta
+
+        prior = {
+            "risk_assessment": [{"risk_name": "Old Risk", "description": "Prior risk.", "source_section": "Risk Factors"}],
+            "strategic_insights": [{"insight": "Old insight", "supporting_evidence": "MD&A"}],
+        }
+        current = {
+            "risk_assessment": [
+                {"risk_name": "New Risk", "description": "New risk.", "source_section": "Risk Factors"},
+                {"risk_name": "Old Risk", "description": "Prior risk.", "source_section": "Risk Factors"},
+            ],
+            "strategic_insights": [
+                {"insight": "New insight", "supporting_evidence": "MD&A"},
+                {"insight": "Old insight", "supporting_evidence": "MD&A"},
+            ],
+        }
+        delta = compute_filing_delta(prior, current)
+        assert delta["overall_change_score"] >= 0
+        assert len(delta["sections"]) == 2
+        assert any(s["section"] == "Risk Factors" for s in delta["sections"])
+
+
+class TestContradictionDetector:
+    def test_detect_aapl_regulatory_contradiction(self):
+        from agents.contradiction.detector import detect_contradictions
+
+        report = {
+            "risk_assessment": [
+                {"risk_name": "Regulatory Scrutiny", "description": "Increasing antitrust regulation.", "source_section": "Risk Factors"},
+            ],
+            "red_flags": [],
+            "strategic_insights": [],
+        }
+        result = detect_contradictions(report, "AAPL")
+        assert result["ticker"] == "AAPL"
+        assert len(result["contradictions"]) >= 1
+
+
+class TestMemoGenerator:
+    def test_generate_memo_pdf(self):
+        from agents.memo_generator.generator import generate_investment_memo_pdf
+
+        report = {
+            "executive_summary": "Test summary for memo export.",
+            "company_overview": {"ticker": "TEST", "name": "Test Co"},
+            "financial_analysis": [{"metric_name": "revenue", "current_value": "$1B", "yoy_change": "+5%", "assessment": "strong"}],
+            "risk_assessment": [{"risk_name": "Test Risk", "description": "Desc", "severity": "medium", "source_section": "Risk Factors"}],
+            "recommendations": [{"priority": "high", "action": "Monitor", "rationale": "Because"}],
+            "data_quality_score": 90,
+        }
+        pdf = generate_investment_memo_pdf(report, "Test Co")
+        assert pdf[:4] == b"%PDF"

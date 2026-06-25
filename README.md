@@ -1,12 +1,21 @@
-# Diligence AI: Autonomous Due Diligence Platform
+# Diligence AI: Autonomous Due Diligence for Equity Research
 
 **Live demo:** https://diligence-ai-nine.vercel.app
 
 > **Important:** `diligence-ai.vercel.app` is a different app (not this project). Use the link above.
 
-**Upload a 10-K. Six AI agents analyze it. Get a consulting-grade report in minutes.**
+**Upload a 10-K. Six AI agents analyze it. Get a research-grade report with citations in minutes.**
 
-What takes a junior consultant two weeks, Diligence AI does in two minutes.
+Built for finance and equity research workflows: what takes a junior analyst days on a new name, Diligence AI surfaces in one session — with filing delta, earnings-vs-10-K cross-checks, and ER memo export.
+
+## What's New (Finance / ER Extensions)
+
+| Feature | What it does |
+|---------|----------------|
+| **QoQ Filing Delta** | Diffs Risk Factors and MD&A/strategic sections between two filings with cited adds/removes |
+| **Earnings vs 10-K Contradictions** | Side-by-side quotes when call tone diverges from Risk Factors / MD&A |
+| **ER Memo Export (PDF)** | One-page investment memo (thesis, metrics, risks, actions) via ReportLab |
+| **Case study** | [docs/case-studies/AAPL.md](docs/case-studies/AAPL.md) — walkthrough for interview demos |
 
 ## Architecture
 
@@ -47,6 +56,9 @@ What takes a junior consultant two weeks, Diligence AI does in two minutes.
 | Strategic Insights | OpenAI Agents SDK | Consultant-grade synthesis |
 | Report Generator | Pydantic AI | Typed consulting report output |
 | Q&A Agent | LangChain + RAGAS | Grounded follow-up questions |
+| Filing Delta | Python difflib | QoQ risk/MD&A diff with citations |
+| Contradiction Scan | Rule + keyword engine | Earnings call vs 10-K mismatch flags |
+| Memo Export | ReportLab | ER-format PDF download |
 | Inter-agent comms | A2A Protocol | HTTP-based message transport |
 | Tool access | MCP Servers | Document, analysis, and benchmark tools |
 | Backend | FastAPI + WebSocket | REST API + real-time progress |
@@ -86,9 +98,9 @@ pip install -r requirements-full.txt   # slow, 2GB+ download
 python data/seed.py
 ```
 
-This creates 3 pre-analyzed companies (Apple, Microsoft, Salesforce) so the demo is alive on first visit. It also downloads real 10-K PDFs from SEC EDGAR into `data/sample_docs/`.
+This creates 3 pre-analyzed companies (Apple, Microsoft, Salesforce) with **stable IDs** matching the live Vercel demo. It also downloads real 10-K PDFs from SEC EDGAR into `data/sample_docs/`.
 
-## Sample 10-K files (for Deloitte / KPMG / EY demos)
+## Sample 10-K files (for ER / banking interviews)
 
 **No need to bring your own files.** The repo ships with real public filings:
 
@@ -100,26 +112,17 @@ This creates 3 pre-analyzed companies (Apple, Microsoft, Salesforce) so the demo
 
 Full demo guide: [`data/sample_docs/README.md`](data/sample_docs/README.md)
 
-### Download fresh copies from SEC
+### Recommended demo flow (interview-ready)
 
-```bash
-python data/download_samples.py
-python data/download_samples.py --force   # replace existing
-```
-
-### Download via API (when backend is running)
-
-```bash
-curl -O http://localhost:8000/api/samples/AAPL_10K_FY2024.pdf
-curl http://localhost:8000/api/samples          # list all samples
-```
-
-### Recommended demo flow
-
-1. **History** (`/history`) — show pre-analyzed Apple report instantly
-2. **Live upload** — drag `MSFT_10K_FY2024.pdf` from `data/sample_docs/` onto the home page
-3. **Compare** (`/compare`) — Apple vs Salesforce side-by-side
+1. **History** (`/history`) — open pre-analyzed Apple report instantly
+2. **Filing Delta** — on the analysis page, compare Apple vs Salesforce QoQ-style diffs
+3. **Contradictions** — show earnings call vs 10-K regulatory tone mismatch (Apple demo)
 4. **Q&A** — ask: *"What are the top 3 things I should worry about if I am investing?"*
+5. **Compare** (`/compare`) — Apple vs Salesforce side-by-side
+6. **Live upload** (local/backend) — drag `MSFT_10K_FY2024.pdf` onto Upload
+7. **ER Memo** — export PDF when backend is running
+
+Case study write-up: [`docs/case-studies/AAPL.md`](docs/case-studies/AAPL.md)
 
 ### 4. Start backend
 
@@ -131,21 +134,22 @@ uvicorn api.main:app --reload --port 8000
 
 ```bash
 cd frontend
+cp .env.local.example .env.local   # enables local uploads + WebSocket + PDF export
 npm install
 npm run dev
 ```
 
 Open **http://localhost:3000**
 
-## Demo Mode
+## Demo Mode vs Live Backend
 
-Set `DEMO_MODE=true` in `.env` (default when no OpenAI key is set). The platform runs with:
-- Heuristic financial extraction
-- Pre-built risk registers
-- Pseudo-embeddings (in-memory vector store)
-- Demo strategic insights and reports
+| Mode | When | Upload | PDF memo | Data source |
+|------|------|--------|----------|-------------|
+| **Vercel demo** | No `NEXT_PUBLIC_API_URL` | Disabled (by design) | Stub alert | Built-in demo JSON |
+| **Local full stack** | `.env.local` → `localhost:8000` | Enabled | ReportLab PDF | SQLite + agent pipeline |
+| **Production** | Vercel env → Render/Railway URL | Enabled | ReportLab PDF | Deployed backend |
 
-Add your `OPENAI_API_KEY` for full GPT-4o-powered analysis.
+Set `DEMO_MODE=true` in backend `.env` (default when no OpenAI key). The platform runs with heuristic extraction, pre-built risk registers, pseudo-embeddings, and demo insights. Add `OPENAI_API_KEY` for full GPT-4o-powered analysis.
 
 ## API Endpoints
 
@@ -155,6 +159,9 @@ Add your `OPENAI_API_KEY` for full GPT-4o-powered analysis.
 | GET | `/api/analysis/{id}/status` | Processing progress |
 | GET | `/api/analysis/{id}` | Full report JSON |
 | POST | `/api/analysis/{id}/ask` | Q&A follow-up |
+| GET | `/api/analysis/{id}/filing-delta?compare_id=` | QoQ filing diff |
+| GET | `/api/analysis/{id}/contradictions` | Earnings vs 10-K scan |
+| GET | `/api/analysis/{id}/memo` | ER memo PDF download |
 | GET | `/api/history` | All analyses |
 | GET | `/api/compare?doc1=&doc2=` | Side-by-side comparison |
 | GET | `/api/agent-logs/{id}` | Agent action logs |
@@ -170,12 +177,7 @@ Add your `OPENAI_API_KEY` for full GPT-4o-powered analysis.
 
 ## RAGAS Evaluation
 
-Every Q&A response is scored on:
-- **Faithfulness** — Is the answer supported by retrieved context?
-- **Answer Relevancy** — Does it address the question?
-- **Context Precision** — Were the right chunks retrieved?
-
-Scores are stored in `qa_interactions` and displayed in the chat UI.
+Every Q&A response is scored on faithfulness, answer relevancy, and context precision. Scores are stored in `qa_interactions` and displayed in the chat UI.
 
 ## Docker
 
@@ -184,7 +186,7 @@ docker-compose up --build
 ```
 
 - Backend: http://localhost:8000
-- Frontend: http://localhost:3000
+- Frontend: http://localhost:3000 (set `NEXT_PUBLIC_API_URL=http://localhost:8000` — now works for uploads)
 
 ## Deployment
 
@@ -203,18 +205,19 @@ Set environment variables on your hosting platform matching `.env.example`.
 pytest tests/ -v
 ```
 
-15+ unit tests covering chunking, financial parsing, risk classification, A2A messages, Pydantic validation, and RAGAS scoring.
+19+ unit tests covering chunking, financial parsing, risk classification, filing delta, contradiction detection, memo PDF, A2A messages, Pydantic validation, and RAGAS scoring.
 
 ## Project Structure
 
 See the full tree in the project root. Key directories:
-- `agents/` — Six specialized AI agents
+- `agents/` — Six specialized AI agents + filing delta, contradiction, memo modules
+- `docs/case-studies/` — Interview-ready walkthroughs
 - `protocols/a2a/` — Inter-agent communication
 - `protocols/mcp/` — MCP tool servers
 - `orchestrator/` — Pipeline orchestration
 - `api/` — FastAPI backend
 - `frontend/` — Next.js dashboard
-- `data/sample_docs/` — **Real SEC 10-K PDFs for demos** (see README inside)
+- `data/sample_docs/` — **Real SEC 10-K PDFs for demos**
 
 ## License
 

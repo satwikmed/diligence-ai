@@ -1,14 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getDemoAnalysis, useDemoApi } from '@/lib/demo-data';
+import { getDemoAnalysis } from '@/lib/demo-data';
+import { getBackendUrl } from '@/lib/server-backend';
 
 export async function GET(
   _request: NextRequest,
   { params }: { params: { documentId: string } }
 ) {
   const { documentId } = params;
+  const backend = getBackendUrl();
 
-  if (!useDemoApi()) {
-    const backend = process.env.NEXT_PUBLIC_API_URL!.replace(/\/$/, '');
+  if (backend) {
     const res = await fetch(`${backend}/api/analysis/${documentId}/status`, { cache: 'no-store' });
     return NextResponse.json(await res.json(), { status: res.status });
   }

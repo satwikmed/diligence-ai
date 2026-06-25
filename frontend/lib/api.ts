@@ -5,17 +5,21 @@ import {
   shouldUseDemoData,
 } from '@/lib/demo-data';
 
-/** Same-origin API when unset; set NEXT_PUBLIC_API_URL to your deployed backend on Vercel. */
+/** Backend base URL when configured; empty string uses same-origin Next.js API routes. */
 export function getApiUrl(): string {
   const url = process.env.NEXT_PUBLIC_API_URL?.trim();
-  if (!url || url.includes('localhost') || url.includes('127.0.0.1')) return '';
+  if (!url) return '';
   return url.replace(/\/$/, '');
 }
 
 export function getWsUrl(): string {
-  const url = process.env.NEXT_PUBLIC_WS_URL?.trim();
-  if (url && !url.includes('localhost') && !url.includes('127.0.0.1')) {
-    return url.replace(/\/$/, '');
+  const wsUrl = process.env.NEXT_PUBLIC_WS_URL?.trim();
+  if (wsUrl) {
+    return wsUrl.replace(/\/$/, '');
+  }
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL?.trim();
+  if (apiUrl) {
+    return apiUrl.replace(/^http/, 'ws').replace(/\/$/, '');
   }
   if (typeof window !== 'undefined') {
     const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
@@ -53,7 +57,9 @@ export interface AnalysisReport {
 
 export async function uploadDocument(file: File): Promise<UploadResponse> {
   if (shouldUseDemoData()) {
-    throw new Error('Upload requires a deployed backend. Set NEXT_PUBLIC_API_URL on Vercel.');
+    throw new Error(
+      'Upload requires a backend. Run the FastAPI server locally and set NEXT_PUBLIC_API_URL=http://localhost:8000 in frontend/.env.local, or deploy the backend and set the URL on Vercel.'
+    );
   }
   const formData = new FormData();
   formData.append('file', file);
@@ -159,4 +165,32 @@ export async function getSuggestedQuestions(documentId: string) {
   const res = await fetch(apiPath(`/api/analysis/${documentId}/suggested-questions`));
   if (!res.ok) return { questions: [] };
   return res.json();
+}
+
+export async function getFilingDelta(documentId: string, compareId: string) {
+  if (shouldUseDemoData()) {
+    const { getDemoFilingDelta } = await import('@/lib/demo-data');
+    const data = getDemoFilingDelta(documentId, compareId);
+    if (!data) throw new Error('Filing delta not available');
+    return data;
+  }
+  const res = await fetch(apiPath(`/api/analysis/${documentId}/filing-delta?compare_id=${compareId}`));
+  if (!res.ok) throw new Error('Failed to fetch filing delta');
+  return res.json();
+}
+
+export async function getContradictions(documentId: string) {
+  if (shouldUseDemoData()) {
+    const { getDemoContradictions } = await import('@/lib/demo-data');
+    const data = getDemoContradictions(documentId);
+    if (!data) throw new Error('Contradictions not available');
+    return data;
+  }
+  const res = await fetch(apiPath(`/api/analysis/${documentId}/contradictions`));
+  if (!res.ok) throw new Error('Failed to fetch contradictions');
+  return res.json();
+}
+
+export function getMemoDownloadUrl(documentId: string): string {
+  return apiPath(`/api/analysis/${documentId}/memo`);
 }

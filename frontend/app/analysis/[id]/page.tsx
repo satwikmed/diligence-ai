@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import AgentPipeline from '@/components/AgentPipeline';
 import CompanyOverviewCard from '@/components/CompanyOverview';
+import ContradictionPanel from '@/components/ContradictionPanel';
+import FilingDeltaPanel from '@/components/FilingDeltaPanel';
+import MemoExportButton from '@/components/MemoExportButton';
 import ExecutiveSummary from '@/components/ExecutiveSummary';
 import FinancialCharts from '@/components/FinancialCharts';
 import InsightsPanel from '@/components/InsightsPanel';
@@ -171,6 +174,9 @@ export default function AnalysisPage() {
       subtitle="Consulting-grade analysis powered by six parallel AI agents."
     >
       <div className="space-y-8">
+        <div className="flex flex-wrap items-center justify-end gap-3">
+          <MemoExportButton documentId={documentId} />
+        </div>
         <ExecutiveSummary summary={String(report.executive_summary || '')} score={Number(report.data_quality_score || 0)} metadata={metadata} />
         <CompanyOverviewCard overview={(report.company_overview as Record<string, string>) || {}} />
         <section>
@@ -186,6 +192,8 @@ export default function AnalysisPage() {
           <InsightsPanel insights={(report.strategic_insights as []) || []} />
         </section>
         <RedFlags flags={(report.red_flags as []) || []} />
+        <FilingDeltaPanel documentId={documentId} />
+        <ContradictionPanel documentId={documentId} />
         <section>
           <SectionHeading label="Actions" title="Recommendations" />
           <RecommendationsList recommendations={(report.recommendations as []) || []} />

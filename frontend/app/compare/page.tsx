@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import CompanyCompare from '@/components/CompanyCompare';
 import PageShell from '@/components/ui/page-shell';
 import { Button } from '@/components/ui/button';
-import { getDemoCompare, getDemoHistory } from '@/lib/demo-data';
+import { compareCompanies, getHistory } from '@/lib/api';
 
 export default function ComparePage() {
   const [items, setItems] = useState<Array<{ document_id: string; company_name: string }>>([]);
@@ -12,31 +12,42 @@ export default function ComparePage() {
   const [doc2, setDoc2] = useState('');
   const [comparison, setComparison] = useState<Record<string, unknown> | null>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    const completed = (getDemoHistory().items || []).filter(
-      (i) => i.processing_status === 'complete'
-    );
-    setItems(completed);
-    if (completed.length >= 2) {
-      setDoc1(completed[0].document_id);
-      setDoc2(completed[1].document_id);
-    }
+    getHistory()
+      .then((data) => {
+        const completed = (data.items || []).filter(
+          (i: { processing_status: string }) => i.processing_status === 'complete'
+        );
+        setItems(completed);
+        if (completed.length >= 2) {
+          setDoc1(completed[0].document_id);
+          setDoc2(completed[1].document_id);
+        }
+      })
+      .catch(() => setError('Could not load companies for comparison.'));
   }, []);
 
-  const runCompare = () => {
-    if (!doc1 || !doc2) return;
+  const runCompare = async () => {
+    if (!doc1 || !doc2 || doc1 === doc2) return;
     setLoading(true);
+    setError('');
     try {
-      const data = getDemoCompare(doc1, doc2);
-      if (data) setComparison(data);
+      const data = await compareCompanies(doc1, doc2);
+      setComparison(data);
+    } catch {
+      setError('Comparison failed. Try selecting two different completed analyses.');
+      setComparison(null);
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    if (doc1 && doc2 && doc1 !== doc2) runCompare();
+    if (doc1 && doc2 && doc1 !== doc2) {
+      runCompare();
+    }
   }, [doc1, doc2]);
 
   return (
@@ -65,10 +76,11 @@ export default function ComparePage() {
           <option value="">Select Company 2</option>
           {items.map((i) => <option key={i.document_id} value={i.document_id}>{i.company_name}</option>)}
         </select>
-        <Button onClick={runCompare} disabled={loading || !doc1 || !doc2}>
+        <Button onClick={runCompare} disabled={loading || !doc1 || !doc2 || doc1 === doc2}>
           {loading ? 'Comparing...' : 'Compare'}
         </Button>
       </div>
+      {error && <div className="glass-card mb-6 p-4 text-sm text-red-300">{error}</div>}
       {comparison && <CompanyCompare data={comparison as Parameters<typeof CompanyCompare>[0]['data']} />}
     </PageShell>
   );

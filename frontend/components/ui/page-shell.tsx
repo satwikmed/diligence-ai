@@ -1,6 +1,6 @@
 "use client"
 
-import ShaderPage from "@/components/ui/shader-page-client"
+import ShaderPage from "@/components/ui/shader-page"
 import PageHeading from "@/components/ui/page-heading"
 import { cn } from "@/lib/utils"
 

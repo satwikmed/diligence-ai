@@ -2,9 +2,13 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
+from fastapi.responses import Response
 from pydantic import BaseModel
 
+from agents.contradiction.detector import detect_contradictions
+from agents.filing_delta.differ import compute_filing_delta
+from agents.memo_generator.generator import generate_investment_memo_pdf
 from agents.qa_agent.agent import SUGGESTED_QUESTIONS, answer_question
 from data.db import get_analysis, get_document
 from orchestrator.events import get_progress_state
@@ -14,6 +18,32 @@ router = APIRouter(prefix="/api/analysis", tags=["analysis"])
 
 class QuestionRequest(BaseModel):
     question: str
+
+
+def _report_from_analysis(analysis: dict) -> dict:
+    return {
+        "executive_summary": analysis.get("executive_summary"),
+        "company_overview": analysis.get("company_overview"),
+        "financial_analysis": analysis.get("financial_metrics"),
+        "risk_assessment": analysis.get("risk_assessment"),
+        "strategic_insights": analysis.get("strategic_insights"),
+        "recommendations": analysis.get("recommendations"),
+        "red_flags": analysis.get("red_flags"),
+        "industry_benchmarks": analysis.get("industry_benchmarks"),
+        "data_quality_score": analysis.get("data_quality_score"),
+    }
+
+
+def _ticker_from_doc(doc: dict) -> str:
+    filename = doc.get("filename") or ""
+    if "_" in filename:
+        return filename.split("_")[0]
+    doc_id = doc.get("id") or ""
+    analysis = get_analysis(doc_id) if doc_id else None
+    overview = (analysis or {}).get("company_overview") or {}
+    if isinstance(overview, dict):
+        return overview.get("ticker") or "UNK"
+    return "UNK"
 
 
 @router.get("/{document_id}/status")
@@ -112,3 +142,62 @@ async def ask_question(document_id: str, body: QuestionRequest):
 @router.get("/{document_id}/suggested-questions")
 async def suggested_questions(document_id: str):
     return {"questions": SUGGESTED_QUESTIONS}
+
+
+@router.get("/{document_id}/filing-delta")
+async def filing_delta(document_id: str, compare_id: str = Query(...)):
+    doc_current = get_document(document_id)
+    doc_prior = get_document(compare_id)
+    if not doc_current or not doc_prior:
+        raise HTTPException(status_code=404, detail="Document not found")
+
+    analysis_current = get_analysis(document_id)
+    analysis_prior = get_analysis(compare_id)
+    if not analysis_current or not analysis_prior:
+        raise HTTPException(status_code=404, detail="Analysis not complete for one or both documents")
+
+    delta = compute_filing_delta(
+        _report_from_analysis(analysis_prior),
+        _report_from_analysis(analysis_current),
+        prior_label=f"{doc_prior.get('company_name', 'Prior')} ({doc_prior.get('filing_year', '')})",
+        current_label=f"{doc_current.get('company_name', 'Current')} ({doc_current.get('filing_year', '')})",
+    )
+    return {
+        "document_id": document_id,
+        "compare_id": compare_id,
+        **delta,
+    }
+
+
+@router.get("/{document_id}/contradictions")
+async def contradictions(document_id: str):
+    doc = get_document(document_id)
+    if not doc:
+        raise HTTPException(status_code=404, detail="Document not found")
+    analysis = get_analysis(document_id)
+    if not analysis:
+        raise HTTPException(status_code=404, detail="Analysis not found")
+
+    report = _report_from_analysis(analysis)
+    result = detect_contradictions(report, _ticker_from_doc(doc))
+    return {"document_id": document_id, **result}
+
+
+@router.get("/{document_id}/memo")
+async def export_memo(document_id: str):
+    doc = get_document(document_id)
+    if not doc:
+        raise HTTPException(status_code=404, detail="Document not found")
+    analysis = get_analysis(document_id)
+    if not analysis:
+        raise HTTPException(status_code=404, detail="Analysis not found")
+
+    report = _report_from_analysis(analysis)
+    company = doc.get("company_name") or "Company"
+    pdf_bytes = generate_investment_memo_pdf(report, company)
+    filename = f"{_ticker_from_doc(doc)}_investment_memo.pdf"
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )

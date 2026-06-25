@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import DataQualityBadge from '@/components/DataQualityBadge';
 import PageShell from '@/components/ui/page-shell';
-import { getDemoHistory } from '@/lib/demo-data';
+import { deleteAnalysis, getHistory } from '@/lib/api';
 
 interface HistoryItem {
   document_id: string;
@@ -21,17 +21,24 @@ export default function HistoryPage() {
   const router = useRouter();
   const [items, setItems] = useState<HistoryItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    const data = getDemoHistory();
-    setItems(data.items || []);
-    setLoading(false);
+    getHistory()
+      .then((data) => setItems(data.items || []))
+      .catch(() => setError('Could not load analysis history.'))
+      .finally(() => setLoading(false));
   }, []);
 
-  const handleDelete = (e: React.MouseEvent, id: string) => {
+  const handleDelete = async (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
     if (!confirm('Delete this analysis?')) return;
-    setItems((prev) => prev.filter((i) => i.document_id !== id));
+    try {
+      await deleteAnalysis(id);
+      setItems((prev) => prev.filter((i) => i.document_id !== id));
+    } catch {
+      alert('Delete failed.');
+    }
   };
 
   const openAnalysis = (item: HistoryItem) => {
@@ -50,6 +57,8 @@ export default function HistoryPage() {
     >
       {loading ? (
         <div className="glass-card p-10 text-center text-white/60">Loading...</div>
+      ) : error ? (
+        <div className="glass-card p-10 text-center text-red-300">{error}</div>
       ) : items.length === 0 ? (
         <div className="glass-card p-10 text-center">
           <p className="text-white/50">No analyses yet.</p>
