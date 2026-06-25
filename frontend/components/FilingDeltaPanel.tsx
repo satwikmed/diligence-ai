@@ -48,6 +48,8 @@ export default function FilingDeltaPanel({ documentId }: FilingDeltaPanelProps) 
 
   const sections = (delta?.sections as Array<Record<string, unknown>>) || [];
   const headlines = (delta?.headline_changes as Array<Record<string, string>>) || [];
+  const source = String(delta?.source || '');
+  const isSecText = source === 'sec_filing_text';
 
   return (
     <section>
@@ -64,12 +66,20 @@ export default function FilingDeltaPanel({ documentId }: FilingDeltaPanelProps) 
               <option key={o.document_id} value={o.document_id}>{o.company_name}</option>
             ))}
           </select>
+          {isSecText && (
+            <span className="badge badge-primary">SEC filing text · Item 1A / Item 7</span>
+          )}
           {delta && (
-            <span className="badge badge-primary">
+            <span className="badge badge-neutral">
               Change score: {String(delta.overall_change_score)}%
             </span>
           )}
         </div>
+        {isSecText && (
+          <p className="mb-4 text-xs text-white/50">
+            Diff computed from extracted FY2023 vs FY2024 10-K PDFs (EDGAR). Headline changes ranked by materiality keywords.
+          </p>
+        )}
 
         {loading && <p className="text-sm text-white/50">Computing delta...</p>}
         {error && <p className="text-sm text-red-300">{error}</p>}
@@ -96,13 +106,13 @@ export default function FilingDeltaPanel({ documentId }: FilingDeltaPanelProps) 
             <div className="grid gap-3 md:grid-cols-2">
               <div>
                 <p className="mb-2 text-xs uppercase text-emerald-400/80">Added</p>
-                {((section.added as Array<{ text: string; citation?: string }>) || []).map((item, i) => (
+                {((section.added as Array<{ text: string; citation?: string }>) || []).slice(0, 6).map((item, i) => (
                   <p key={i} className="mb-1 text-xs text-white/70">+ {item.text}</p>
                 ))}
               </div>
               <div>
                 <p className="mb-2 text-xs uppercase text-amber-400/80">Removed</p>
-                {((section.removed as Array<{ text: string }>) || []).map((item, i) => (
+                {((section.removed as Array<{ text: string }>) || []).slice(0, 6).map((item, i) => (
                   <p key={i} className="mb-1 text-xs text-white/70">− {item.text}</p>
                 ))}
               </div>

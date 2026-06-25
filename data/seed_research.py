@@ -10,11 +10,40 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from agents.contradiction.research import detect_contradictions_from_filing_text
-from agents.filing_delta.text_differ import compute_text_filing_delta
+from agents.filing_delta.text_differ import _is_noise_paragraph, _materiality_score, compute_text_filing_delta
 from data.filing_sections import TICKER_FILINGS, extract_sections_from_pdf, filing_paths_for_ticker
 
 OUT_DIR = ROOT / "frontend" / "public" / "research"
 SAMPLE_DIR = ROOT / "data" / "sample_docs"
+
+
+def _qa_chunks(sections: dict) -> list[dict[str, str | int | None]]:
+    """Filing paragraphs for Q&A retrieval (material, non-noise)."""
+    chunks: list[dict[str, str | int | None]] = []
+    for para in sections.get("risk_paragraphs") or []:
+        if _is_noise_paragraph(para):
+            continue
+        chunks.append(
+            {
+                "section_name": "Risk Factors",
+                "text": para,
+                "page_number": sections.get("risk_page"),
+                "materiality": round(_materiality_score(para), 1),
+            }
+        )
+    for para in sections.get("mda_paragraphs") or []:
+        if _is_noise_paragraph(para):
+            continue
+        chunks.append(
+            {
+                "section_name": "MD&A",
+                "text": para,
+                "page_number": sections.get("mda_page"),
+                "materiality": round(_materiality_score(para), 1),
+            }
+        )
+    chunks.sort(key=lambda c: float(c.get("materiality") or 0), reverse=True)
+    return chunks[:40]
 
 
 def build_ticker_research(ticker: str) -> dict | None:
@@ -45,7 +74,9 @@ def build_ticker_research(ticker: str) -> dict | None:
 
     contradictions = detect_contradictions_from_filing_text(current, ticker)
     result["contradictions"] = contradictions
+    result["qa_chunks"] = _qa_chunks(current)
     print(f"  {ticker} contradictions: {len(contradictions.get('contradictions', []))} flagged")
+    print(f"  {ticker} Q&A chunks: {len(result['qa_chunks'])} paragraphs")
 
     return result
 

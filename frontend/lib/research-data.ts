@@ -12,8 +12,16 @@ type ResearchArtifact = {
     source?: string;
     transcript_period?: string;
   };
+  qa_chunks?: QaChunk[];
   current_source?: string;
   prior_source?: string;
+};
+
+export type QaChunk = {
+  section_name: string;
+  text: string;
+  page_number?: number | null;
+  materiality?: number;
 };
 
 function tickerFromDocumentId(documentId: string): string | null {
@@ -76,4 +84,11 @@ export function getResearchContradictions(documentId: string) {
     document_id: documentId,
     ...contradictions,
   };
+}
+
+export function getResearchQaChunks(documentId: string): QaChunk[] | null {
+  const ticker = tickerFromDocumentId(documentId);
+  if (!ticker) return null;
+  const artifact = loadResearchArtifact(ticker);
+  return artifact?.qa_chunks?.length ? artifact.qa_chunks : null;
 }

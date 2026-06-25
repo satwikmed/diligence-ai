@@ -6,33 +6,33 @@ import SectionHeading from "@/components/ui/section-heading"
 const AGENTS = [
   {
     name: "Document Processor",
-    framework: "LangChain",
+    framework: "pypdf + chunking",
     role: "Parses the uploaded 10-K PDF, splits it into logical sections (Business, Risk Factors, MD&A, Financial Statements), chunks the text, and embeds it into a vector store for retrieval by other agents.",
   },
   {
     name: "Financial Analyst",
-    framework: "CrewAI",
+    framework: "Python + GPT/heuristics",
     role: "Extracts key financial metrics — revenue, margins, debt, cash flow, YoY changes — and benchmarks them against industry averages. Flags metrics that are strong, adequate, or concerning.",
   },
   {
     name: "Risk Detective",
-    framework: "LangGraph",
+    framework: "Multi-step Python",
     role: "Runs a multi-step risk analysis workflow. Identifies operational, financial, regulatory, and market risks from the filing. Ranks each risk by severity and likelihood, and notes whether it is currently in the news.",
   },
   {
     name: "Strategic Insights",
-    framework: "OpenAI Agents SDK",
+    framework: "GPT / heuristics",
     role: "Synthesizes financial and risk findings into equity-research-grade insights — competitive positioning, growth drivers, and macro exposure with cited filing sections.",
   },
   {
     name: "Report Generator",
-    framework: "Pydantic AI",
+    framework: "Pydantic models",
     role: "Compiles all agent outputs into a structured ER due diligence report with executive summary, company overview, and a data quality score reflecting filing completeness.",
   },
   {
     name: "Q&A Agent",
-    framework: "LangChain + RAGAS",
-    role: "Available after the report is complete. Answers follow-up questions using retrieval-augmented generation, cites source sections and page numbers, and scores every response on faithfulness, relevancy, and precision.",
+    framework: "RAG + heuristic scores",
+    role: "Available after the report is complete. Retrieves relevant filing paragraphs, answers follow-up questions, cites source sections, and scores responses on faithfulness, relevancy, and precision.",
   },
 ]
 
@@ -74,11 +74,11 @@ const REPORT_SECTIONS = [
 const PLATFORM_FEATURES = [
   {
     title: "QoQ Filing Delta",
-    detail: "Diff Risk Factors and MD&A themes between filings with cited adds and removes — the workflow analysts use when coverage resumes after earnings.",
+    detail: "Diff Risk Factors and MD&A from real SEC 10-K PDF text (FY2023 vs FY2024) with materiality-ranked adds and removes.",
   },
   {
     title: "Earnings vs 10-K Contradictions",
-    detail: "Side-by-side quotes when management tone on the call diverges from Risk Factors or MD&A language in the 10-K.",
+    detail: "Side-by-side quotes when management tone on the call diverges from extracted Risk Factors / MD&A language in the 10-K.",
   },
   {
     title: "ER Memo Export (PDF)",
@@ -94,17 +94,19 @@ const PLATFORM_FEATURES = [
   },
   {
     title: "Demo Mode",
-    detail: "Works on Vercel without API keys — full ER demo flow including filing delta, contradictions, and PDF memo export.",
+    detail: "Works on Vercel: SEC filing-text delta & contradictions, PDF memo export, and OpenAI Q&A over extracted filing chunks (set OPENAI_API_KEY).",
   },
 ]
 
 const TECH_STACK = [
-  { layer: "Document Processor", tech: "LangChain + Unstructured / pypdf" },
-  { layer: "Financial Analyst", tech: "CrewAI" },
-  { layer: "Risk Detective", tech: "LangGraph" },
-  { layer: "Strategic Insights", tech: "OpenAI Agents SDK" },
-  { layer: "Report Generator", tech: "Pydantic AI" },
-  { layer: "Q&A Agent", tech: "LangChain + RAGAS" },
+  { layer: "Document Processor", tech: "pypdf + section chunking (LangChain optional)" },
+  { layer: "Financial Analyst", tech: "Python heuristics + optional GPT-4o" },
+  { layer: "Risk Detective", tech: "Multi-step Python workflow" },
+  { layer: "Strategic Insights", tech: "GPT-4o-mini / heuristics" },
+  { layer: "Report Generator", tech: "Pydantic typed models" },
+  { layer: "Q&A Agent", tech: "Chunk retrieval + GPT-4o-mini + heuristic quality scores" },
+  { layer: "Filing Delta", tech: "SEC PDF text diff (Item 1A / Item 7)" },
+  { layer: "Contradictions", tech: "Transcript vs filing text rules" },
   { layer: "Inter-agent comms", tech: "A2A Protocol (HTTP messages)" },
   { layer: "Tool access", tech: "MCP Servers (document, analysis, benchmark)" },
   { layer: "Backend API", tech: "FastAPI + WebSocket" },
@@ -292,10 +294,10 @@ export default function ProjectSummary() {
         </section>
 
         {/* RAGAS */}
-        <OverviewBlock step="QUALITY" title="RAGAS Answer Quality Scoring">
+        <OverviewBlock step="QUALITY" title="Answer Quality Scoring">
           <p className="mb-4 max-w-3xl text-sm leading-relaxed text-white/70">
-            Every Q&A response is automatically evaluated using RAGAS (Retrieval-Augmented Generation Assessment).
-            Scores are displayed in the chat UI and stored in the database.
+            Q&A retrieves relevant filing paragraphs from extracted 10-K text, then scores answers on
+            faithfulness, relevancy, and context precision (heuristic on Vercel; full RAGAS when installed locally).
           </p>
           <div className="grid gap-3 sm:grid-cols-3">
             {RAGAS_METRICS.map((metric) => (

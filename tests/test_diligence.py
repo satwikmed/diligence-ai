@@ -263,6 +263,15 @@ class TestTextFilingDelta:
         assert delta["overall_change_score"] >= 0
         assert len(delta["sections"]) == 2
 
+    def test_noise_paragraph_filtered(self):
+        from agents.filing_delta.text_differ import _is_noise_paragraph
+
+        assert _is_noise_paragraph("Item 1A. Risk Factors 5 Item 1B.")
+        assert not _is_noise_paragraph(
+            "Antitrust and regulatory investigations may materially affect our business and operating results "
+            "in multiple jurisdictions including the EU, US, and Greater China regions worldwide."
+        )
+
 
 class TestResearchContradictions:
     def test_detect_from_filing_text(self):

@@ -9,7 +9,17 @@
         "section": "Risk Factors",
         "added": [
           {
-            "text": "Risk Factor Summary Operational and Execution Risks \u007f Any breaches in our security measures or those of our third-party data center providers, cloud computing platform providers, customers, partners, or other third-party vendors, or the underlying Internet infrastructure that cause unauthorized access to, disclosure, alteration, corruption, destruction or loss of customer data, our data or our IT systems, or disruption of authorized access thereto. \u007f Any defects or disruptions in our services that diminish demand for our services. 11 Table of Contents \u007f Any interruptions or delays in services from third parties, including data center hosting facilities, cloud computing platform providers and other hardware and software vendors, as well as Internet infrastructure, or from our inability to adequately plan for and manage service interruptions or infrastructure capacity requirements. \u007f An inability to realize the expected business or financial benefits of company and technology acquisitions. \u007f Strain on our personnel resources and infrastructure from supporting our existing and growing customer base or an inability to scale our operations and increase productivity. \u007f Customer attrition, or our inability to accurately predict subscription renewals and upgrade rates. \u007f Disruptions caused by periodic changes to our sales organization. \u007f Exposure to risks inherent in international operations from sales to customers outside the United States. \u007f A more time-consuming and expensive sales cycle, pricing pressure and implementation and configuration challenges for sales efforts to larger enterprise customers. \u007f Any loss of key members of our management team or development and operations personnel, or inability to attract and retain employees necessary to support our operations and growth. \u007f Any failure in the delivery of high-quality professional and technical support services related to our online applications.",
+            "text": "Legal and Regulatory Risks \u007f Privacy concerns and laws as well as evolving regulation of cloud computing, AI services, increased restriction of cross-border data transfers and other regulatory developments. \u007f Evolving industry-specific regulations, requirements, interpretive positions or standards. \u007f Lawsuits against us by third parties for various claims, including alleged infringement of proprietary rights. \u007f Any failure to obtain registration or protection of our intellectual property rights. \u007f Risks related to government contracts and related procurement regulations. \u007f Governmental sanctions and export and import controls that could impair our ability to compete in international markets and may subject us to liability.",
+            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
+            "section": "Risk Factors"
+          },
+          {
+            "text": "Assessing whether an incident is material or reportable may require complex judgment and investigation, and disclosure of an incident may itself adversely affect our reputation, customer relationships and exposure to legal or regulatory proceedings. A security incident or related disclosure could result in loss of confidence in the security of our s",
+            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
+            "section": "Risk Factors"
+          },
+          {
+            "text": "We are subject to contractual, regulatory and other legal obligations to notify relevant stakeholders of certain security incidents. For example, SEC rules require disclosure on Form 8-K of the nature, scope and timing of any material cybersecurity incident and the reasonably likely impact of such incident.",
             "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
             "section": "Risk Factors"
           },
@@ -19,27 +29,12 @@
             "section": "Risk Factors"
           },
           {
-            "text": "Legal and Regulatory Risks \u007f Privacy concerns and laws as well as evolving regulation of cloud computing, AI services, increased restriction of cross-border data transfers and other regulatory developments. \u007f Evolving industry-specific regulations, requirements, interpretive positions or standards. \u007f Lawsuits against us by third parties for various claims, including alleged infringement of proprietary rights. \u007f Any failure to obtain registration or protection of our intellectual property rights. \u007f Risks related to government contracts and related procurement regulations. \u007f Governmental sanctions and export and import controls that could impair our ability to compete in international markets and may subject us to liability.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Risks Related to Owning Our Common Stock \u007f Fluctuations in our quarterly results. \u007f Volatility in our stock price and associated litigation. 12 Table of Contents \u007f Provisions in our governing documents and Delaware law that might discourage, delay or prevent a change of control of the Company or changes in our management.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "General Risks \u007f Volatile and significantly weakened global economic conditions. \u007f The occurrence of natural disasters and other catastrophic events beyond our control. \u007f The long-term impact of climate change on our business.",
+            "text": "Our services and underlying infrastructure have in the past and may in the future be breached or compromised, including, for example, as a result of the following: \u007f attempts to fraudulently induce our employees, customers, partners, or third-party vendors to disclose sensitive information to gain unauthorized access to our or our customers\u2019 data or IT systems; \u007f efforts by threat actors, including criminal organizations, state-sponsored actors and nation-states, to launch coordinated cyberattacks or supply chain attacks on our infrastructure or that of our third-party vendors, including through ransomware, destructive malware, distributed denial-of-service attacks or exploitation of previously unknown \u201czero-day\u201d vulnerabilities; \u007f attempts to misuse our marketing, advertising, messaging or social products and functionalities to impersonate persons or organizations and disseminate information that is false, misleading or malicious; \u007f vulnerabilities arising from new technologies and infrastructures, including those from acquisitions, enhancements and updates to our existing products, and the adoption and deployment of AI technologies within our products, services, internal systems, which may introduce novel security, data governance, or operational risks; \u007f vulnerabilities in products or components within the broad ecosystem in which our services operate and upon which they depend; \u007f attacks on, or vulnerabilities in, the underlying networks and services that power the Internet on which our products depend, most of which are not under our control or the control of our third-party vendors, partners or customers; and \u007f employee or contractor errors, omissions or intentional acts that compromise our security systems.",
             "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
             "section": "Risk Factors"
           },
           {
             "text": "Operational and Execution Risks If our security measures, or those of our third-party data center providers, cloud computing platform providers, customers, partners, other third- party vendors or the underlying Internet infrastructure, are breached or otherwise compromised, resulting in the unauthorized access to, disclosure, alteration, corruption, destruction or loss of customer data, our data or our IT systems, or disruption of authorized access thereto, our services may be perceived as insecure, customers may reduce or terminate their use of our services, and we may incur significant reputational harm, legal liability, regulatory scrutiny or a negative financial impact.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Our services and underlying infrastructure have in the past and may in the future be breached or compromised, including, for example, as a result of the following: \u007f attempts to fraudulently induce our employees, customers, partners, or third-party vendors to disclose sensitive information to gain unauthorized access to our or our customers\u2019 data or IT systems; \u007f efforts by threat actors, including criminal organizations, state-sponsored actors and nation-states, to launch coordinated cyberattacks or supply chain attacks on our infrastructure or that of our third-party vendors, including through ransomware, destructive malware, distributed denial-of-service attacks or exploitation of previously unknown \u201czero-day\u201d vulnerabilities; \u007f attempts to misuse our marketing, advertising, messaging or social products and functionalities to impersonate persons or organizations and disseminate information that is false, misleading or malicious; \u007f vulnerabilities arising from new technologies and infrastructures, including those from acquisitions, enhancements and updates to our existing products, and the adoption and deployment of AI technologies within our products, services, internal systems, which may introduce novel security, data governance, or operational risks; \u007f vulnerabilities in products or components within the broad ecosystem in which our services operate and upon which they depend; \u007f attacks on, or vulnerabilities in, the underlying networks and services that power the Internet on which our products depend, most of which are not under our control or the control of our third-party vendors, partners or customers; and \u007f employee or contractor errors, omissions or intentional acts that compromise our security systems.",
             "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
             "section": "Risk Factors"
           },
@@ -52,44 +47,9 @@
             "text": "Our ability to mitigate these risks may be impacted by the following: \u007f evolving and increasingly sophisticated techniques used to breach or disrupt IT systems and infrastructure, including the use or exploitation of AI technologies by threat actors to accelerate, scale or personalize cyberattacks, which may increase speed and effectiveness and limit our ability to anticipate, detect or mitigate such threats; \u007f the increasing complexity of our internal IT systems as we integrate acquired businesses and adopt new technologies and data-sharing models; and \u007f our limited control over our customers, partners, and third-party vendors (including those authorized by customers to access their data), or over the processing of data by such third parties, which may limit our ability to maintain the integrity or security of such transmissions or processing.",
             "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
             "section": "Risk Factors"
-          },
-          {
-            "text": "In the normal course of business, we and our customers are and have been the target of malicious cyberattacks and other security threats. Although to date we have not identified any security incidents involving our systems that have had a material financial impact on us, there can be no assurance that future incidents will not be material or significant.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "As our market presence grows, we may face increased risks of cyberattacks and other security threats. Additionally, as AI technologies, including generative and agentic AI, continue to evolve, threat actors are using and exploiting these technologies to enhance the sophistication, scale, speed and effectiveness of security threats that may be more difficult to detect and defend against.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Any delay in detecting, containing, or remediating a cybersecurity incident may result in additional harm, and in certain cases the full scope and impact of any such incident may not be immediately apparent. 13 Table of Contents A cybersecurity incident could result in unauthorized access to, or the loss or denial of authorized access to, our IT systems or data, or those of our customers, including intellectual property and other proprietary, sensitive or confidential information.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We are subject to contractual, regulatory and other legal obligations to notify relevant stakeholders of certain security incidents. For example, SEC rules require disclosure on Form 8-K of the nature, scope and timing of any material cybersecurity incident and the reasonably likely impact of such incident.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Assessing whether an incident is material or reportable may require complex judgment and investigation, and disclosure of an incident may itself adversely affect our reputation, customer relationships and exposure to legal or regulatory proceedings. A security incident or related disclosure could result in loss of confidence in the security of our s",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "Risk Factors"
           }
         ],
         "removed": [
-          {
-            "text": "Risk Factor Summary Operational and Execution Risks \u007f Any breaches in our security measures or those of our third-party data center hosting facilities, cloud computing platform providers or third-party service partners, or the underlying infrastructure of the Internet that cause unauthorized access to a customer\u2019s data, our data or our IT systems, or the blockage or disablement of authorized access to our services. \u007f Any defects or disruptions in our services that diminish demand for our services. \u007f Any interruptions or delays in services from third parties, including data center hosting facilities, cloud computing platform providers and other hardware and software vendors, as well as internet availability, or from our inability to adequately plan for and manage service interruptions or infrastructure capacity requirements. \u007f An inability to realize the expected business or financial benefits of company and technology acquisitions. \u007f Strain on our personnel resources and infrastructure from supporting our existing and growing customer base or an inability to scale our operations and increase productivity. \u007f Customer attrition, or our inability to accurately predict subscription renewals and upgrade rates. \u007f Disruptions caused by periodic changes to our sales organization. \u007f Exposure to risks inherent in international operations from sales to customers outside the United States. \u007f A more time-consuming and expensive sales cycle, pricing pressure and implementation and configuration challenges as we target more of our sales efforts at larger enterprise customers. \u007f Any loss of key members of our management team or development and operations personnel, or inability to attract and retain employees necessary to support our operations and growth. \u007f Any failure in the delivery of high-quality professional and technical support services related to our online applications.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Strategic and Industry Risks \u007f An inability to compete effectively in the intensely competitive markets in which we participate. \u007f Any failure to expand our services and to develop and integrate our existing services in order to keep pace with technological developments. \u007f An inability to maintain and enhance our brands. \u007f Partial or complete loss of invested capital, or significant changes in the fair value, of our strategic investment portfolio. \u007f Any discontinuance by third-party developers and providers in embracing our technology delivery model and enterprise cloud computing services, or customers asking us for warranties for third- party applications, integrations, data and content. \u007f Social and ethical issues, including the use or capabilities of AI in our offerings. 11 Table of Contents \u007f The evolving landscape related to ESG matters.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
           {
             "text": "Legal and Regulatory Risks \u007f Privacy concerns and laws as well as evolving regulation of cloud computing, increased restriction of cross-border data transfers and other regulatory developments. \u007f Evolving industry-specific regulations, requirements, interpretive positions or standards. \u007f Lawsuits against us by third parties for various claims, including alleged infringement of proprietary rights. \u007f Any failure to obtain registration or protection of our intellectual property rights. \u007f Risks related to government contracts and related procurement regulations. \u007f Governmental sanctions and export and import controls that could impair our ability to compete in international markets and may subject us to liability.",
             "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
@@ -101,57 +61,12 @@
             "section": "Risk Factors"
           },
           {
-            "text": "General Risks \u007f Volatile and significantly weakened global economic conditions. \u007f The occurrence of natural disasters and other events beyond our control. \u007f The long-term impact of climate change on our business.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Operational and Execution Risks If our security measures or those of our third-party data center hosting facilities, cloud computing platform providers or third-party service partners, or the underlying infrastructure of the Internet are breached, and unauthorized access is obtained to a customer\u2019s data, our data or our IT systems, or authorized access is blocked or disabled, our services may be perceived as not being secure, customers may curtail or stop using our services, and we may incur significant reputational harm, legal exposure and liabilities, or a negative financial impact.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Our services and underlying infrastructure may in the future be materially breached or compromised as a result of the following: \u007f third- party attempts to fraudulently induce our employees, partners or customers to disclose sensitive information to gain access to our customers\u2019 data or IT systems, or our data or our IT systems; \u007f efforts by hackers or sophisticated groups, such as criminal organizations, state-sponsored organizations or nation-states, to launch coordinated cyberattacks on internally built infrastructure or on third-party cloud-computing platform providers, including ransomware, destructive malware and distributed denial-of-service attacks; \u007f third-party attempts to abuse our marketing, advertising, messaging or social products and functionalities to impersonate persons or organizations and disseminate information that is false, misleading or malicious; \u007f vulnerabilities existing within new technologies and infrastructures, including those from acquired companies, or resulting from enhancements and updates to our existing service offerings; \u007f vulnerabilities in the products or components across the broad ecosystem that our services operate in conjunction with and are dependent on; \u007f attacks on, or vulnerabilities in, the many different underlying networks and services that power the Internet that our products depend on, most of which are not under our control or the control of our vendors, partners or customers; and 12 Table of Contents \u007f employee or contractor errors or intentional acts that compromise our security systems.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "These risks are mitigated, to the extent possible, by our ability to maintain and improve business and data governance policies and enhance processes and internal security controls, including our ability to escalate and respond to known and potential risks.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We can provide no assurances that our security measures, including implemented systems and processes designed to protect our customers\u2019 and our customers\u2019 customers\u2019 proprietary and other sensitive data, will provide absolute security or otherwise be effective or that a material breach will not occur.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "For example, our ability to mitigate these risks may be impacted by the following: \u007f evolving techniques used to breach or sabotage IT systems and infrastructure, including as a result of the increased use of AI technologies by bad actors, which are generally not recognized until launched against a target, and could result in our being unable to anticipate or implement adequate measures to prevent such techniques; \u007f the increasing complexity of our internal IT systems as we incorporate and secure IT environments from acquired companies and early adoption of new technologies and new ways of sharing data; and \u007f our limited control over our customers or third-party technology providers (including those authorized by customers to access their data), or the processing of data by third-party technology providers, which may not allow us to maintain the integrity or security of such transmissions or processing.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "In the normal course of business, we are and have been the target of malicious cyberattacks and have experienced other security incidents. Although, to date, such identified security events have not had a material financial impact, there can be no assurance that future cyberattacks will not be material or significant.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Additionally, as our market presence grows, we may face increased risks of cyberattacks or security threats, and as AI technologies, including generative AI models, develop rapidly, threat actors are using these technologies to create new sophisticated attack methods that are increasingly automated, targeted and coordinated and more difficult to defend against.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "A security breach or incident could result in unauthorized parties obtaining access to, or the denial of authorized access to, our IT systems or data, or our customers\u2019 systems or data, including intellectual property and proprietary, sensitive or other confidential information. We have contractual and other legal obligations to notify relevant stakeholders of security breaches.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "For example, SEC rules require disclosure on Form 8-K of the nature, scope and timing of any material cybersecurity incident and the reasonably likely impact of any such incident.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
             "text": "A security breach or resulting mandatory disclosure could result in a loss of confidence in the security of our services, damage our reputation, negatively impact our future sales, disrupt our business and lead to increases in insurance premiums and legal, regulatory and financial exposure and liability.",
+            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
+            "section": "Risk Factors"
+          },
+          {
+            "text": "Finally, the detection, prevention and remediation of known or potential security vulnerabilities, including determining whether a cybersecurity incident is notifiable or reportable, may not be straightforward and may result in additional financial",
             "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
             "section": "Risk Factors"
           },
@@ -161,45 +76,30 @@
             "section": "Risk Factors"
           },
           {
-            "text": "Finally, the detection, prevention and remediation of known or potential security vulnerabilities, including determining whether a cybersecurity incident is notifiable or reportable, may not be straightforward and may result in additional financial",
+            "text": "For example, SEC rules require disclosure on Form 8-K of the nature, scope and timing of any material cybersecurity incident and the reasonably likely impact of any such incident.",
+            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
+            "section": "Risk Factors"
+          },
+          {
+            "text": "Risk Factor Summary Operational and Execution Risks \u007f Any breaches in our security measures or those of our third-party data center hosting facilities, cloud computing platform providers or third-party service partners, or the underlying infrastructure of the Internet that cause unauthorized access to a customer\u2019s data, our data or our IT systems, or the blockage or disablement of authorized access to our services. \u007f Any defects or disruptions in our services that diminish demand for our services. \u007f Any interruptions or delays in services from third parties, including data center hosting facilities, cloud computing platform providers and other hardware and software vendors, as well as internet availability, or from our inability to adequately plan for and manage service interruptions or infrastructure capacity requirements. \u007f An inability to realize the expected business or financial benefits of company and technology acquisitions. \u007f Strain on our personnel resources and infrastructure from supporting our existing and growing customer base or an inability to scale our operations and increase productivity. \u007f Customer attrition, or our inability to accurately predict subscription renewals and upgrade rates. \u007f Disruptions caused by periodic changes to our sales organization. \u007f Exposure to risks inherent in international operations from sales to customers outside the United States. \u007f A more time-consuming and expensive sales cycle, pricing pressure and implementation and configuration challenges as we target more of our sales efforts at larger enterprise customers. \u007f Any loss of key members of our management team or development and operations personnel, or inability to attract and retain employees necessary to support our operations and growth. \u007f Any failure in the delivery of high-quality professional and technical support services related to our online applications.",
+            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
+            "section": "Risk Factors"
+          },
+          {
+            "text": "For example, our ability to mitigate these risks may be impacted by the following: \u007f evolving techniques used to breach or sabotage IT systems and infrastructure, including as a result of the increased use of AI technologies by bad actors, which are generally not recognized until launched against a target, and could result in our being unable to anticipate or implement adequate measures to prevent such techniques; \u007f the increasing complexity of our internal IT systems as we incorporate and secure IT environments from acquired companies and early adoption of new technologies and new ways of sharing data; and \u007f our limited control over our customers or third-party technology providers (including those authorized by customers to access their data), or the processing of data by third-party technology providers, which may not allow us to maintain the integrity or security of such transmissions or processing.",
             "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
             "section": "Risk Factors"
           }
         ],
         "change_percentage": 68.0,
-        "summary": "Risk Factors: 14 new paragraph(s) and 17 removed paragraph(s) vs prior filing (extracted 10-K text).",
+        "summary": "Risk Factors: 8 new paragraph(s) and 8 removed paragraph(s) vs prior filing (extracted 10-K text).",
         "extraction_method": "10-K PDF text (Item 1A / Item 7)"
       },
       {
         "section": "MD&A",
         "added": [
           {
-            "text": "Except as required by law, we undertake no obligation to revise or update publicly any forward-looking statements for any reason. 3 Table of Contents PART I. ITEM 1. BUSINESS Overview Salesforce, Inc. (\u201cSalesforce,\u201d the \u201cCompany,\u201d \u201cwe\u201d or \u201cour\u201d) is a global leader in customer relationship management (\u201cCRM\u201d) technology, helping organizations of any size become agentic enterprises.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Founded in 1999, we bring humans, agents, applications, and data together on a trusted, unified platform to unlock growth and innovation.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
             "text": "Our artificial intelligence (\u201cAI\u201d) powered Agentforce 360 Platform unites our offerings \u2014 spanning sales, service, marketing, commerce, collaboration, data management, integration, analytics, IT service, industry verticals and more \u2014 on a single, intelligent platform for trusted enterprise execution.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We unify and harmonize across systems, applications and devices to create a complete view of customers. With this single source of customer truth powering agents, teams can be more responsive, productive and efficient and deliver AI-powered, personalized and automated experiences across every channel.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "With Agentforce, the agentic layer of the Agentforce 360 Platform, our customers can build and deploy always-on digital labor for employees and customers, leveraging autonomous AI agents across business functions that aim to increase productivity, lower costs and drive operational efficiencies.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "With Agentforce, AI is embedded in the flow of work \u2014 in the applications that our customers already use every day. Every Agentforce-embedded application now reasons, learns, and takes action alongside users. Our service offerings are designed to be flexible, scalable and easy to use.",
             "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
             "section": "MD&A"
           },
@@ -209,67 +109,12 @@
             "section": "MD&A"
           },
           {
-            "text": "Our Service Offerings We believe every business, in every industry, must become an Agentic Enterprise creating agent-first experiences that increase efficiency, boost productivity, and drive growth for customers, employees, and partners. We view Salesforce to be uniquely positioned to lead customers through this transformation.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "By integrating data, metadata, applications and agents, we have created a deeply unified platform for the Agentic Enterprise, with humans at the center. Central to this ecosystem is Slack, which serves as the primary conversational interface, allowing users to interact with Agentforce-embedded applications and autonomous agents within their natural flow of work.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "These Agentforce-embedded applications are infused with agentic capabilities that turn workflows into personalized, intelligent, autonomous experiences\u2014so customers and employees can move faster, make better decisions, and achieve more value. Our service offerings are designed to work together and include: 4 Table of Contents Agentforce Sales.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our Agentforce Sales offering is an integrated platform that brings together the power of humans with AI agents to help sales teams sell faster and smarter, and to efficiently manage and automate entire sales processes.",
+            "text": "This gives AI agents the customer and business context they need to reason accurately, personalize interactions, and make better decisions in the moment. By leveraging Data 360\u2019s metadata and trust framework, Data 360 is designed to make every data point permissioned, governed, and compliant, so agents see only what they are allowed to see and act only within approved boundaries. Informatica .",
             "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
             "section": "MD&A"
           },
           {
             "text": "With our Sales offering, businesses can create lifelong customers by connecting their entire organization and unifying all data sources on a single integrated platform. Further, with Agentforce for Sales, customers can build a sales team augmented by a digital labor force and empower every seller with their own AI agent to help accelerate productivity and drive growth. Agentforce Service.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our Agentforce Service offering enables companies in every industry to bring all of their customer, employee, IT and field service needs onto one integrated, AI-powered platform to deliver trusted, highly personalized customer support at scale. It also helps our customers maximize productivity, resolve cases faster and improve customer satisfaction by automating routine tasks.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "With Agentforce for Service, customers can tap the power of digital labor to handle low-touch interactions and help their teams with high-touch tasks, unlocking new levels of efficiency.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Agentforce automatically routes cases to the best service agent for the job, responds to customers with personalized, relevant answers grounded in company data and performs tasks like auto-summarizing support cases and field work orders.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our service offering also provides a field service solution that enables companies to connect service agents, dispatchers and mobile employees through one centralized platform, on which they can intelligently schedule and dispatch work as well as track and manage jobs. Agentforce 360 Platform, Slack and Other.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "The Agentforce 360 Platform enables companies of all industries, sizes, and locations to build business workflows, applications and AI agents on a single, comprehensive platform to help automate processes, boost efficiency, increase productivity and reduce information technology costs.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "It facilitates development with no-code and low-code tools that are easy to use and free to learn, empowering teams to build trusted applications, workflows, AI agents and much more. Our Trust Layer is built into the Platform to help customers safely use their data and set guardrails on what AI agents do with that data.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "The Agentforce 360 Platform is built on Hyperforce, our infrastructure that helps customers manage data governance and compliance at a local level, all over the world. Our technology partners help customers to add the applications and agents they need and utilize the data lakes and other infrastructure they have already invested in.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "With our open, extensible Agentforce 360 Platform, customers can integrate and build with any data or partner application they choose to make the Agentforce 360 Platform work for their business. Data 360 .",
             "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
             "section": "MD&A"
           },
@@ -284,109 +129,24 @@
             "section": "MD&A"
           },
           {
-            "text": "This gives AI agents the customer and business context they need to reason accurately, personalize interactions, and make better decisions in the moment. By leveraging Data 360\u2019s metadata and trust framework, Data 360 is designed to make every data point permissioned, governed, and compliant, so agents see only what they are allowed to see and act only within approved boundaries. Informatica .",
+            "text": "Our Agentforce Service offering enables companies in every industry to bring all of their customer, employee, IT and field service needs onto one integrated, AI-powered platform to deliver trusted, highly personalized customer support at scale. It also helps our customers maximize productivity, resolve cases faster and improve customer satisfaction by automating routine tasks.",
             "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
             "section": "MD&A"
           },
           {
-            "text": "The acquisition of Informatica closed in the fourth quarter of fiscal 2026, significantly expanding our trusted data foundations. Informatica is an enterprise-grade, AI-powered data management platform that enables customers to discover, integrate, govern, and deliver trusted data at scale across hybrid and multi-cloud environments.",
-            "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "It provides comprehensive capabilities for data integration, quality, governance, master data and metadata management, and catalog services that connect and harmonize data from any source\u2014whether on-premises, cloud-based, or within leg",
+            "text": "By integrating data, metadata, applications and agents, we have created a deeply unified platform for the Agentic Enterprise, with humans at the center. Central to this ecosystem is Slack, which serves as the primary conversational interface, allowing users to interact with Agentforce-embedded applications and autonomous agents within their natural flow of work.",
             "source": "FY current 10-K (CRM_10K_FY2024.pdf)",
             "section": "MD&A"
           }
         ],
         "removed": [
           {
-            "text": "Except as required by law, we undertake no obligation to revise or update publicly any forward-looking statements for any reason. 3 Table of Contents PART I. ITEM 1. BUSINESS Overview Salesforce, Inc.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
             "text": "(\u201cSalesforce,\u201d the \u201cCompany,\u201d \u201cwe\u201d or \u201cour\u201d) is a global leader in customer relationship management (\u201cCRM\u201d) technology, enabling companies of every size and industry to connect with their customers through the power of data, artificial intelligence (\u201cAI\u201d), CRM and trust. Founded in 1999, we bring humans together with AI agents to drive customer success on one deeply unified platform.",
             "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
             "section": "MD&A"
           },
           {
-            "text": "Our AI- powered Salesforce Platform unites our offerings \u2014 spanning sales, service, marketing, commerce, collaboration, integration, AI, analytics, automation, industries and more \u2014 by connecting customer data across systems, applications and devices to create a complete view of customers.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "With this single source of customer truth, teams can be more responsive, productive and efficient and deliver intelligent, personalized and automated experiences across every channel.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "With Agentforce, the agentic layer of the Salesforce Platform, our customers can build and augment their teams with an always-on digital labor force, deploying autonomous AI agents across business functions that aim to increase productivity, lower costs and drive operational efficiencies. Our service offerings are designed to be flexible, scalable and easy to use.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
             "text": "Customer success is at the core of our business, and we align the entire company around our customers\u2019 needs, promoting their success, showing our value and upholding applicable laws, contractual obligations and industry regulations and standards.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our Service Offerings We believe that every business, in every industry, has to optimize for an AI- first experience for their customers, employees and partners, leveraging trusted AI, data and CRM technology to increase efficiency, boost productivity and drive growth.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Through Agentforce, our suite of customizable AI agents and tools, Salesforce brings autonomous AI, unified data and applications together on one deeply unified platform that enables companies of any industry or size to deliver AI-powered, personalized engagement across every customer touchpoint with the ability to hyperscale data and automation.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our service offerings are designed to work together and include: Sales. Our Sales offering is an integrated platform that brings together the power of humans with AI agents to help sales teams sell faster and smarter, and to efficiently manage and automate entire sales processes.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "With our Sales offering, businesses can create 4 Table of Contents lifelong customers by connecting their entire organization and unifying all data sources on a single integrated platform. Further, with Agentforce for Sales, customers can build a sales team augmented by a digital labor force and empower every seller with their own AI agent to help accelerate productivity and drive growth. Service.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our Service offering enables companies in every industry to bring all of their customer service and field service needs onto one integrated, AI-powered platform to deliver trusted, highly personalized customer support at scale. It also helps our customers maximize productivity, resolve cases faster and improve customer satisfaction by automating routine tasks.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "With Agentforce for Service, customers can tap the power of digital labor to handle low-touch interactions and help their teams with high- touch tasks, unlocking new levels of efficiency.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our AI technology enables service teams to automatically route cases to the best service agent for the job, respond to customers with personalized, relevant answers grounded in company data and perform tasks like auto-summarizing support cases and field work orders.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our service offering also provides a field service solution that enables companies to connect service agents, dispatchers and mobile employees through one centralized platform, on which they can intelligently schedule and dispatch work as well as track and manage jobs. Platform and Other.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "The Salesforce Platform enables companies of all industries, sizes, and locations to build business workflows, applications and AI agents on a single, comprehensive platform to help boost efficiency, increases productivity and automation and save on information technology costs.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "It facilitates development with no-code and low-code tools that are easy to use and free to learn, empowering anyone to build trusted applications, AI agents, models, code, prompts, automations, and much more. Our Trust Layer is built into the Salesforce Platform to help customers safely use their data and set guardrails on what AI agents do with that data.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "The Salesforce Platform is built on Hyperforce, our infrastructure that helps customers manage data governance and compliance at a local level, all over the world.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our technology partners help customers to easily add the applications they need and utilize the data lakes and systems they have already invested in, and because the platform is open source, customers can integrate and build with any data or partner application they choose to make the platform work for their business. Slack.",
             "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
             "section": "MD&A"
           },
@@ -401,27 +161,17 @@
             "section": "MD&A"
           },
           {
-            "text": "Our Marketing offering is a complete marketing platform designed to help customers personalize engagement across the customer lifecycle. By connecting departments through actionable data, trusted AI, and autonomous AI agents, we empower teams to work together to build lasting customer relationships.",
+            "text": "With Agentforce, the agentic layer of the Salesforce Platform, our customers can build and augment their teams with an always-on digital labor force, deploying autonomous AI agents across business functions that aim to increase productivity, lower costs and drive operational efficiencies. Our service offerings are designed to be flexible, scalable and easy to use.",
             "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
             "section": "MD&A"
           },
           {
-            "text": "With Agentforce, marketers can save time on every step of the campaign process by using prompts to generate briefs, content, and journeys, as well as optimize performance and spend with actionable insights and predictive AI.",
+            "text": "Our Service offering enables companies in every industry to bring all of their customer service and field service needs onto one integrated, AI-powered platform to deliver trusted, highly personalized customer support at scale. It also helps our customers maximize productivity, resolve cases faster and improve customer satisfaction by automating routine tasks.",
             "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
             "section": "MD&A"
           },
           {
-            "text": "With operational customer profiles, marketers and AI agents can easily take action on structured and unstructured data to build segments, calculate insights, analyze performance, and power AI recommendations, decisioning, and automations.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our Marketing offering is built on the Salesforce Platform, so that marketing teams are able to seamlessly provide sales next-best-offer recommendations, help service retain customers with proactive promotions, and re-engage inactive shoppers. Commerce.",
-            "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our Commerce offering helps connect every aspect of commerce\u2014from marketing and sales to service and fulfillment\u2014on a single, connected, AI-powered platform, enabling brands to deliver personalized, seamless shopping experiences across every customer touchpoint.",
+            "text": "It facilitates development with no-code and low-code tools that are easy to use and free to learn, empowering anyone to build trusted applications, AI agents, models, code, prompts, automations, and much more. Our Trust Layer is built into the Salesforce Platform to help customers safely use their data and set guardrails on what AI agents do with that data.",
             "source": "FY prior 10-K (CRM_10K_FY2023.pdf)",
             "section": "MD&A"
           },
@@ -432,7 +182,7 @@
           }
         ],
         "change_percentage": 61.9,
-        "summary": "MD&A: 25 new paragraph(s) and 26 removed paragraph(s) vs prior filing (extracted 10-K text).",
+        "summary": "MD&A: 8 new paragraph(s) and 8 removed paragraph(s) vs prior filing (extracted 10-K text).",
         "extraction_method": "10-K PDF text (Item 1A / Item 7)"
       }
     ],
@@ -440,41 +190,42 @@
       {
         "type": "added",
         "section": "Risk Factors",
-        "text": "Risk Factor Summary Operational and Execution Risks \u007f Any breaches in our security measures or those of our third-party data center providers, cloud computing platform providers, customers, partners, or other third-party vendors, or the underlying Internet infrastructure that cau\u2026",
+        "text": "Legal and Regulatory Risks \u007f Privacy concerns and laws as well as evolving regulation of cloud computing, AI services, increased restriction of cross-border data transfers and other regulatory developments. \u007f Evolving industry-specific regulations, requirements, interpretive posi\u2026",
         "citation": "FY current 10-K (CRM_10K_FY2024.pdf) \u00b7 extracted filing text"
       },
       {
         "type": "added",
         "section": "Risk Factors",
-        "text": "Strategic and Industry Risks \u007f An inability to compete effectively in the intensely competitive markets in which we participate. \u007f Any failure to expand our services and to develop and integrate our existing services in order to keep pace with technological developments. \u007f An ina\u2026",
+        "text": "Assessing whether an incident is material or reportable may require complex judgment and investigation, and disclosure of an incident may itself adversely affect our reputation, customer relationships and exposure to legal or regulatory proceedings. A security incident or related\u2026",
+        "citation": "FY current 10-K (CRM_10K_FY2024.pdf) \u00b7 extracted filing text"
+      },
+      {
+        "type": "added",
+        "section": "Risk Factors",
+        "text": "We are subject to contractual, regulatory and other legal obligations to notify relevant stakeholders of certain security incidents. For example, SEC rules require disclosure on Form 8-K of the nature, scope and timing of any material cybersecurity incident and the reasonably lik\u2026",
         "citation": "FY current 10-K (CRM_10K_FY2024.pdf) \u00b7 extracted filing text"
       },
       {
         "type": "removed",
         "section": "Risk Factors",
-        "text": "Risk Factor Summary Operational and Execution Risks \u007f Any breaches in our security measures or those of our third-party data center hosting facilities, cloud computing platform providers or third-party service partners, or the underlying infrastructure of the Internet that cause \u2026",
+        "text": "Legal and Regulatory Risks \u007f Privacy concerns and laws as well as evolving regulation of cloud computing, increased restriction of cross-border data transfers and other regulatory developments. \u007f Evolving industry-specific regulations, requirements, interpretive positions or stan\u2026",
         "citation": "FY prior 10-K (CRM_10K_FY2023.pdf) \u00b7 extracted filing text"
-      },
-      {
-        "type": "added",
-        "section": "MD&A",
-        "text": "Except as required by law, we undertake no obligation to revise or update publicly any forward-looking statements for any reason. 3 Table of Contents PART I. ITEM 1. BUSINESS Overview Salesforce, Inc. (\u201cSalesforce,\u201d the \u201cCompany,\u201d \u201cwe\u201d or \u201cour\u201d) is a global leader in customer rel\u2026",
-        "citation": "FY current 10-K (CRM_10K_FY2024.pdf) \u00b7 extracted filing text"
-      },
-      {
-        "type": "added",
-        "section": "MD&A",
-        "text": "Founded in 1999, we bring humans, agents, applications, and data together on a trusted, unified platform to unlock growth and innovation.",
-        "citation": "FY current 10-K (CRM_10K_FY2024.pdf) \u00b7 extracted filing text"
       },
       {
         "type": "removed",
-        "section": "MD&A",
-        "text": "Except as required by law, we undertake no obligation to revise or update publicly any forward-looking statements for any reason. 3 Table of Contents PART I. ITEM 1. BUSINESS Overview Salesforce, Inc.",
+        "section": "Risk Factors",
+        "text": "Risks Related to Owning Our Common Stock \u007f Fluctuations in our quarterly results. \u007f Volatility in the market price of our common stock and associated litigation. \u007f Provisions in our certificate of incorporation and bylaws and Delaware law that might discourage, delay or prevent a\u2026",
         "citation": "FY prior 10-K (CRM_10K_FY2023.pdf) \u00b7 extracted filing text"
+      },
+      {
+        "type": "added",
+        "section": "MD&A",
+        "text": "Our artificial intelligence (\u201cAI\u201d) powered Agentforce 360 Platform unites our offerings \u2014 spanning sales, service, marketing, commerce, collaboration, data management, integration, analytics, IT service, industry verticals and more \u2014 on a single, intelligent platform for trusted \u2026",
+        "citation": "FY current 10-K (CRM_10K_FY2024.pdf) \u00b7 extracted filing text"
       }
     ],
     "overall_change_score": 65.0,
+    "material_change_count": 32,
     "source": "sec_filing_text",
     "risk_page_prior": 15,
     "risk_page_current": 16
@@ -492,7 +243,7 @@
           "source": "Q4 FY2024 Earnings Call"
         },
         "filing": {
-          "quote": "ITEM 1A. RISK FACTORS In evaluating our business, you should carefully consider the following discussion of material risks, events and uncertainties that make an investment in us speculative or risky in addition to the o\u2026",
+          "quote": "\u2026ers. Legal and Regulatory Risks \u007f Privacy concerns and laws as well as evolving regulation of cloud computing, AI services, increased restriction of cross-border data transfers and other regulatory developments. \u007f Evolving industry-specific regulations, requirements, interpretive positions or standa\u2026",
           "source": "Risk Factors"
         },
         "analysis": "Management tone on the call ('demand / sales cycle') appears more optimistic than language in the 10-K risk factors section."
@@ -501,5 +252,247 @@
     "call_excerpt_count": 3,
     "source": "transcript_vs_filing_text",
     "transcript_period": "Q4 FY2024 Earnings Call"
-  }
+  },
+  "qa_chunks": [
+    {
+      "section_name": "Risk Factors",
+      "text": "Legal and Regulatory Risks \u007f Privacy concerns and laws as well as evolving regulation of cloud computing, AI services, increased restriction of cross-border data transfers and other regulatory developments. \u007f Evolving industry-specific regulations, requirements, interpretive positions or standards. \u007f Lawsuits against us by third parties for various claims, including alleged infringement of proprietary rights. \u007f Any failure to obtain registration or protection of our intellectual property rights. \u007f Risks related to government contracts and related procurement regulations. \u007f Governmental sanctions and export and import controls that could impair our ability to compete in international markets and may subject us to liability.",
+      "page_number": 16,
+      "materiality": 5.8
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "Assessing whether an incident is material or reportable may require complex judgment and investigation, and disclosure of an incident may itself adversely affect our reputation, customer relationships and exposure to legal or regulatory proceedings. A security incident or related disclosure could result in loss of confidence in the security of our s",
+      "page_number": 16,
+      "materiality": 4.9
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "A manifestation of any of the following risks and uncertainties could, in circumstances we may or may not be able to accurately predict, materially and adversely affect our business and operations, growth, reputation, prospects, operating and financial results, financial condition, cash flows, liquidity and stock price.",
+      "page_number": 16,
+      "materiality": 4.8
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "We are subject to contractual, regulatory and other legal obligations to notify relevant stakeholders of certain security incidents. For example, SEC rules require disclosure on Form 8-K of the nature, scope and timing of any material cybersecurity incident and the reasonably likely impact of such incident.",
+      "page_number": 16,
+      "materiality": 4.8
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "Strategic and Industry Risks \u007f An inability to compete effectively in the intensely competitive markets in which we participate. \u007f Any failure to expand our services and to develop and integrate our existing services in order to keep pace with technological developments. \u007f An inability to maintain and enhance our brands. \u007f Partial or complete loss of invested capital, or significant changes in the fair value, of our strategic investment portfolio. \u007f Any discontinuance by third-party developers and vendors in embracing our technology delivery model and enterprise cloud computing services, or customers asking us for warranties for third-party applications, integrations, data and content. \u007f Social, ethical, and regulatory issues, including the development, deployment, use or capabilities of AI in our offerings. \u007f The evolving landscape related to environmental, social and governance matters.",
+      "page_number": 16,
+      "materiality": 4.0
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "Our services and underlying infrastructure have in the past and may in the future be breached or compromised, including, for example, as a result of the following: \u007f attempts to fraudulently induce our employees, customers, partners, or third-party vendors to disclose sensitive information to gain unauthorized access to our or our customers\u2019 data or IT systems; \u007f efforts by threat actors, including criminal organizations, state-sponsored actors and nation-states, to launch coordinated cyberattacks or supply chain attacks on our infrastructure or that of our third-party vendors, including through ransomware, destructive malware, distributed denial-of-service attacks or exploitation of previously unknown \u201czero-day\u201d vulnerabilities; \u007f attempts to misuse our marketing, advertising, messaging or social products and functionalities to impersonate persons or organizations and disseminate information that is false, misleading or malicious; \u007f vulnerabilities arising from new technologies and infrastructures, including those from acquisitions, enhancements and updates to our existing products, and the adoption and deployment of AI technologies within our products, services, internal systems, which may introduce novel security, data governance, or operational risks; \u007f vulnerabilities in products or components within the broad ecosystem in which our services operate and upon which they depend; \u007f attacks on, or vulnerabilities in, the underlying networks and services that power the Internet on which our products depend, most of which are not under our control or the control of our third-party vendors, partners or customers; and \u007f employee or contractor errors, omissions or intentional acts that compromise our security systems.",
+      "page_number": 16,
+      "materiality": 4.0
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "Operational and Execution Risks If our security measures, or those of our third-party data center providers, cloud computing platform providers, customers, partners, other third- party vendors or the underlying Internet infrastructure, are breached or otherwise compromised, resulting in the unauthorized access to, disclosure, alteration, corruption, destruction or loss of customer data, our data or our IT systems, or disruption of authorized access thereto, our services may be perceived as insecure, customers may reduce or terminate their use of our services, and we may incur significant reputational harm, legal liability, regulatory scrutiny or a negative financial impact.",
+      "page_number": 16,
+      "materiality": 3.7
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "Although we devote significant resources to protecting our data and IT systems, we can provide no assurances that our security measures, including systems and processes designed to protect the confidentiality, integrity and availability of our customers\u2019 and our customers\u2019 customers\u2019 proprietary and sensitive data, will be effective or that a material cybersecurity incident will not occur.",
+      "page_number": 16,
+      "materiality": 3.0
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Innovation is fundamental to our mission, empowering and enabling our customers to stay ahead in their industries and driving technological advancements in line with evolving laws, standards and guidelines. Equality is a legal and ethical mandate and a core tenet that informs how we operate. Our commitment to equal opportunity is anchored in applicable laws, statutes, regulations and principles.",
+      "page_number": 9,
+      "materiality": 3.0
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "The risks and uncertainties described below are not the only ones we face. Other events, factors or uncertainties that we do not currently anticipate or that we currently deem immaterial also may affect our business, financial condition, results of operations, cash flows, other key metrics and the trading price of our common stock.",
+      "page_number": 16,
+      "materiality": 2.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Our artificial intelligence (\u201cAI\u201d) powered Agentforce 360 Platform unites our offerings \u2014 spanning sales, service, marketing, commerce, collaboration, data management, integration, analytics, IT service, industry verticals and more \u2014 on a single, intelligent platform for trusted enterprise execution.",
+      "page_number": 9,
+      "materiality": 2.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "We believe that our values, grounded in legal and regulatory frameworks, create value, and the business of business is to make the world a better place for all of our stakeholders, including stockholders, customers, employees, partners, the planet and the communities in which we work and live.",
+      "page_number": 9,
+      "materiality": 2.7
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Customer success is at the core of our business, and we align the entire company around our customers\u2019 needs, promoting their success and delivering value while upholding applicable laws, contractual obligations and industry regulations and standards.",
+      "page_number": 9,
+      "materiality": 2.6
+    },
+    {
+      "section_name": "MD&A",
+      "text": "By grounding our values in legal and regulatory principles, we reinforce our opportunity and responsibility to uphold high integrity and robust ethical standards, ensuring that trust, fairness, and compliance remain central to everything we seek to do.",
+      "page_number": 9,
+      "materiality": 2.6
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Salesforce is committed to a core set of values: trust, customer success, innovation, equality and sustainability \u2013 all of which are grounded in legal and regulatory frameworks that guide and inform our business.",
+      "page_number": 9,
+      "materiality": 2.5
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "Our ability to mitigate these risks may be impacted by the following: \u007f evolving and increasingly sophisticated techniques used to breach or disrupt IT systems and infrastructure, including the use or exploitation of AI technologies by threat actors to accelerate, scale or personalize cyberattacks, which may increase speed and effectiveness and limit our ability to anticipate, detect or mitigate such threats; \u007f the increasing complexity of our internal IT systems as we integrate acquired businesses and adopt new technologies and data-sharing models; and \u007f our limited control over our customers, partners, and third-party vendors (including those authorized by customers to access their data), or over the processing of data by such third parties, which may limit our ability to maintain the integrity or security of such transmissions or processing.",
+      "page_number": 16,
+      "materiality": 2.0
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "Financial Risks \u007f Downturns or upturns in new business, which may not be immediately reflected in our operating results because we generally recognize revenue from subscriptions for our services over the term of the subscription. \u007f Significant fluctuations in our rate of anticipated growth and any failure to balance our expenses with our revenue forecasts. \u007f Unanticipated changes in our effective tax rate and additional tax liabilities and global tax developments. \u007f Fluctuations in currency exchange rates, particularly the U.S.",
+      "page_number": 16,
+      "materiality": 1.3
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "As our market presence grows, we may face increased risks of cyberattacks and other security threats. Additionally, as AI technologies, including generative and agentic AI, continue to evolve, threat actors are using and exploiting these technologies to enhance the sophistication, scale, speed and effectiveness of security threats that may be more difficult to detect and defend against.",
+      "page_number": 16,
+      "materiality": 1.0
+    },
+    {
+      "section_name": "MD&A",
+      "text": "In light of these and other risks and uncertainties, the future events and trends discussed in this Annual Report on Form 10-K may not occur as we expect or at all, and our actual results or outcomes may differ materially and adversely from those expressed or implied in our forward-looking statements. Readers are cautioned not to place undue reliance on such forward-looking statements.",
+      "page_number": 9,
+      "materiality": 1.0
+    },
+    {
+      "section_name": "MD&A",
+      "text": "With our Sales offering, businesses can create lifelong customers by connecting their entire organization and unifying all data sources on a single integrated platform. Further, with Agentforce for Sales, customers can build a sales team augmented by a digital labor force and empower every seller with their own AI agent to help accelerate productivity and drive growth. Agentforce Service.",
+      "page_number": 9,
+      "materiality": 1.0
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Data 360 is Salesforce\u2019s hyperscale, trusted data engine that gives AI agents their context and serves as the foundation for how customers unify our service offerings making their data actionable for both humans and agents. It connects enterprise data from across clouds, systems, and channels utilizing zero-copy technology to access external data sources without the need for duplication.",
+      "page_number": 9,
+      "materiality": 1.0
+    },
+    {
+      "section_name": "MD&A",
+      "text": "This architecture unifies, cleans, and harmonizes the data into a single, governed source of truth that agents can reliably understand and act on. Through real- time ingestion, transformation, indexing, and retrieval-augmented generation, Data 360 turns both structured records and unstructured content\u2014emails, documents, conversations, and events\u2014into usable, searchable intelligence.",
+      "page_number": 9,
+      "materiality": 1.0
+    },
+    {
+      "section_name": "MD&A",
+      "text": "This gives AI agents the customer and business context they need to reason accurately, personalize interactions, and make better decisions in the moment. By leveraging Data 360\u2019s metadata and trust framework, Data 360 is designed to make every data point permissioned, governed, and compliant, so agents see only what they are allowed to see and act only within approved boundaries. Informatica .",
+      "page_number": 9,
+      "materiality": 1.0
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "Some of the factors, events and contingencies discussed below may have occurred in the past, but the disclosures below are not representations as to whether or not the factors, events or contingencies have occurred in the past and instead reflect our beliefs and opinions as to the factors, events or contingencies that could materially and adversely affect us in the future.",
+      "page_number": 16,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "In the normal course of business, we and our customers are and have been the target of malicious cyberattacks and other security threats. Although to date we have not identified any security incidents involving our systems that have had a material financial impact on us, there can be no assurance that future incidents will not be material or significant.",
+      "page_number": 16,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "MD&A",
+      "text": "By integrating data, metadata, applications and agents, we have created a deeply unified platform for the Agentic Enterprise, with humans at the center. Central to this ecosystem is Slack, which serves as the primary conversational interface, allowing users to interact with Agentforce-embedded applications and autonomous agents within their natural flow of work.",
+      "page_number": 9,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Our Agentforce Service offering enables companies in every industry to bring all of their customer, employee, IT and field service needs onto one integrated, AI-powered platform to deliver trusted, highly personalized customer support at scale. It also helps our customers maximize productivity, resolve cases faster and improve customer satisfaction by automating routine tasks.",
+      "page_number": 9,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "MD&A",
+      "text": "We unify and harmonize across systems, applications and devices to create a complete view of customers. With this single source of customer truth powering agents, teams can be more responsive, productive and efficient and deliver AI-powered, personalized and automated experiences across every channel.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "We value the equality of every individual at our company and in our communities and are dedicated to fostering a workplace that complies with these protections, creating an inclusive culture where every individual feels seen, heard and valued. Finally, we are committed to creating a more sustainable and nature-positive future for all.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Our Service Offerings We believe every business, in every industry, must become an Agentic Enterprise creating agent-first experiences that increase efficiency, boost productivity, and drive growth for customers, employees, and partners. We view Salesforce to be uniquely positioned to lead customers through this transformation.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Our service offering also provides a field service solution that enables companies to connect service agents, dispatchers and mobile employees through one centralized platform, on which they can intelligently schedule and dispatch work as well as track and manage jobs. Agentforce 360 Platform, Slack and Other.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "It facilitates development with no-code and low-code tools that are easy to use and free to learn, empowering teams to build trusted applications, workflows, AI agents and much more. Our Trust Layer is built into the Platform to help customers safely use their data and set guardrails on what AI agents do with that data.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "The Agentforce 360 Platform is built on Hyperforce, our infrastructure that helps customers manage data governance and compliance at a local level, all over the world. Our technology partners help customers to add the applications and agents they need and utilize the data lakes and other infrastructure they have already invested in.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "The acquisition of Informatica closed in the fourth quarter of fiscal 2026, significantly expanding our trusted data foundations. Informatica is an enterprise-grade, AI-powered data management platform that enables customers to discover, integrate, govern, and deliver trusted data at scale across hybrid and multi-cloud environments.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "It is not possible for our management to predict all risks, nor can we assess the impact of all factors on our business or the extent to which any factor, or combination of factors, may cause actual results or outcomes to differ materially from those contained in any forward-looking statements.",
+      "page_number": 9,
+      "materiality": 0.7
+    },
+    {
+      "section_name": "MD&A",
+      "text": "With Agentforce, the agentic layer of the Agentforce 360 Platform, our customers can build and deploy always-on digital labor for employees and customers, leveraging autonomous AI agents across business functions that aim to increase productivity, lower costs and drive operational efficiencies.",
+      "page_number": 9,
+      "materiality": 0.7
+    },
+    {
+      "section_name": "MD&A",
+      "text": "With Agentforce, AI is embedded in the flow of work \u2014 in the applications that our customers already use every day. Every Agentforce-embedded application now reasons, learns, and takes action alongside users. Our service offerings are designed to be flexible, scalable and easy to use.",
+      "page_number": 9,
+      "materiality": 0.7
+    },
+    {
+      "section_name": "MD&A",
+      "text": "They can generally be configured easily, deployed rapidly and integrated with other platforms and enterprise applications. We sell to businesses worldwide, primarily on a subscription basis, through our direct sales efforts and also indirectly through partners.",
+      "page_number": 9,
+      "materiality": 0.7
+    },
+    {
+      "section_name": "MD&A",
+      "text": "The Agentforce 360 Platform enables companies of all industries, sizes, and locations to build business workflows, applications and AI agents on a single, comprehensive platform to help automate processes, boost efficiency, increase productivity and reduce information technology costs.",
+      "page_number": 9,
+      "materiality": 0.7
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "General Risks \u007f Volatile and significantly weakened global economic conditions. \u007f The occurrence of natural disasters and other catastrophic events beyond our control. \u007f The long-term impact of climate change on our business.",
+      "page_number": 16,
+      "materiality": 0.6
+    }
+  ]
 }

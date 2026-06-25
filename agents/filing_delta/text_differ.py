@@ -3,7 +3,70 @@
 from __future__ import annotations
 
 import difflib
+import re
 from typing import Any
+
+MATERIALITY_KEYWORDS = [
+    "antitrust",
+    "regulation",
+    "regulatory",
+    "tariff",
+    "china",
+    "geopolitical",
+    "macroeconomic",
+    "capex",
+    "capital expenditure",
+    "cash flow",
+    "margin",
+    "elongat",
+    "slowdown",
+    "investigation",
+    "litigation",
+    "cybersecurity",
+    "supply chain",
+    "artificial intelligence",
+    "competition",
+    "debt",
+    "liquidity",
+]
+
+NOISE_PATTERNS = [
+    re.compile(r"^item\s+\d", re.I),
+    re.compile(r"risk factors\s+the following summarizes factors", re.I),
+    re.compile(r"table of contents", re.I),
+    re.compile(r"^part\s+(i|ii|iii|iv)\b", re.I),
+]
+
+
+def _is_noise_paragraph(text: str) -> bool:
+    t = text.strip()
+    if len(t) < 120:
+        return True
+    lower = t.lower()
+    if any(p.search(t) for p in NOISE_PATTERNS):
+        return True
+    if "form 10-k" in lower and len(t) < 350:
+        return True
+    if lower.count("item ") >= 3:
+        return True
+    return False
+
+
+def _materiality_score(text: str) -> float:
+    lower = text.lower()
+    score = sum(2.0 for kw in MATERIALITY_KEYWORDS if kw in lower)
+    if any(p in lower for p in ("iphone", "ipad", "apple watch", "homepod")):
+        score -= 1.5
+    return score + min(len(text) / 400, 2.0)
+
+
+def _rank_paragraphs(items: list[dict[str, str]], limit: int = 8) -> list[dict[str, str]]:
+    ranked = sorted(
+        items,
+        key=lambda x: _materiality_score(x.get("text", "")),
+        reverse=True,
+    )
+    return ranked[:limit]
 
 
 def _paragraph_diff(
@@ -23,15 +86,22 @@ def _paragraph_diff(
             unchanged += i2 - i1
         elif tag == "delete":
             for line in prior_paragraphs[i1:i2]:
-                removed.append({"text": line, "source": prior_label, "section": section})
+                if not _is_noise_paragraph(line):
+                    removed.append({"text": line, "source": prior_label, "section": section})
         elif tag == "insert":
             for line in current_paragraphs[j1:j2]:
-                added.append({"text": line, "source": current_label, "section": section})
+                if not _is_noise_paragraph(line):
+                    added.append({"text": line, "source": current_label, "section": section})
         elif tag == "replace":
             for line in prior_paragraphs[i1:i2]:
-                removed.append({"text": line, "source": prior_label, "section": section})
+                if not _is_noise_paragraph(line):
+                    removed.append({"text": line, "source": prior_label, "section": section})
             for line in current_paragraphs[j1:j2]:
-                added.append({"text": line, "source": current_label, "section": section})
+                if not _is_noise_paragraph(line):
+                    added.append({"text": line, "source": current_label, "section": section})
+
+    added = _rank_paragraphs(added)
+    removed = _rank_paragraphs(removed)
 
     total = max(len(prior_paragraphs), len(current_paragraphs), 1)
     change_pct = round((1 - unchanged / total) * 100, 1)
@@ -83,7 +153,7 @@ def compute_text_filing_delta(
 
     headline_changes: list[dict[str, str]] = []
     for section in sections:
-        for item in section["added"][:2]:
+        for item in _rank_paragraphs(section["added"], 3):
             headline_changes.append(
                 {
                     "type": "added",
@@ -92,7 +162,7 @@ def compute_text_filing_delta(
                     "citation": f"{item['source']} · extracted filing text",
                 }
             )
-        for item in section["removed"][:1]:
+        for item in _rank_paragraphs(section["removed"], 2):
             headline_changes.append(
                 {
                     "type": "removed",
@@ -102,6 +172,7 @@ def compute_text_filing_delta(
                 }
             )
 
+    material_count = sum(len(s["added"]) + len(s["removed"]) for s in sections)
     return {
         "prior_label": prior_label,
         "current_label": current_label,
@@ -111,6 +182,7 @@ def compute_text_filing_delta(
             sum(s["change_percentage"] for s in sections) / max(len(sections), 1),
             1,
         ),
+        "material_change_count": material_count,
         "source": "sec_filing_text",
         "risk_page_prior": prior_sections.get("risk_page"),
         "risk_page_current": current_sections.get("risk_page"),

@@ -4,9 +4,9 @@
 
 > **Important:** `diligence-ai.vercel.app` is a different app (not this project). Use the link above.
 
-**Upload a 10-K. Six AI agents analyze it. Get a research-grade report with citations in minutes.**
+**Upload a 10-K. A modular agent pipeline analyzes it. Get a structured ER report with citations — plus SEC filing-text delta and earnings cross-checks.**
 
-Built for finance and equity research workflows: what takes a junior analyst days on a new name, Diligence AI surfaces in one session — with filing delta, earnings-vs-10-K cross-checks, and ER memo export.
+Built for finance and equity research workflows: what takes a junior analyst days on a new name, Diligence AI surfaces in one session — with filing delta from real 10-K text, earnings-vs-10-K cross-checks, and ER memo export.
 
 ## What's New (Finance / ER Extensions)
 
@@ -48,23 +48,25 @@ Built for finance and equity research workflows: what takes a junior analyst day
 
 ## Tech Stack
 
-| Component | Framework | Role |
-|-----------|-----------|------|
-| Document Processor | LangChain + Unstructured | PDF parsing, chunking, embedding |
-| Financial Analyst | CrewAI | Metric extraction + industry benchmarking |
-| Risk Detective | LangGraph | Multi-step risk analysis with news cross-ref |
-| Strategic Insights | OpenAI Agents SDK | Consultant-grade synthesis |
-| Report Generator | Pydantic AI | Typed consulting report output |
-| Q&A Agent | LangChain + RAGAS | Grounded follow-up questions |
-| Filing Delta | Python difflib | QoQ risk/MD&A diff with citations |
-| Contradiction Scan | Rule + keyword engine | Earnings call vs 10-K mismatch flags |
-| Memo Export | ReportLab | ER-format PDF download |
+| Component | Default install | Role |
+|-----------|-----------------|------|
+| Document Processor | pypdf + section chunking | PDF parsing, chunking, embedding |
+| Financial Analyst | Python heuristics + optional GPT | Metric extraction + benchmarking |
+| Risk Detective | Multi-step Python workflow | Risk identification + ranking |
+| Strategic Insights | GPT-4o-mini / heuristics | ER synthesis |
+| Report Generator | Pydantic models | Typed report output |
+| Q&A Agent | Chunk retrieval + GPT + heuristic scores | Grounded follow-up questions |
+| Filing Delta | SEC PDF text diff (Item 1A / Item 7) | QoQ risk/MD&A diff with materiality ranking |
+| Contradiction Scan | Transcript vs filing text rules | Earnings call vs 10-K mismatch flags |
+| Memo Export | jsPDF (Vercel) / ReportLab (backend) | ER-format PDF download |
 | Inter-agent comms | A2A Protocol | HTTP-based message transport |
 | Tool access | MCP Servers | Document, analysis, and benchmark tools |
 | Backend | FastAPI + WebSocket | REST API + real-time progress |
 | Frontend | Next.js + Tailwind | Dark-themed analysis dashboard |
 | Vector DB | Pinecone (or in-memory fallback) | Per-document namespace search |
 | Database | SQLite | Documents, analyses, logs, Q&A |
+
+Optional heavy frameworks (CrewAI, LangGraph, Unstructured, RAGAS): `pip install -r requirements-full.txt`
 
 ## Quick Start
 
@@ -100,6 +102,15 @@ python data/seed.py
 
 This creates 3 pre-analyzed companies (Apple, Microsoft, Salesforce) with **stable IDs** matching the live Vercel demo. It also downloads real 10-K PDFs from SEC EDGAR into `data/sample_docs/`.
 
+### Research artifacts (SEC filing text)
+
+```bash
+python data/download_samples.py --prior   # FY2023 10-Ks for YoY delta
+python data/seed_research.py              # → frontend/public/research/*.json
+```
+
+Powers filing delta, contradictions, and Q&A chunk retrieval on Vercel without a backend.
+
 ## Sample 10-K files (for ER / banking interviews)
 
 **No need to bring your own files.** The repo ships with real public filings:
@@ -115,8 +126,8 @@ Full demo guide: [`data/sample_docs/README.md`](data/sample_docs/README.md)
 ### Recommended demo flow (interview-ready)
 
 1. **History** (`/history`) — open pre-analyzed Apple report instantly
-2. **Filing Delta** — on the analysis page, compare Apple vs Salesforce QoQ-style diffs
-3. **Contradictions** — show earnings call vs 10-K regulatory tone mismatch (Apple demo)
+2. **Filing Delta** — compare FY2024 vs prior-year 10-K; show material Risk Factors adds (SEC extracted text)
+3. **Contradictions** — show earnings call vs 10-K regulatory tone mismatch (extracted filing text)
 4. **Q&A** — ask: *"What are the top 3 things I should worry about if I am investing?"*
 5. **Compare** (`/compare`) — Apple vs Salesforce side-by-side
 6. **Live upload** (local/backend) — drag `MSFT_10K_FY2024.pdf` onto Upload
@@ -143,11 +154,11 @@ Open **http://localhost:3000**
 
 ## Demo Mode vs Live Backend
 
-| Mode | When | Upload | PDF memo | Data source |
-|------|------|--------|----------|-------------|
-| **Vercel demo** | No `NEXT_PUBLIC_API_URL` | Disabled (by design) | Stub alert | Built-in demo JSON |
-| **Local full stack** | `.env.local` → `localhost:8000` | Enabled | ReportLab PDF | SQLite + agent pipeline |
-| **Production** | Vercel env → Render/Railway URL | Enabled | ReportLab PDF | Deployed backend |
+| Mode | When | Upload | PDF memo | Filing delta / contradictions | Q&A |
+|------|------|--------|----------|-------------------------------|-----|
+| **Vercel demo** | No `NEXT_PUBLIC_API_URL` | Disabled | jsPDF export | SEC filing text (research JSON) | GPT + filing chunks if `OPENAI_API_KEY` |
+| **Local full stack** | `.env.local` → `localhost:8000` | Enabled | ReportLab PDF | Live PDF text diff | RAG over chunks + GPT |
+| **Production** | Vercel + Render backend URL | Enabled | ReportLab PDF | Live PDF text diff | Full backend RAG |
 
 Set `DEMO_MODE=true` in backend `.env` (default when no OpenAI key). The platform runs with heuristic extraction, pre-built risk registers, pseudo-embeddings, and demo insights. Add `OPENAI_API_KEY` for full GPT-4o-powered analysis.
 

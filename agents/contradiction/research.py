@@ -10,6 +10,9 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent.parent
 TRANSCRIPT_DIR = ROOT / "data" / "transcripts"
 
+EXCERPT_KEYWORDS = [
+    "antitrust", "regulation", "china", "geopolitical", "capex", "elongat", "macro", "investigation",
+]
 # Call tone (optimistic) vs filing disclosure (cautious/risk) keyword pairs
 TONE_RULES: list[dict[str, Any]] = [
     {
@@ -135,12 +138,26 @@ def detect_contradictions_from_filing_text(
 
 def _excerpt_around_keyword(text: str, keyword: str, window: int = 220) -> str:
     lower = text.lower()
-    idx = lower.find(keyword.lower())
-    if idx < 0:
+    # Prefer substantive matches, not section headers
+    candidates: list[tuple[int, str]] = []
+    for kw in [keyword] + EXCERPT_KEYWORDS:
+        idx = lower.find(kw.lower())
+        if idx >= 0:
+            candidates.append((idx, kw))
+    if not candidates:
         return text[:window] + "…"
+
+    idx = min(candidates, key=lambda x: x[0])[0]
     start = max(0, idx - 80)
     end = min(len(text), idx + window)
     snippet = text[start:end].strip()
+    if re.match(r"^item\s+1a", snippet, re.I):
+        # Skip generic opener; search deeper
+        deeper = lower.find(keyword.lower(), idx + 50)
+        if deeper > 0:
+            start = max(0, deeper - 80)
+            end = min(len(text), deeper + window)
+            snippet = text[start:end].strip()
     if start > 0:
         snippet = "…" + snippet
     if end < len(text):

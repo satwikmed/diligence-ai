@@ -29,11 +29,19 @@ export default function ContradictionPanel({ documentId }: ContradictionPanelPro
   }, [documentId]);
 
   const items = (data?.contradictions as ContradictionItem[]) || [];
+  const source = String(data?.source || '');
+  const isResearch = source === 'transcript_vs_filing_text';
 
   return (
     <section>
       <SectionHeading label="Cross-check" title="Earnings Call vs 10-K Contradictions" />
       <div className="glass-card p-6">
+        {isResearch && (
+          <p className="mb-4 text-xs text-white/50">
+            Cross-checks representative earnings-call excerpts against extracted Risk Factors / MD&A text from the 10-K.
+            {data?.transcript_period ? ` (${String(data.transcript_period)})` : ''}
+          </p>
+        )}
         {loading && <p className="text-sm text-white/50">Scanning for contradictions...</p>}
         {error && <p className="text-sm text-red-300">{error}</p>}
 

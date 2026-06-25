@@ -9,11 +9,6 @@
         "section": "Risk Factors",
         "added": [
           {
-            "text": "PART I Item 1A CYBERSECURITY, DATA PRIVACY, AND PLATFORM ABUSE RISKS Cyberattacks and security vulnerabilities could lead to reduced revenue, increased costs, liability claims, or harm to our reputation or competitive position. Security of our information technology Threats to security can take a variety of forms.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "Risk Factors"
-          },
-          {
             "text": "Threat actors, including individual and groups of hackers and sophisticated organizations, including nation-states, state-sponsored organizations, or cybercriminal groups, continuously undertake attacks that pose threats to our customers and our internal infrastructure, and we have experienced cybersecurity incidents in which such actors have gained unauthorized access to our systems and data, including customer systems and data.",
             "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
             "section": "Risk Factors"
@@ -26,172 +21,7 @@
         ],
         "removed": [
           {
-            "text": "Item 1A. Risk Factors 20 Item 1B. Unresolved Staff Comments 34 Item 1C. Cybersecurity 34 Item 2. Properties 36 Item 3. Legal Proceedings 36 Item 4. Mine Safety Disclosures 36 PART II Item 5. Market for Registrant\u2019s Common Equity, Related Stockholder Matters, and Issuer Purchases of Equity Securities 37 Item 6. [Reserved] 38 Item 7.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations 39 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 55 Item 8. Financial Statements and Supplementary Data 56 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 98 Item 9A.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Controls and Procedures 98 Report of Management on Internal Control over Financial Reporting 98 Report of Independent Registered Public Accounting Firm 99 Item 9B. Other Information 101 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 101 PART III Item 10. Directors, Executive Officers, and Corporate Governance 101 Item 11. Executive Compensation 102 Item 12.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 102 Item 13. Certain Relationships and Related Transactions, and Director Independence 102 Item 14. Principal Accountant Fees and Services 102 PART IV Item 15. Exhibit and Financial Statement Schedules 103 Item 16.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
             "text": "Form 10-K Summary 110 Signatures 111 2 PART I Item 1 Note About Forward- Looking Statements This report includes estimates, projections, statements relating to our business plans, objectives, and expected operating results that are \u201cforward-looking statements\u201d within the meaning of the Private Securities Litigation Reform Act of 1995, Section 27A of the Securities Act of 1933, and Section 21E of the Securities Exchange Act of 1934.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Forward-looking statements may appear throughout this report, including the following sections: \u201cBusiness\u201d (Part I, Item 1 of this Form 10-K), \u201cRisk Factors\u201d (Part I, Item 1A of this Form 10-K), and \u201cManagement\u2019s Discussion and Analysis of Financial Condition and Results of Operations\u201d (Part II, Item 7 of this Form 10-K).",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "These forward-looking statements generally are identified by the words \u201cbelieve,\u201d \u201cproject,\u201d \u201cexpect,\u201d \u201canticipate,\u201d \u201cestimate,\u201d \u201cintend,\u201d \u201cstrategy,\u201d \u201cfuture,\u201d \u201copportunity,\u201d \u201cplan,\u201d \u201cmay,\u201d \u201cshould,\u201d \u201cwill,\u201d \u201cwould,\u201d \u201cwill be,\u201d \u201cwill continue,\u201d \u201cwill likely result,\u201d and similar expressions.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Forward-looking statements are based on current expectations and assumptions that are subject to risks and uncertainties that may cause actual results to differ materially.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We describe risks and uncertainties that could cause actual results and events to differ materially in \u201cRisk Factors,\u201d \u201cManagement\u2019s Discussion and Analysis of Financial Condition and Results of Operations,\u201d and \u201cQuantitative and Qualitative Disclosures About Market Risk\u201d (Part II, Item 7A of this Form 10-K).",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Readers are cautioned not to place undue reliance on forward-looking statements, which speak only as of the date they are made. We undertake no obligation to update or revise publicly any forward-looking statements, whether because of new information, future events, or otherwise. PART I ITEM 1.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "B USINESS GENERAL Embracing Our Future Microsoft is a technology company committed to making digital technology and artificial intelligence (\u201cAI\u201d) available broadly and doing so responsibly, with a mission to empower every person and every organization on the planet to achieve more.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We create platforms and tools, powered by AI, that deliver innovative solutions that meet the evolving needs of our customers. From infrastructure and data, to business applications and collaboration, we provide unique, differentiated value to customers. We strive to create local opportunity, growth, and impact in every country around the world.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We have entered a new age of AI that will fundamentally transform productivity for every individual, organization, and industry on earth, while helping us address some of our most pressing challenges. Microsoft's AI offerings, including Copilot and our Copilot stack, are already orchestrating a new era of AI transformation, driving better business outcomes across every role and industry.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "As a company, we believe we can be the democratizing force for this new generation of technology and the opportunity it will help unlock for every country, community, and individual. We believe AI should be as empowering across communities as it is powerful, and we\u2019re committed to ensuring it is responsibly designed and built with safety and security from the outset.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "What We Offer Founded in 1975, we develop and support software, services, devices, and solutions that deliver new value for customers and help people and businesses realize their full potential. We offer an array of services, including cloud-based solutions that provide customers with software, services, platforms, and content, and we provide solution support and consulting services.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We also deliver relevant online advertising to a global audience. Our products include operating systems, cross-device productivity and collaboration applications, server applications, business solution applications, desktop and server management tools, software development tools, and video games.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We also design and sell devices, including PCs, tablets, gaming and entertainment consoles, other intelligent devices, and related accessories. 3 PART I Item 1 The Ambitions That Drive Us To achieve our vision, our research and development efforts focus on three interconnected ambitions: \u007f Reinvent productivity and business processes. \u007f Build the intelligent cloud and intelligent edge platform. \u007f Create more personal computing.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Reinvent Productivity and Business Processes At Microsoft, we provide technology and resources to help our customers create a secure, productive work environment. Our family of products plays a key role in the ways the world works, learns, and connects.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Our growth depends on securely delivering continuous innovation and advancing our leading productivity and collaboration tools and services, including Microsoft 365, LinkedIn, and Dynamics 365. Microsoft 365 is an AI first platform that brings together Office, Windows, Copilot, and Enterprise Mobility + Security to help organizations empower their employees.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Copilot for Microsoft 365 combines AI with business data in the Microsoft Graph and Microsoft 365 applications. Microsoft Teams is a comprehensive platform for communication and collaboration, with meetings, calling, chat, file collaboration, and the ability to bring all of the applications teams use into a single place.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Microsoft Viva is an employee experience platform that brings together communications, knowledge, learning, resources, and insights. Together, the Microsoft Cloud, Dynamics 365, Microsoft Teams, and our AI offerings bring a new era of collaborative applications for every role and business function to get insights and business impact faster.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Dynamics 365 is a portfolio of intelligent business applications that delivers operational efficiency and breakthrough customer experiences. Our role-based extensions of Microsoft Copilot \u2013 Copilot for Sales, Copilot for Service, and Copilot for Finance \u2013 bring together the power of Copilot for Microsoft 365 with role-specific insights and workflow assistance to streamline business processes.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Copilot Studio allows customers to customize Copilot for Microsoft 365 or build their own Copilot. Microsoft Power Platform helps domain experts drive productivity gains with low-code/no-code tools, robotic process automation, virtual agents, and business intelligence.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Copilot Pro is a consumer subscription service that offers faster and more powerful AI assistance in Microsoft 365 apps and on the web. LinkedIn combines our unique data with this new generation of AI to transform the way professionals learn, sell, market, and get hired.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Build the Intelligent Cloud and Intelligent Edge Platform Digital transformation and adoption of AI continues to revolutionize more business workstreams for organizations in every sector across the globe. For enterprises, digital technology empowers employees, optimizes operations, engages customers, and in some cases, changes the very core of products and services.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We continue to invest in high performance and sustainable computing to meet the growing demand for fast access to Microsoft services provided by our network of cloud computing and AI infrastructure and datacenters.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Our cloud business benefits from three economies of scale: datacenters that deploy computational resources at significantly lower cost per unit than smaller ones; datacenters that coordinate and aggregate diverse customer, geographic, and application demand patterns, improving the utilization of computing, storage, and network resources; and multi-tenancy locations that lower application maintenance labor costs.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "The Microsoft Cloud provides the best integration across the technology stack while offering openness, improving time to value, reducing costs, and increasing agility. As the foundation of the Microsoft Cloud, Azure uniquely offers hybrid consistency, developer productivity, data and AI capabilities, and trusted security and compliance.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We offer supercomputing power for AI at scale to run large workloads, complemented by our rapidly expanding portfolio of AI cloud services and hardware, which includes custom- built silicon and strong partnerships with chip manufacturers.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We have introduced purpose-built cloud infrastructure for AI workloads including a custom AI accelerator, Azure Maia, and a custom in-house central processing unit, Azure Cobalt. 4 PART I Item 1 Our AI platform, Azure AI, is helping organizations transform, bringing intelligence and insights to the hands of their employees and customers to solve their most pressing challenges.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We offer a wide selection of industry-leading frontier and open models, including from partners, as well as state-of-the-art tooling, and AI-optimized infrastructure, delivering the Copilot stack for Microsoft, enterprises, and developers.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "Organizations large and small are deploying Azure AI solutions to achieve more at scale, more easily, with the proper enterprise-level responsible AI and safety and security protections. Azure AI Studio provides a full lifecycle toolchain customers can use to ground these models on their own data, create prompt workflows, and help ensure they are deployed and used safely.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "GitHub Copilot is at the forefront of AI-powered software development, giving developers a tool to write code easier and faster. From GitHub to Visual Studio, we provide a developer tool chain for everyone, no matter the technical experience, across all platforms. We have a long-term partnership with OpenAI, a leading AI research and deployment company.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "Risk Factors"
-          },
-          {
-            "text": "We deploy OpenAI\u2019s models across our consumer and enterprise products. As OpenAI\u2019s exclusive cloud provider, Azure powers all of OpenAI's workloads. We have also increased our investments in the development and deployment of specialized supercomputing systems to accelerate OpenAI\u2019s research.",
             "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
             "section": "Risk Factors"
           },
@@ -201,18 +31,38 @@
             "section": "Risk Factors"
           },
           {
-            "text": "Azure Arc simplifies governance and management by delivering a consistent multi-cloud and on-premises management platform. The Microsoft Intelligent Data Platform fully integrates databases, analytics, and governance. Microsoft Fabric is an end-to- end, unified analytics platform that brings together all the data and analytics tools that organizations need.",
+            "text": "B USINESS GENERAL Embracing Our Future Microsoft is a technology company committed to making digital technology and artificial intelligence (\u201cAI\u201d) available broadly and doing so responsibly, with a mission to empower every person and every organization on the planet to achieve more.",
             "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
             "section": "Risk Factors"
           },
           {
-            "text": "Nuance is a leader in conversational AI and ambient intelligence across industries, including healthcare, financial servic",
+            "text": "We also design and sell devices, including PCs, tablets, gaming and entertainment consoles, other intelligent devices, and related accessories. 3 PART I Item 1 The Ambitions That Drive Us To achieve our vision, our research and development efforts focus on three interconnected ambitions: \u007f Reinvent productivity and business processes. \u007f Build the intelligent cloud and intelligent edge platform. \u007f Create more personal computing.",
+            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
+            "section": "Risk Factors"
+          },
+          {
+            "text": "Our cloud business benefits from three economies of scale: datacenters that deploy computational resources at significantly lower cost per unit than smaller ones; datacenters that coordinate and aggregate diverse customer, geographic, and application demand patterns, improving the utilization of computing, storage, and network resources; and multi-tenancy locations that lower application maintenance labor costs.",
+            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
+            "section": "Risk Factors"
+          },
+          {
+            "text": "Dynamics 365 is a portfolio of intelligent business applications that delivers operational efficiency and breakthrough customer experiences. Our role-based extensions of Microsoft Copilot \u2013 Copilot for Sales, Copilot for Service, and Copilot for Finance \u2013 bring together the power of Copilot for Microsoft 365 with role-specific insights and workflow assistance to streamline business processes.",
+            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
+            "section": "Risk Factors"
+          },
+          {
+            "text": "We have entered a new age of AI that will fundamentally transform productivity for every individual, organization, and industry on earth, while helping us address some of our most pressing challenges. Microsoft's AI offerings, including Copilot and our Copilot stack, are already orchestrating a new era of AI transformation, driving better business outcomes across every role and industry.",
+            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
+            "section": "Risk Factors"
+          },
+          {
+            "text": "What We Offer Founded in 1975, we develop and support software, services, devices, and solutions that deliver new value for customers and help people and businesses realize their full potential. We offer an array of services, including cloud-based solutions that provide customers with software, services, platforms, and content, and we provide solution support and consulting services.",
             "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
             "section": "Risk Factors"
           }
         ],
         "change_percentage": 100.0,
-        "summary": "Risk Factors: 3 new paragraph(s) and 37 removed paragraph(s) vs prior filing (extracted 10-K text).",
+        "summary": "Risk Factors: 2 new paragraph(s) and 8 removed paragraph(s) vs prior filing (extracted 10-K text).",
         "extraction_method": "10-K PDF text (Item 1A / Item 7)"
       },
       {
@@ -224,102 +74,7 @@
             "section": "MD&A"
           },
           {
-            "text": "Our mission is to empower every person and every organization on the planet to achieve more. We develop and support a broad portfolio of technology solutions for individuals and businesses, focusing on secure, trusted, and innovative platforms and tools that meet evolving customer needs across cloud computing, productivity and collaboration, and personal computing.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We strive to create opportunity, growth, and impact in every country around the world. AI is fundamentally transforming productivity for every individual, organization, and industry. Microsoft's AI offerings span every layer of the technology stack, enabling transformative outcomes across sectors and unlocking opportunity for every country, community, and individual.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We believe AI should be as empowering as it is powerful, and we\u2019re committed to designing and deploying AI responsibly with safety and security from the outset. What We Offer Founded in 1975, we develop and support software, services, devices, and solutions that deliver new value for customers and help people and businesses realize their full potential.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We offer an array of services, including cloud- based solutions that provide customers with software, services, platforms, and content, and we provide solution support and consulting services. We also deliver relevant online advertising to a global audience.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our products include operating systems, cross-device productivity and collaboration applications, server applications, business solution applications, desktop and server management tools, software development tools, and video games. We also design and sell devices, including PCs, tablets, gaming and entertainment consoles, other intelligent devices, and related accessories.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Digital transformation and adoption of AI continues to revolutionize more business workstreams for organizations in every sector across the globe.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "For enterprises, digital technology empowers employees, optimizes operations, engages customers, and in some cases, changes the very core of products and services. 3 PART I Item 1 The Microsoft Cloud provides integration across the technology stack while offering openness, improving time to value, reducing costs, and increasing agility.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We prioritize security above all else and we offer our customers integrated AI-driven products addressing security, compliance, identity, management, and privacy across customers\u2019 multi- cloud, application, and device assets.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "The Ambitions That Drive Us To achieve our vision, our research and development efforts focus on three interconnected ambitions: \u007f Reinvent productivity and business processes to help organizations and individuals work and collaborate more securely and efficiently. \u007f Build the intelligent cloud and intelligent edge platform to provide a foundation for our customers\u2019 digital workloads including hybrid consistency, developer productivity, data and AI capabilities, and trusted security and compliance. \u007f Create more personal computing to enable users to interact with technology in more intuitive, engaging, and dynamic ways.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our Future Opportunity We are focused on helping customers use the breadth and depth of the Microsoft Cloud to get the most value out of their digital spend while leading the AI platform wave across our solution areas.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We continue to develop complete, intelligent solutions for our customers that empower people to be productive and collaborate, while safeguarding businesses and simplifying IT management. Our goal is to lead the industry in several distinct areas of technology over the long term, which we expect will translate to sustained growth.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
             "text": "We are investing significant resources in: \u007f Transforming the workplace to deliver new, modern, modular business applications, drive deeper insights, and improve how people communicate, collaborate, learn, work, and interact with one another. \u007f Building and running cloud-based services in ways that utilize ubiquitous computing to unleash new experiences and opportunities for businesses and individuals. \u007f Applying AI and ambient intelligence to drive insights, revolutionize many types of work and business processes, and provide substantive productivity gains using Microsoft 365 Copilot and agents. \u007f Providing training on generative AI and greater access to digital learning and resources through skilling programs and initiatives, grants, and LinkedIn learning pathways. \u007f Inventing new gaming experiences that bring people together around their shared love for games on any device and pushing the boundaries of innovation with console and PC gaming. \u007f Leveraging Windows to fuel our cloud business, grow our share of the PC market, and drive increased engagement with our services like Microsoft Edge, Bing, Copilot, Microsoft Teams, Microsoft 365 Consumer, Xbox Game Pass, and more. \u007f Tackling security from all angles with our integrated, end-to-end solutions spanning security, compliance, identity, and management, across all clouds and platforms.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our future growth depends on our ability to transcend current product category definitions, business models, and sales motions. Commitment to Sustainability Microsoft is committed to sustainability and our approach to addressing climate change starts with the sustainability of our own business. In 2020, we announced goals to become a carbon negative, water positive, and zero waste company by 2030.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Since announcing these goals, we have made meaningful progress while having seen major changes in both the technology sector and in our understanding of what it will take to meet our goals.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Progress toward these goals can be found in our annual Environmental Sustainability Report. 4 PART I Item 1 OPERATING SEGMENTS We operate our business and report our financial performance using three segments: Productivity and Business Processes, Intelligent Cloud, and More Personal Computing. Our segments provide management with a comprehensive financial view of our key businesses.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "The segments enable the alignment of strategies and objectives across the development, sales, marketing, and services organizations, and they provide a framework for timely and rational allocation of resources within businesses. In August 2024, we announced changes to the composition of our segments.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "These changes align our segments with how we currently manage our business, most notably bringing the commercial components of Microsoft 365 together in the Productivity and Business Processes segment.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Beginning in fiscal year 2025, the information that our chief operating decision maker is regularly provided and reviews for purposes of allocating resources and assessing performance reflects these segment changes.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Additional information on our operating segments and geographic and product information is contained in Note 18 \u2013 Segment Information and Geographic Data of the Notes to Financial Statements (Part II, Item 8 of this Form 10-K). Our reportable segments are described below.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Productivity and Business Processes Our Productivity and Business Processes segment consists of products and services in our portfolio of productivity, communication, and information services, spanning a variety of devices and platforms.",
             "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
             "section": "MD&A"
           },
@@ -329,17 +84,22 @@
             "section": "MD&A"
           },
           {
-            "text": "Microsoft 365 Commercial Products and Cloud Services Microsoft 365 Commercial is an AI-powered business and productivity solutions platform that brings together Office, Windows, Microsoft 365 Copilot, and Enterprise Mobility + Security to help organizations empower their employees.",
+            "text": "The Ambitions That Drive Us To achieve our vision, our research and development efforts focus on three interconnected ambitions: \u007f Reinvent productivity and business processes to help organizations and individuals work and collaborate more securely and efficiently. \u007f Build the intelligent cloud and intelligent edge platform to provide a foundation for our customers\u2019 digital workloads including hybrid consistency, developer productivity, data and AI capabilities, and trusted security and compliance. \u007f Create more personal computing to enable users to interact with technology in more intuitive, engaging, and dynamic ways.",
             "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
             "section": "MD&A"
           },
           {
-            "text": "Growth depends on our ability to reach new users in new markets such as frontline workers, small and medium businesses, and growth markets, as well as add AI-enabled tools, features, and agentic scenarios to our core product and service offerings across communication, collaboration, analytics, security, compliance, and other AI business productivity categories.",
+            "text": "Our future growth depends on our ability to transcend current product category definitions, business models, and sales motions. Commitment to Sustainability Microsoft is committed to sustainability and our approach to addressing climate change starts with the sustainability of our own business. In 2020, we announced goals to become a carbon negative, water positive, and zero waste company by 2030.",
             "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
             "section": "MD&A"
           },
           {
-            "text": "Microsoft 365 Commercial revenue is mainly affected by a combination of continued installed base growth and average revenue per user expansion, as well as the continued shift from Office licensed on-premises to Microsoft 365.",
+            "text": "Progress toward these goals can be found in our annual Environmental Sustainability Report. 4 PART I Item 1 OPERATING SEGMENTS We operate our business and report our financial performance using three segments: Productivity and Business Processes, Intelligent Cloud, and More Personal Computing. Our segments provide management with a comprehensive financial view of our key businesses.",
+            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
+            "section": "MD&A"
+          },
+          {
+            "text": "Our products include operating systems, cross-device productivity and collaboration applications, server applications, business solution applications, desktop and server management tools, software development tools, and video games. We also design and sell devices, including PCs, tablets, gaming and entertainment consoles, other intelligent devices, and related accessories.",
             "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
             "section": "MD&A"
           },
@@ -347,41 +107,11 @@
             "text": "Microsoft 365 Consumer Products and Cloud Services Microsoft 365 Consumer is designed to increase personal productivity and creativity through a range of products and services. Growth depends on our ability to reach new users, add value to our core product set with new features including AI tools, and continue to expand our product and service offerings into new markets.",
             "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
             "section": "MD&A"
-          },
-          {
-            "text": "Microsoft 365 Consumer cloud revenue and Office Consumer products revenue is mainly affected by the percentage of customers that buy Office with their new devices and the continued shift from Office licensed on-premises to Microsoft 365 Consumer subscriptions.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Microsoft 365 Consumer cloud revenue is also affected by the demand for communication and storage through Outlook.com and OneDrive, which is largely driven by subscriptions and advertising. 5 PART I Item 1 LinkedIn LinkedIn connects the world\u2019s professionals to make them more productive and successful and transforms the way companies hire, market, sell, and learn.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "In addition to LinkedIn\u2019s free services, LinkedIn offers monetized solutions designed to offer AI-enabled insights and productivity: Talent Solutions, Marketing Solutions, Premium Subscriptions, and Sales Solutions.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Growth will depend on our ability to increase LinkedIn member engagement on the platform and our ability to continue offering insight and AI-enabled services that provide value for our members and customers.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "LinkedIn revenue is mainly affected by demand from enterprises and professionals for subscriptions to Talent Solutions, Sales Solutions, and Premium Subscriptions offerings, as well as member engagement and the quality of the sponsored content delivered to those members to drive Marketing Solutions.",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Dynamics Products and Cloud Services Dynamics provides cloud-based and on-premises business solutions for financial management, enterprise r",
-            "source": "FY current 10-K (MSFT_10K_FY2024.pdf)",
-            "section": "MD&A"
           }
         ],
         "removed": [
           {
-            "text": "We undertake no obligation to update or revise publicly any forward-looking statements, whether because of new information, future events, or otherwise. PART I ITEM 1.",
+            "text": "Our hybrid infrastructure offers integrated, end-to- end security, compliance, identity, and management capabilities to support the real-world needs and evolving regulatory requirements of commercial customers and enterprises. Our industry clouds bring together capabilities across the entire Microsoft Cloud, along with industry- specific customizations.",
             "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
             "section": "MD&A"
           },
@@ -391,27 +121,7 @@
             "section": "MD&A"
           },
           {
-            "text": "We create platforms and tools, powered by AI, that deliver innovative solutions that meet the evolving needs of our customers. From infrastructure and data, to business applications and collaboration, we provide unique, differentiated value to customers. We strive to create local opportunity, growth, and impact in every country around the world.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We have entered a new age of AI that will fundamentally transform productivity for every individual, organization, and industry on earth, while helping us address some of our most pressing challenges. Microsoft's AI offerings, including Copilot and our Copilot stack, are already orchestrating a new era of AI transformation, driving better business outcomes across every role and industry.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "As a company, we believe we can be the democratizing force for this new generation of technology and the opportunity it will help unlock for every country, community, and individual. We believe AI should be as empowering across communities as it is powerful, and we\u2019re committed to ensuring it is responsibly designed and built with safety and security from the outset.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "What We Offer Founded in 1975, we develop and support software, services, devices, and solutions that deliver new value for customers and help people and businesses realize their full potential. We offer an array of services, including cloud-based solutions that provide customers with software, services, platforms, and content, and we provide solution support and consulting services.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We also deliver relevant online advertising to a global audience. Our products include operating systems, cross-device productivity and collaboration applications, server applications, business solution applications, desktop and server management tools, software development tools, and video games.",
+            "text": "With Copilot for Security, Microsoft offers an AI cybersecurity product that enables security professionals to respond to cyberthreats quickly. Windows 365 enables users to stream a full Windows experience from the Microsoft Cloud to any device.",
             "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
             "section": "MD&A"
           },
@@ -421,57 +131,17 @@
             "section": "MD&A"
           },
           {
-            "text": "Reinvent Productivity and Business Processes At Microsoft, we provide technology and resources to help our customers create a secure, productive work environment. Our family of products plays a key role in the ways the world works, learns, and connects.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our growth depends on securely delivering continuous innovation and advancing our leading productivity and collaboration tools and services, including Microsoft 365, LinkedIn, and Dynamics 365. Microsoft 365 is an AI first platform that brings together Office, Windows, Copilot, and Enterprise Mobility + Security to help organizations empower their employees.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Copilot for Microsoft 365 combines AI with business data in the Microsoft Graph and Microsoft 365 applications. Microsoft Teams is a comprehensive platform for communication and collaboration, with meetings, calling, chat, file collaboration, and the ability to bring all of the applications teams use into a single place.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Microsoft Viva is an employee experience platform that brings together communications, knowledge, learning, resources, and insights. Together, the Microsoft Cloud, Dynamics 365, Microsoft Teams, and our AI offerings bring a new era of collaborative applications for every role and business function to get insights and business impact faster.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
             "text": "Dynamics 365 is a portfolio of intelligent business applications that delivers operational efficiency and breakthrough customer experiences. Our role-based extensions of Microsoft Copilot \u2013 Copilot for Sales, Copilot for Service, and Copilot for Finance \u2013 bring together the power of Copilot for Microsoft 365 with role-specific insights and workflow assistance to streamline business processes.",
             "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
             "section": "MD&A"
           },
           {
-            "text": "Copilot Studio allows customers to customize Copilot for Microsoft 365 or build their own Copilot. Microsoft Power Platform helps domain experts drive productivity gains with low-code/no-code tools, robotic process automation, virtual agents, and business intelligence.",
+            "text": "We have entered a new age of AI that will fundamentally transform productivity for every individual, organization, and industry on earth, while helping us address some of our most pressing challenges. Microsoft's AI offerings, including Copilot and our Copilot stack, are already orchestrating a new era of AI transformation, driving better business outcomes across every role and industry.",
             "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
             "section": "MD&A"
           },
           {
-            "text": "Copilot Pro is a consumer subscription service that offers faster and more powerful AI assistance in Microsoft 365 apps and on the web. LinkedIn combines our unique data with this new generation of AI to transform the way professionals learn, sell, market, and get hired.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Build the Intelligent Cloud and Intelligent Edge Platform Digital transformation and adoption of AI continues to revolutionize more business workstreams for organizations in every sector across the globe. For enterprises, digital technology empowers employees, optimizes operations, engages customers, and in some cases, changes the very core of products and services.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We continue to invest in high performance and sustainable computing to meet the growing demand for fast access to Microsoft services provided by our network of cloud computing and AI infrastructure and datacenters.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "The Microsoft Cloud provides the best integration across the technology stack while offering openness, improving time to value, reducing costs, and increasing agility. As the foundation of the Microsoft Cloud, Azure uniquely offers hybrid consistency, developer productivity, data and AI capabilities, and trusted security and compliance.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We offer supercomputing power for AI at scale to run large workloads, complemented by our rapidly expanding portfolio of AI cloud services and hardware, which includes custom- built silicon and strong partnerships with chip manufacturers.",
+            "text": "What We Offer Founded in 1975, we develop and support software, services, devices, and solutions that deliver new value for customers and help people and businesses realize their full potential. We offer an array of services, including cloud-based solutions that provide customers with software, services, platforms, and content, and we provide solution support and consulting services.",
             "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
             "section": "MD&A"
           },
@@ -479,90 +149,10 @@
             "text": "We have introduced purpose-built cloud infrastructure for AI workloads including a custom AI accelerator, Azure Maia, and a custom in-house central processing unit, Azure Cobalt. 4 PART I Item 1 Our AI platform, Azure AI, is helping organizations transform, bringing intelligence and insights to the hands of their employees and customers to solve their most pressing challenges.",
             "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
             "section": "MD&A"
-          },
-          {
-            "text": "We offer a wide selection of industry-leading frontier and open models, including from partners, as well as state-of-the-art tooling, and AI-optimized infrastructure, delivering the Copilot stack for Microsoft, enterprises, and developers.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Organizations large and small are deploying Azure AI solutions to achieve more at scale, more easily, with the proper enterprise-level responsible AI and safety and security protections. Azure AI Studio provides a full lifecycle toolchain customers can use to ground these models on their own data, create prompt workflows, and help ensure they are deployed and used safely.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "GitHub Copilot is at the forefront of AI-powered software development, giving developers a tool to write code easier and faster. From GitHub to Visual Studio, we provide a developer tool chain for everyone, no matter the technical experience, across all platforms. We have a long-term partnership with OpenAI, a leading AI research and deployment company.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We deploy OpenAI\u2019s models across our consumer and enterprise products. As OpenAI\u2019s exclusive cloud provider, Azure powers all of OpenAI's workloads. We have also increased our investments in the development and deployment of specialized supercomputing systems to accelerate OpenAI\u2019s research.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our hybrid infrastructure offers integrated, end-to- end security, compliance, identity, and management capabilities to support the real-world needs and evolving regulatory requirements of commercial customers and enterprises. Our industry clouds bring together capabilities across the entire Microsoft Cloud, along with industry- specific customizations.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Azure Arc simplifies governance and management by delivering a consistent multi-cloud and on-premises management platform. The Microsoft Intelligent Data Platform fully integrates databases, analytics, and governance. Microsoft Fabric is an end-to- end, unified analytics platform that brings together all the data and analytics tools that organizations need.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Nuance is a leader in conversational AI and ambient intelligence across industries, including healthcare, financial services, retail, and telecommunications. Microsoft and Nuance enable organizations to accelerate their business goals with security-focused, cloud-based solutions infused with AI.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "As the rate and pace of cyberthreats continue to accelerate, security is a top priority for every organization. Microsoft offers customers integrated products addressing security, compliance, identity, management, and privacy across customers\u2019 multi-cloud, application, and device assets.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "With Copilot for Security, Microsoft offers an AI cybersecurity product that enables security professionals to respond to cyberthreats quickly. Windows 365 enables users to stream a full Windows experience from the Microsoft Cloud to any device.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Create More Personal Computing We strive to make computing more personal, enabling users to interact with technology in more intuitive, engaging, and dynamic ways. Windows 11 offers innovations focused on performance, productivity, and creativity, including Copilot in Windows.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Windows 11 security and privacy features include operating system security, application security, and user and identity security. Dev Home is an open-source experience in Windows to help developer productivity. We are committed to designing and marketing first-party devices to help drive innovation, create new device categories, and stimulate demand in the Windows ecosystem.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "The Surface family includes Surface Pro, Surface Laptop, and other Surface products. Copilot+ PCs are a new class of Windows 11 PCs that are powered by a neural processing unit. These PCs use on-device AI for enhanced performance and features. Copilot is an AI assistant that helps users navigate the web, answer questions, and create content.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Microsoft Edge is our fast and secure browser that helps protect users\u2019 data and offers enhanced browsing capabilities including quick access to AI-powered tools, apps, and more.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "The AI-powered Bing search engine with Copilot delivers better search, more complete answers, and the ability to generate content. 5 PART I Item 1 Microsoft is expanding how billions of people globally access and play video games on PC, console, mobile, and cloud.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "We put game development front and center, backed by innovative hardware, experiences, and a subscription service, Xbox Game Pass, that allows those games to reach more players across more devices. Activision Blizzard, Inc. (\u201cActivision Blizzard\u201d), a leader in game development and an interactive entertainment content publisher, joined Microsoft in October 2023.",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
-          },
-          {
-            "text": "Our Future Opportunity We are focused on helping customers use the breadth and depth of the Microsoft Cloud to get the most value out of their digital spend while leading the AI plat",
-            "source": "FY prior 10-K (MSFT_10K_FY2023.pdf)",
-            "section": "MD&A"
           }
         ],
         "change_percentage": 94.7,
-        "summary": "MD&A: 32 new paragraph(s) and 36 removed paragraph(s) vs prior filing (extracted 10-K text).",
+        "summary": "MD&A: 8 new paragraph(s) and 8 removed paragraph(s) vs prior filing (extracted 10-K text).",
         "extraction_method": "10-K PDF text (Item 1A / Item 7)"
       }
     ],
@@ -570,19 +160,25 @@
       {
         "type": "added",
         "section": "Risk Factors",
-        "text": "PART I Item 1A CYBERSECURITY, DATA PRIVACY, AND PLATFORM ABUSE RISKS Cyberattacks and security vulnerabilities could lead to reduced revenue, increased costs, liability claims, or harm to our reputation or competitive position. Security of our information technology Threats to se\u2026",
+        "text": "Threat actors, including individual and groups of hackers and sophisticated organizations, including nation-states, state-sponsored organizations, or cybercriminal groups, continuously undertake attacks that pose threats to our customers and our internal infrastructure, and we ha\u2026",
         "citation": "FY current 10-K (MSFT_10K_FY2024.pdf) \u00b7 extracted filing text"
       },
       {
         "type": "added",
         "section": "Risk Factors",
-        "text": "Threat actors, including individual and groups of hackers and sophisticated organizations, including nation-states, state-sponsored organizations, or cybercriminal groups, continuously undertake attacks that pose threats to our customers and our internal infrastructure, and we ha\u2026",
+        "text": "These actors use a wide variety of methods, which include developing and deploying malicious software; exploiting known and potential vulnerabilities or intentionally designed processes in our or third-party hardware, software, or other infrastructure to attack our products and s\u2026",
         "citation": "FY current 10-K (MSFT_10K_FY2024.pdf) \u00b7 extracted filing text"
       },
       {
         "type": "removed",
         "section": "Risk Factors",
-        "text": "Item 1A. Risk Factors 20 Item 1B. Unresolved Staff Comments 34 Item 1C. Cybersecurity 34 Item 2. Properties 36 Item 3. Legal Proceedings 36 Item 4. Mine Safety Disclosures 36 PART II Item 5. Market for Registrant\u2019s Common Equity, Related Stockholder Matters, and Issuer Purchases \u2026",
+        "text": "Form 10-K Summary 110 Signatures 111 2 PART I Item 1 Note About Forward- Looking Statements This report includes estimates, projections, statements relating to our business plans, objectives, and expected operating results that are \u201cforward-looking statements\u201d within the meaning \u2026",
+        "citation": "FY prior 10-K (MSFT_10K_FY2023.pdf) \u00b7 extracted filing text"
+      },
+      {
+        "type": "removed",
+        "section": "Risk Factors",
+        "text": "Our hybrid infrastructure offers integrated, end-to- end security, compliance, identity, and management capabilities to support the real-world needs and evolving regulatory requirements of commercial customers and enterprises. Our industry clouds bring together capabilities acros\u2026",
         "citation": "FY prior 10-K (MSFT_10K_FY2023.pdf) \u00b7 extracted filing text"
       },
       {
@@ -594,17 +190,12 @@
       {
         "type": "added",
         "section": "MD&A",
-        "text": "Our mission is to empower every person and every organization on the planet to achieve more. We develop and support a broad portfolio of technology solutions for individuals and businesses, focusing on secure, trusted, and innovative platforms and tools that meet evolving custome\u2026",
+        "text": "We are investing significant resources in: \u007f Transforming the workplace to deliver new, modern, modular business applications, drive deeper insights, and improve how people communicate, collaborate, learn, work, and interact with one another. \u007f Building and running cloud-based se\u2026",
         "citation": "FY current 10-K (MSFT_10K_FY2024.pdf) \u00b7 extracted filing text"
-      },
-      {
-        "type": "removed",
-        "section": "MD&A",
-        "text": "We undertake no obligation to update or revise publicly any forward-looking statements, whether because of new information, future events, or otherwise. PART I ITEM 1.",
-        "citation": "FY prior 10-K (MSFT_10K_FY2023.pdf) \u00b7 extracted filing text"
       }
     ],
     "overall_change_score": 97.3,
+    "material_change_count": 26,
     "source": "sec_filing_text",
     "risk_page_prior": 9,
     "risk_page_current": null
@@ -631,5 +222,211 @@
     "call_excerpt_count": 3,
     "source": "transcript_vs_filing_text",
     "transcript_period": "Q4 FY2024 Earnings Call"
-  }
+  },
+  "qa_chunks": [
+    {
+      "section_name": "Risk Factors",
+      "text": "Threat actors, including individual and groups of hackers and sophisticated organizations, including nation-states, state-sponsored organizations, or cybercriminal groups, continuously undertake attacks that pose threats to our customers and our internal infrastructure, and we have experienced cybersecurity incidents in which such actors have gained unauthorized access to our systems and data, including customer systems and data.",
+      "page_number": null,
+      "materiality": 3.1
+    },
+    {
+      "section_name": "MD&A",
+      "text": "We undertake no obligation to update or revise publicly any forward-looking statements, whether because of new information, future events, or otherwise. PART I ITEM 1. B USINESS GENERAL Microsoft is a technology company committed to making digital technology and artificial intelligence (\u201cAI\u201d) available broadly and doing so responsibly.",
+      "page_number": 9,
+      "materiality": 2.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "We are investing significant resources in: \u007f Transforming the workplace to deliver new, modern, modular business applications, drive deeper insights, and improve how people communicate, collaborate, learn, work, and interact with one another. \u007f Building and running cloud-based services in ways that utilize ubiquitous computing to unleash new experiences and opportunities for businesses and individuals. \u007f Applying AI and ambient intelligence to drive insights, revolutionize many types of work and business processes, and provide substantive productivity gains using Microsoft 365 Copilot and agents. \u007f Providing training on generative AI and greater access to digital learning and resources through skilling programs and initiatives, grants, and LinkedIn learning pathways. \u007f Inventing new gaming experiences that bring people together around their shared love for games on any device and pushing the boundaries of innovation with console and PC gaming. \u007f Leveraging Windows to fuel our cloud business, grow our share of the PC market, and drive increased engagement with our services like Microsoft Edge, Bing, Copilot, Microsoft Teams, Microsoft 365 Consumer, Xbox Game Pass, and more. \u007f Tackling security from all angles with our integrated, end-to-end solutions spanning security, compliance, identity, and management, across all clouds and platforms.",
+      "page_number": 9,
+      "materiality": 2.0
+    },
+    {
+      "section_name": "MD&A",
+      "text": "This segment primarily comprises: \u007f Microsoft 365 Commercial products and cloud services, including Microsoft 365 Commercial cloud, comprising Microsoft 365 Commercial, Enterprise Mobility + Security, the cloud portion of Windows Commercial, the per-user portion of Power BI, Exchange, SharePoint, Microsoft Teams, Microsoft 365 Security and Compliance, and Microsoft 365 Copilot; and Microsoft 365 Commercial products, comprising Windows Commercial on-premises and Office licensed on-premises. \u007f Microsoft 365 Consumer products and cloud services, including Microsoft 365 Consumer subscriptions, Office licensed on-premises, and other consumer services. \u007f LinkedIn, including Talent Solutions, Marketing Solutions, Premium Subscriptions, and Sales Solutions. \u007f Dynamics products and cloud services, including Dynamics 365, comprising a set of intelligent, cloud-based applications across ERP, CRM, Power Apps, and Power Automate; and on- premises ERP and CRM applications.",
+      "page_number": 9,
+      "materiality": 2.0
+    },
+    {
+      "section_name": "Risk Factors",
+      "text": "These actors use a wide variety of methods, which include developing and deploying malicious software; exploiting known and potential vulnerabilities or intentionally designed processes in our or third-party hardware, software, or other infrastructure to attack our products and services or gain access to our networks and datacenters; using social engineering techniques to induce our employees, users, partners, or customers to disclose sensitive information, such as passwords, or take other actions to gain access to our data or our users\u2019 or customers\u2019 data; or acting in a coordinated manner or conducting coordinated attacks.",
+      "page_number": null,
+      "materiality": 1.6
+    },
+    {
+      "section_name": "MD&A",
+      "text": "The Ambitions That Drive Us To achieve our vision, our research and development efforts focus on three interconnected ambitions: \u007f Reinvent productivity and business processes to help organizations and individuals work and collaborate more securely and efficiently. \u007f Build the intelligent cloud and intelligent edge platform to provide a foundation for our customers\u2019 digital workloads including hybrid consistency, developer productivity, data and AI capabilities, and trusted security and compliance. \u007f Create more personal computing to enable users to interact with technology in more intuitive, engaging, and dynamic ways.",
+      "page_number": 9,
+      "materiality": 1.6
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Our cloud business benefits from three economies of scale: datacenters that deploy computational resources at significantly lower cost per unit than smaller ones; datacenters that coordinate and aggregate diverse customer, geographic, and application demand patterns, improving the utilization of computing, storage, and network resources; and multi-tenancy locations that lower application maintenance labor costs.",
+      "page_number": 9,
+      "materiality": 1.0
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Our future growth depends on our ability to transcend current product category definitions, business models, and sales motions. Commitment to Sustainability Microsoft is committed to sustainability and our approach to addressing climate change starts with the sustainability of our own business. In 2020, we announced goals to become a carbon negative, water positive, and zero waste company by 2030.",
+      "page_number": 9,
+      "materiality": 1.0
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Progress toward these goals can be found in our annual Environmental Sustainability Report. 4 PART I Item 1 OPERATING SEGMENTS We operate our business and report our financial performance using three segments: Productivity and Business Processes, Intelligent Cloud, and More Personal Computing. Our segments provide management with a comprehensive financial view of our key businesses.",
+      "page_number": 9,
+      "materiality": 1.0
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Our mission is to empower every person and every organization on the planet to achieve more. We develop and support a broad portfolio of technology solutions for individuals and businesses, focusing on secure, trusted, and innovative platforms and tools that meet evolving customer needs across cloud computing, productivity and collaboration, and personal computing.",
+      "page_number": 9,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "MD&A",
+      "text": "We strive to create opportunity, growth, and impact in every country around the world. AI is fundamentally transforming productivity for every individual, organization, and industry. Microsoft's AI offerings span every layer of the technology stack, enabling transformative outcomes across sectors and unlocking opportunity for every country, community, and individual.",
+      "page_number": 9,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "MD&A",
+      "text": "We believe AI should be as empowering as it is powerful, and we\u2019re committed to designing and deploying AI responsibly with safety and security from the outset. What We Offer Founded in 1975, we develop and support software, services, devices, and solutions that deliver new value for customers and help people and businesses realize their full potential.",
+      "page_number": 9,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Our products include operating systems, cross-device productivity and collaboration applications, server applications, business solution applications, desktop and server management tools, software development tools, and video games. We also design and sell devices, including PCs, tablets, gaming and entertainment consoles, other intelligent devices, and related accessories.",
+      "page_number": 9,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Growth depends on our ability to reach new users in new markets such as frontline workers, small and medium businesses, and growth markets, as well as add AI-enabled tools, features, and agentic scenarios to our core product and service offerings across communication, collaboration, analytics, security, compliance, and other AI business productivity categories.",
+      "page_number": 9,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Microsoft 365 Consumer Products and Cloud Services Microsoft 365 Consumer is designed to increase personal productivity and creativity through a range of products and services. Growth depends on our ability to reach new users, add value to our core product set with new features including AI tools, and continue to expand our product and service offerings into new markets.",
+      "page_number": 9,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Microsoft 365 Consumer cloud revenue is also affected by the demand for communication and storage through Outlook.com and OneDrive, which is largely driven by subscriptions and advertising. 5 PART I Item 1 LinkedIn LinkedIn connects the world\u2019s professionals to make them more productive and successful and transforms the way companies hire, market, sell, and learn.",
+      "page_number": 9,
+      "materiality": 0.9
+    },
+    {
+      "section_name": "MD&A",
+      "text": "For enterprises, digital technology empowers employees, optimizes operations, engages customers, and in some cases, changes the very core of products and services. 3 PART I Item 1 The Microsoft Cloud provides integration across the technology stack while offering openness, improving time to value, reducing costs, and increasing agility.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "We continue to develop complete, intelligent solutions for our customers that empower people to be productive and collaborate, while safeguarding businesses and simplifying IT management. Our goal is to lead the industry in several distinct areas of technology over the long term, which we expect will translate to sustained growth.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "The segments enable the alignment of strategies and objectives across the development, sales, marketing, and services organizations, and they provide a framework for timely and rational allocation of resources within businesses. In August 2024, we announced changes to the composition of our segments.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "LinkedIn revenue is mainly affected by demand from enterprises and professionals for subscriptions to Talent Solutions, Sales Solutions, and Premium Subscriptions offerings, as well as member engagement and the quality of the sponsored content delivered to those members to drive Marketing Solutions.",
+      "page_number": 9,
+      "materiality": 0.8
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Microsoft 365 Commercial Products and Cloud Services Microsoft 365 Commercial is an AI-powered business and productivity solutions platform that brings together Office, Windows, Microsoft 365 Copilot, and Enterprise Mobility + Security to help organizations empower their employees.",
+      "page_number": 9,
+      "materiality": 0.7
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Microsoft 365 Consumer cloud revenue and Office Consumer products revenue is mainly affected by the percentage of customers that buy Office with their new devices and the continued shift from Office licensed on-premises to Microsoft 365 Consumer subscriptions.",
+      "page_number": 9,
+      "materiality": 0.7
+    },
+    {
+      "section_name": "MD&A",
+      "text": "We offer an array of services, including cloud- based solutions that provide customers with software, services, platforms, and content, and we provide solution support and consulting services. We also deliver relevant online advertising to a global audience.",
+      "page_number": 9,
+      "materiality": 0.6
+    },
+    {
+      "section_name": "MD&A",
+      "text": "We prioritize security above all else and we offer our customers integrated AI-driven products addressing security, compliance, identity, management, and privacy across customers\u2019 multi- cloud, application, and device assets.",
+      "page_number": 9,
+      "materiality": 0.6
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Productivity and Business Processes Our Productivity and Business Processes segment consists of products and services in our portfolio of productivity, communication, and information services, spanning a variety of devices and platforms.",
+      "page_number": 9,
+      "materiality": 0.6
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Microsoft 365 Commercial revenue is mainly affected by a combination of continued installed base growth and average revenue per user expansion, as well as the continued shift from Office licensed on-premises to Microsoft 365.",
+      "page_number": 9,
+      "materiality": 0.6
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Our Future Opportunity We are focused on helping customers use the breadth and depth of the Microsoft Cloud to get the most value out of their digital spend while leading the AI platform wave across our solution areas.",
+      "page_number": 9,
+      "materiality": 0.5
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Since announcing these goals, we have made meaningful progress while having seen major changes in both the technology sector and in our understanding of what it will take to meet our goals.",
+      "page_number": 9,
+      "materiality": 0.5
+    },
+    {
+      "section_name": "MD&A",
+      "text": "These changes align our segments with how we currently manage our business, most notably bringing the commercial components of Microsoft 365 together in the Productivity and Business Processes segment.",
+      "page_number": 9,
+      "materiality": 0.5
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Beginning in fiscal year 2025, the information that our chief operating decision maker is regularly provided and reviews for purposes of allocating resources and assessing performance reflects these segment changes.",
+      "page_number": 9,
+      "materiality": 0.5
+    },
+    {
+      "section_name": "MD&A",
+      "text": "In addition to LinkedIn\u2019s free services, LinkedIn offers monetized solutions designed to offer AI-enabled insights and productivity: Talent Solutions, Marketing Solutions, Premium Subscriptions, and Sales Solutions.",
+      "page_number": 9,
+      "materiality": 0.5
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Growth will depend on our ability to increase LinkedIn member engagement on the platform and our ability to continue offering insight and AI-enabled services that provide value for our members and customers.",
+      "page_number": 9,
+      "materiality": 0.5
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Digital transformation and adoption of AI continues to revolutionize more business workstreams for organizations in every sector across the globe.",
+      "page_number": 9,
+      "materiality": 0.4
+    },
+    {
+      "section_name": "MD&A",
+      "text": "Dynamics Products and Cloud Services Dynamics provides cloud-based and on-premises business solutions for financial management, enterprise r",
+      "page_number": 9,
+      "materiality": 0.3
+    }
+  ]
 }

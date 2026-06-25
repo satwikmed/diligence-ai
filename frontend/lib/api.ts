@@ -155,24 +155,12 @@ export async function getSuggestedQuestions(documentId: string) {
 }
 
 export async function getFilingDelta(documentId: string, compareId: string) {
-  if (shouldUseDemoData()) {
-    const { getDemoFilingDelta } = await import('@/lib/demo-data');
-    const data = getDemoFilingDelta(documentId, compareId);
-    if (!data) throw new Error('Filing delta not available');
-    return data;
-  }
-  const res = await fetch(apiPath(`/api/analysis/${documentId}/filing-delta?compare_id=${compareId}`));
+  const res = await fetch(apiPath(`/api/analysis/${documentId}/filing-delta?compare_id=${encodeURIComponent(compareId)}`));
   if (!res.ok) throw new Error('Failed to fetch filing delta');
   return res.json();
 }
 
 export async function getContradictions(documentId: string) {
-  if (shouldUseDemoData()) {
-    const { getDemoContradictions } = await import('@/lib/demo-data');
-    const data = getDemoContradictions(documentId);
-    if (!data) throw new Error('Contradictions not available');
-    return data;
-  }
   const res = await fetch(apiPath(`/api/analysis/${documentId}/contradictions`));
   if (!res.ok) throw new Error('Failed to fetch contradictions');
   return res.json();
