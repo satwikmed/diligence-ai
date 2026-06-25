@@ -8,6 +8,14 @@ interface ContradictionPanelProps {
   documentId: string;
 }
 
+interface ContradictionItem {
+  theme: string;
+  severity: string;
+  analysis: string;
+  earnings_call?: { quote?: string; source?: string; speaker?: string };
+  filing?: { quote?: string; source?: string };
+}
+
 export default function ContradictionPanel({ documentId }: ContradictionPanelProps) {
   const [data, setData] = useState<Record<string, unknown> | null>(null);
   const [loading, setLoading] = useState(true);
@@ -20,7 +28,7 @@ export default function ContradictionPanel({ documentId }: ContradictionPanelPro
       .finally(() => setLoading(false));
   }, [documentId]);
 
-  const items = (data?.contradictions as Array<Record<string, Record<string, string>>>) || [];
+  const items = (data?.contradictions as ContradictionItem[]) || [];
 
   return (
     <section>
@@ -32,9 +40,9 @@ export default function ContradictionPanel({ documentId }: ContradictionPanelPro
         {!loading && !error && items.map((item, i) => (
           <div key={i} className="mb-4 rounded-xl border border-white/10 bg-white/[0.03] p-4">
             <div className="mb-3 flex flex-wrap items-center gap-2">
-              <span className="font-medium text-white">{item.theme as string}</span>
+              <span className="font-medium text-white">{item.theme}</span>
               <span className={`badge ${item.severity === 'high' ? 'badge-danger' : item.severity === 'medium' ? 'badge-warning' : 'badge-neutral'}`}>
-                {item.severity as string}
+                {item.severity}
               </span>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
@@ -49,7 +57,7 @@ export default function ContradictionPanel({ documentId }: ContradictionPanelPro
                 <p className="mt-2 text-xs text-white/45">{item.filing?.source}</p>
               </blockquote>
             </div>
-            <p className="mt-3 text-sm text-white/65">{item.analysis as string}</p>
+            <p className="mt-3 text-sm text-white/65">{item.analysis}</p>
           </div>
         ))}
       </div>

@@ -7,6 +7,7 @@ uploads/
 *.egg-info/
 .pytest_cache/
 node_modules/
+.node/
 .next/
 out/
 .DS_Store

@@ -1,0 +1,7 @@
+venv
+.pytest_cache
+uploads
+diligence.db
+*.pyc
+__pycache__
+.node
