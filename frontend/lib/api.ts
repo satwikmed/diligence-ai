@@ -94,16 +94,15 @@ export async function getAnalysis(documentId: string): Promise<AnalysisReport> {
 }
 
 export async function askQuestion(documentId: string, question: string) {
-  if (shouldUseDemoData()) {
-    const { getDemoAnswer } = await import('@/lib/demo-data');
-    return getDemoAnswer(documentId, question);
-  }
   const res = await fetch(apiPath(`/api/analysis/${documentId}/ask`), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ question }),
   });
-  if (!res.ok) throw new Error('Question failed');
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error((err as { detail?: string }).detail || 'Question failed');
+  }
   return res.json();
 }
 
