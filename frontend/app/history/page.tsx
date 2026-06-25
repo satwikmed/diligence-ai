@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import DataQualityBadge from '@/components/DataQualityBadge';
 import PageShell from '@/components/ui/page-shell';
 import { deleteAnalysis, getHistory } from '@/lib/api';
+import { shouldUseDemoData } from '@/lib/demo-data';
 
 interface HistoryItem {
   document_id: string;
@@ -19,6 +20,7 @@ interface HistoryItem {
 
 export default function HistoryPage() {
   const router = useRouter();
+  const demoMode = shouldUseDemoData();
   const [items, setItems] = useState<HistoryItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -114,12 +116,14 @@ export default function HistoryPage() {
                     </span>
                   </td>
                   <td className="p-4">
-                    <button
-                      onClick={(e) => handleDelete(e, item.document_id)}
-                      className="text-xs text-red-400 hover:underline"
-                    >
-                      Delete
-                    </button>
+                    {!demoMode && (
+                      <button
+                        onClick={(e) => handleDelete(e, item.document_id)}
+                        className="text-xs text-red-400 hover:underline"
+                      >
+                        Delete
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}

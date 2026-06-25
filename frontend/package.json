@@ -12,6 +12,7 @@
     "@paper-design/shaders-react": "^0.0.76",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "jspdf": "^2.5.2",
     "lucide-react": "^1.18.0",
     "next": "^14.2.0",
     "react": "^18.3.0",

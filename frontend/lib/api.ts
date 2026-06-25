@@ -12,7 +12,7 @@ export function getApiUrl(): string {
   return url.replace(/\/$/, '');
 }
 
-export function getWsUrl(): string {
+export function getWsUrl(): string | null {
   const wsUrl = process.env.NEXT_PUBLIC_WS_URL?.trim();
   if (wsUrl) {
     return wsUrl.replace(/\/$/, '');
@@ -21,11 +21,7 @@ export function getWsUrl(): string {
   if (apiUrl) {
     return apiUrl.replace(/^http/, 'ws').replace(/\/$/, '');
   }
-  if (typeof window !== 'undefined') {
-    const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    return `${proto}//${window.location.host}`;
-  }
-  return 'ws://localhost:8000';
+  return null;
 }
 
 function apiPath(path: string): string {
@@ -99,11 +95,8 @@ export async function getAnalysis(documentId: string): Promise<AnalysisReport> {
 
 export async function askQuestion(documentId: string, question: string) {
   if (shouldUseDemoData()) {
-    return {
-      answer: `Based on the 10-K filing, ${question.replace('?', '')} is addressed in the Risk Factors and MD&A sections. Key themes include competitive pressure, regulatory exposure, and margin sustainability.`,
-      sources: [{ section_name: 'Risk Factors', page_number: 12, excerpt: 'See filing discussion.' }],
-      ragas_scores: { faithfulness: 0.88, answer_relevancy: 0.9, context_precision: 0.85 },
-    };
+    const { getDemoAnswer } = await import('@/lib/demo-data');
+    return getDemoAnswer(documentId, question);
   }
   const res = await fetch(apiPath(`/api/analysis/${documentId}/ask`), {
     method: 'POST',
@@ -154,13 +147,8 @@ export async function getAgentLogs(documentId: string) {
 
 export async function getSuggestedQuestions(documentId: string) {
   if (shouldUseDemoData()) {
-    return {
-      questions: [
-        'What are the top 3 risks I should worry about?',
-        'How is revenue growth trending year over year?',
-        'What is management saying about competitive threats?',
-      ],
-    };
+    const { getDemoSuggestedQuestions } = await import('@/lib/demo-data');
+    return { questions: getDemoSuggestedQuestions(documentId) };
   }
   const res = await fetch(apiPath(`/api/analysis/${documentId}/suggested-questions`));
   if (!res.ok) return { questions: [] };

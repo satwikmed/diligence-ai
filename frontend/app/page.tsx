@@ -1,16 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import PageShell from '@/components/ui/page-shell';
-
-const ProjectSummary = dynamic(() => import('@/components/ProjectOverview'), {
-  loading: () => (
-    <div className="py-20 text-center text-white/50">Loading summary...</div>
-  ),
-});
+import ProjectSummary from '@/components/ProjectOverview';
 
 function scrollToSummary() {
   document.getElementById('summary')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -27,12 +21,12 @@ export default function HomePage() {
 
   return (
     <PageShell
-      eyebrow="Six AI agents. Six frameworks. One analysis."
+      eyebrow="Equity research · Multi-agent · Citation-backed"
       line1="Autonomous"
       line2="Due Diligence"
-      line3="Reports"
-      title="Autonomous Due Diligence Reports"
-      subtitle="What takes a junior consultant two weeks, Diligence AI delivers in two minutes. Upload a 10-K and get a consulting-grade report powered by parallel AI agents."
+      line3="for ER"
+      title="Autonomous Due Diligence for Equity Research"
+      subtitle="What takes a junior analyst days on a new name, Diligence AI surfaces in one session — filing delta, earnings-vs-10-K cross-checks, and ER memo export with citations."
     >
       <div className="mb-12 flex flex-wrap items-center gap-4">
         <Link

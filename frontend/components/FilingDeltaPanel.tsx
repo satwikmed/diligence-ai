@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import SectionHeading from '@/components/ui/section-heading';
 import { getFilingDelta, getHistory } from '@/lib/api';
+import { PRIOR_YEAR_SUFFIX } from '@/lib/demo-data';
 
 interface FilingDeltaPanelProps {
   documentId: string;
@@ -22,8 +23,12 @@ export default function FilingDeltaPanel({ documentId }: FilingDeltaPanelProps) 
           (i: { document_id: string; processing_status: string }) =>
             i.processing_status === 'complete' && i.document_id !== documentId
         );
-        setOptions(completed);
-        if (completed.length > 0) setCompareId(completed[0].document_id);
+        const priorOption = {
+          document_id: `${documentId}${PRIOR_YEAR_SUFFIX}`,
+          company_name: 'Prior year 10-K (same company)',
+        };
+        setOptions([priorOption, ...completed]);
+        setCompareId(priorOption.document_id);
       })
       .catch(() => setError('Could not load comparison filings.'));
   }, [documentId]);

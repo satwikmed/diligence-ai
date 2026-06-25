@@ -19,7 +19,7 @@ import PageShell from '@/components/ui/page-shell';
 import SectionHeading from '@/components/ui/section-heading';
 import { Button } from '@/components/ui/button';
 import { getAnalysis, getAnalysisStatus, getSuggestedQuestions } from '@/lib/api';
-import { getDemoAnalysis } from '@/lib/demo-data';
+import { getDemoAnalysis, shouldUseDemoData } from '@/lib/demo-data';
 import { WebSocketManager } from '@/lib/websocket';
 
 type LoadState = 'loading' | 'processing' | 'complete' | 'error';
@@ -89,10 +89,12 @@ export default function AnalysisPage() {
 
     async function init() {
       try {
-        const demo = getDemoAnalysis(documentId);
-        if (demo?.report) {
-          if (!cancelled) await applyAnalysis(demo);
-          return;
+        if (shouldUseDemoData()) {
+          const demo = getDemoAnalysis(documentId);
+          if (demo?.report) {
+            if (!cancelled) await applyAnalysis(demo);
+            return;
+          }
         }
 
         const analysis = await getAnalysis(documentId);
@@ -171,7 +173,7 @@ export default function AnalysisPage() {
       line2={line2 || undefined}
       line3={line3}
       title={companyName}
-      subtitle="Consulting-grade analysis powered by six parallel AI agents."
+      subtitle="Equity research-grade analysis with filing delta, earnings cross-checks, and memo export."
     >
       <div className="space-y-8">
         <div className="flex flex-wrap items-center justify-end gap-3">

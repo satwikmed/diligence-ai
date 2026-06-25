@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from data.db import create_document, get_connection, init_db, save_analysis, save_qa_interaction, update_document
 
-# Stable IDs so frontend demo data can match if needed
 DEMO_DOCS = [
     {
         "id": "aapl-demo-0001-0000-0000-000000000001",
@@ -47,45 +46,67 @@ DEMO_DOCS = [
     },
 ]
 
+_TICKER_PROFILES = {
+    "AAPL": {
+        "summary": "Apple Inc. remains a high-quality compounder with ecosystem economics; EU DMA / App Store regulation and China demand are key swing factors.",
+        "risks": [
+            {"risk_name": "App Store & DMA Regulation", "description": "EU Digital Markets Act may force alternative distribution and reduce take rates.", "severity": "high", "likelihood": "likely", "category": "regulatory", "source_section": "Risk Factors"},
+            {"risk_name": "Greater China Demand", "description": "Revenue concentration in China exposes results to geopolitical tension.", "severity": "high", "likelihood": "possible", "category": "market", "source_section": "Risk Factors"},
+        ],
+        "fcf": ("$108.8B", "$99.6B", "+9.2%"),
+        "op_margin": ("30.1%", "28.5%", "+1.6%"),
+    },
+    "MSFT": {
+        "summary": "Microsoft is a leading enterprise AI beneficiary; AI capex step-up and cloud competition are the main diligence debates.",
+        "risks": [
+            {"risk_name": "AI Infrastructure Capex", "description": "Datacenter build-out may pressure near-term free cash flow if utilization lags.", "severity": "medium", "likelihood": "likely", "category": "financial", "source_section": "Risk Factors"},
+            {"risk_name": "Cloud Competition", "description": "AWS and Google Cloud competing aggressively on AI workloads.", "severity": "high", "likelihood": "likely", "category": "market", "source_section": "Risk Factors"},
+        ],
+        "fcf": ("$74.1B", "$65.1B", "+13.8%"),
+        "op_margin": ("44.6%", "42.0%", "+2.6%"),
+    },
+    "CRM": {
+        "summary": "Salesforce leads enterprise CRM; deal elongation and AI seat economics are key investor focus areas.",
+        "risks": [
+            {"risk_name": "Enterprise Deal Elongation", "description": "Macro uncertainty may extend sales cycles and increase discounting.", "severity": "high", "likelihood": "likely", "category": "market", "source_section": "Risk Factors"},
+            {"risk_name": "Competition from Microsoft", "description": "Dynamics 365 bundling creates pricing pressure.", "severity": "high", "likelihood": "likely", "category": "market", "source_section": "Risk Factors"},
+        ],
+        "fcf": ("$9.8B", "$7.9B", "+24.1%"),
+        "op_margin": ("22.4%", "18.1%", "+4.3%"),
+    },
+}
+
 
 def _report(company: dict) -> dict:
     name = company["company_name"]
+    ticker = company["filename"].split("_")[0]
+    profile = _TICKER_PROFILES.get(ticker, _TICKER_PROFILES["AAPL"])
+    fcf = profile["fcf"]
+    op = profile["op_margin"]
     return {
-        "executive_summary": (
-            f"{name} presents a mixed but generally favorable investment profile based on this 10-K analysis. "
-            f"Revenue of {company['revenue']} with {company['revenue_growth']} YoY growth reflects solid market positioning. "
-            f"Key risks include competitive pressure and regulatory exposure, balanced by strong margins and cash generation."
-        ),
+        "executive_summary": profile["summary"],
         "company_overview": {
             "name": name,
             "industry": company["industry"],
             "headquarters": company["hq"],
-            "ticker": company["filename"].split("_")[0],
+            "ticker": ticker,
             "employees": "150,000+",
             "description": f"{name} is a leading company in {company['industry']}.",
         },
         "financial_analysis": [
             {"metric_name": "revenue", "current_value": company["revenue"], "prior_year_value": "—", "yoy_change": company["revenue_growth"], "assessment": "strong", "industry_average": "—"},
             {"metric_name": "gross_margin", "current_value": company["gross_margin"], "prior_year_value": "—", "yoy_change": "—", "assessment": "strong", "industry_average": "45%"},
-            {"metric_name": "operating_margin", "current_value": "30.1%", "prior_year_value": "28.5%", "yoy_change": "+1.6%", "assessment": "adequate", "industry_average": "22%"},
-            {"metric_name": "free_cash_flow", "current_value": "$108.8B", "prior_year_value": "$99.6B", "yoy_change": "+9.2%", "assessment": "strong", "industry_average": "—"},
+            {"metric_name": "operating_margin", "current_value": op[0], "prior_year_value": op[1], "yoy_change": op[2], "assessment": "adequate", "industry_average": "22%"},
+            {"metric_name": "free_cash_flow", "current_value": fcf[0], "prior_year_value": fcf[1], "yoy_change": fcf[2], "assessment": "strong", "industry_average": "—"},
         ],
-        "risk_assessment": [
-            {"risk_name": "Competitive Pressure", "description": "Intensifying competition in core markets.", "severity": "medium", "likelihood": "likely", "category": "market", "source_section": "Risk Factors"},
-            {"risk_name": "Regulatory Scrutiny", "description": "Increasing antitrust and privacy regulation globally.", "severity": "high", "likelihood": "possible", "category": "regulatory", "source_section": "Risk Factors"},
-            {"risk_name": "Supply Chain", "description": "Concentration risk in key suppliers and geographies.", "severity": "medium", "likelihood": "possible", "category": "operational", "source_section": "Risk Factors"},
-        ],
+        "risk_assessment": profile["risks"],
         "strategic_insights": [
-            {"insight": f"{name} maintains strong competitive moats through ecosystem lock-in and brand loyalty.", "category": "competitive", "severity": "positive", "supporting_evidence": "Business Overview"},
-            {"insight": "Services revenue growth outpaces hardware, improving margin mix.", "category": "operational", "severity": "positive", "supporting_evidence": "MD&A"},
+            {"insight": f"{name} maintains competitive positioning in {company['industry']}.", "category": "competitive", "severity": "positive", "supporting_evidence": "MD&A"},
         ],
         "recommendations": [
-            {"priority": "high", "action": "Monitor regulatory developments in EU and US markets.", "rationale": "Material impact on business model possible."},
-            {"priority": "medium", "action": "Track services attach rate as key growth indicator.", "rationale": "Higher-margin recurring revenue driver."},
+            {"priority": "high", "action": "Monitor key risk themes each earnings cycle.", "rationale": "Regulatory and competitive dynamics drive estimate revisions."},
         ],
-        "red_flags": [
-            {"flag": "Revenue growth decelerating vs prior year", "severity": "medium", "source_page": 32},
-        ],
+        "red_flags": [{"flag": "Review MD&A for guidance language vs model assumptions", "severity": "medium", "source_page": 28}],
         "industry_benchmarks": [],
         "data_quality_score": company["data_quality_score"],
     }

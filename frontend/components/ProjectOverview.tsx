@@ -22,12 +22,12 @@ const AGENTS = [
   {
     name: "Strategic Insights",
     framework: "OpenAI Agents SDK",
-    role: "Synthesizes financial and risk findings into consultant-grade strategic insights — competitive positioning, growth drivers, management quality signals, and macro exposure.",
+    role: "Synthesizes financial and risk findings into equity-research-grade insights — competitive positioning, growth drivers, and macro exposure with cited filing sections.",
   },
   {
     name: "Report Generator",
     framework: "Pydantic AI",
-    role: "Compiles all agent outputs into a structured, typed consulting report with an executive summary, company overview, and a data quality score reflecting how complete the source filing was.",
+    role: "Compiles all agent outputs into a structured ER due diligence report with executive summary, company overview, and a data quality score reflecting filing completeness.",
   },
   {
     name: "Q&A Agent",
@@ -73,28 +73,28 @@ const REPORT_SECTIONS = [
 
 const PLATFORM_FEATURES = [
   {
-    title: "Live Agent Pipeline",
-    detail: "Watch all six agents run in real time via WebSocket. See progress percentage, current agent, and a live event log as each stage completes.",
+    title: "QoQ Filing Delta",
+    detail: "Diff Risk Factors and MD&A themes between filings with cited adds and removes — the workflow analysts use when coverage resumes after earnings.",
+  },
+  {
+    title: "Earnings vs 10-K Contradictions",
+    detail: "Side-by-side quotes when management tone on the call diverges from Risk Factors or MD&A language in the 10-K.",
+  },
+  {
+    title: "ER Memo Export (PDF)",
+    detail: "One-page investment memo: thesis, key metrics, risks, and analyst actions — formatted for equity research, not consulting slides.",
   },
   {
     title: "Analysis History",
-    detail: "Every completed analysis is saved to SQLite. Re-open any report instantly without re-processing. Pre-seeded with Apple, Microsoft, and Salesforce demos.",
+    detail: "Every completed analysis is saved. Re-open any report instantly. Pre-seeded with Apple, Microsoft, and Salesforce demos.",
   },
   {
     title: "Company Compare",
     detail: "Select any two completed analyses and compare financial metrics, risk counts, insight counts, and red flags side by side.",
   },
   {
-    title: "Sample 10-K Filings",
-    detail: "Real SEC EDGAR PDFs for Apple (AAPL), Microsoft (MSFT), and Salesforce (CRM) are bundled with the project — no need to bring your own files for demos.",
-  },
-  {
     title: "Demo Mode",
-    detail: "Works without API keys. Uses heuristic extraction, pre-built risk registers, pseudo-embeddings, and demo insights. Add OPENAI_API_KEY for full GPT-powered analysis.",
-  },
-  {
-    title: "Agent Logs",
-    detail: "Full audit trail of every agent action stored in the database — useful for debugging and demonstrating the multi-agent orchestration.",
+    detail: "Works on Vercel without API keys — full ER demo flow including filing delta, contradictions, and PDF memo export.",
   },
 ]
 
@@ -143,7 +143,7 @@ function OverviewBlock({ step, title, children }: { step?: string; title: string
 
 export default function ProjectSummary() {
   return (
-    <section className="scroll-mt-6 px-6 py-20 md:px-10">
+    <section className="scroll-mt-6 py-8 md:py-12">
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="hero-fade-up mb-4">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-sky-400/80">Project Summary</p>
@@ -161,15 +161,14 @@ export default function ProjectSummary() {
         {/* Mission */}
         <OverviewBlock step="INTRO" title="The Problem It Solves">
           <p className="mb-4 max-w-3xl text-sm leading-relaxed text-white/70 md:text-base">
-            Due diligence on a public company&apos;s annual 10-K filing is one of the most time-consuming tasks in
-            finance and consulting. A junior analyst might spend two weeks reading hundreds of pages, extracting
-            financial metrics, mapping risks, and writing a summary for a partner or investment committee.
+            Equity research coverage means reading hundreds of pages per name — 10-Ks, 10-Qs, earnings calls — while
+            headcount is flat. A single analyst may cover 30+ stocks; nobody manually diffs every Risk Factors section
+            or cross-checks every CEO quote against the filing.
           </p>
           <p className="max-w-3xl text-sm leading-relaxed text-white/70 md:text-base">
-            <strong className="font-medium text-white">Diligence AI</strong> automates that entire workflow. Upload a
-            single PDF and six specialized AI agents — each built on a different framework — collaborate to produce a
-            consulting-grade due diligence report in minutes. The platform is designed as a portfolio-grade demo of
-            modern multi-agent AI architecture, not a simple chatbot wrapper.
+            <strong className="font-medium text-white">Diligence AI</strong> automates the first-pass diligence workflow:
+            upload a 10-K, get a citation-backed report, QoQ filing delta, earnings-vs-10-K contradiction flags, and a
+            one-page ER memo export — in minutes, not days.
           </p>
         </OverviewBlock>
 
@@ -309,23 +308,29 @@ export default function ProjectSummary() {
         </OverviewBlock>
 
         {/* Demo tips */}
-        <OverviewBlock step="DEMO" title="Suggested Demo Flow">
+        <OverviewBlock step="DEMO" title="Suggested ER Demo Flow">
           <ol className="space-y-3 text-sm leading-relaxed text-white/70">
             <li>
-              <strong className="text-white">1. History</strong> — Open the pre-analyzed Apple Inc. report instantly to
-              show a complete due diligence output without waiting.
+              <strong className="text-white">1. History → Apple</strong> — Open the pre-built AAPL report; walk through
+              executive summary, risks, and financials.
             </li>
             <li>
-              <strong className="text-white">2. Live Upload</strong> — Upload the Microsoft or Salesforce sample 10-K
-              and watch the six-agent pipeline run in real time.
+              <strong className="text-white">2. Filing Delta</strong> — Compare FY2024 vs prior-year 10-K; show Risk
+              Factors adds (e.g. DMA / App Store regulation).
             </li>
             <li>
-              <strong className="text-white">3. Compare</strong> — Put Apple vs Salesforce side-by-side on financials
-              and risk counts.
+              <strong className="text-white">3. Contradictions</strong> — Show CEO call quote vs 10-K regulatory risk
+              language side-by-side.
             </li>
             <li>
-              <strong className="text-white">4. Q&A</strong> — Ask: &ldquo;What are the top 3 things I should worry
-              about if I am investing?&rdquo; and show grounded answers with citations.
+              <strong className="text-white">4. Export ER Memo</strong> — Download the one-page PDF investment memo.
+            </li>
+            <li>
+              <strong className="text-white">5. Compare</strong> — Apple vs Microsoft on growth, margins, and risk count.
+            </li>
+            <li>
+              <strong className="text-white">6. Q&A</strong> — Ask: &ldquo;What are the top 3 risks to the thesis?&rdquo;
+              and show cited answers.
             </li>
           </ol>
         </OverviewBlock>

@@ -73,12 +73,18 @@
 .badge-neutral { @apply bg-white/10 text-white/60; }
 
 .hero-gradient-text {
+  color: #e0f2fe;
   background: linear-gradient(135deg, #f0f9ff 0%, #38bdf8 35%, #fbbf24 70%, #f0f9ff 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
   animation: gradient-shift 8s linear infinite;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-gradient-text {
+    color: transparent;
+  }
 }
 
 @keyframes gradient-shift {

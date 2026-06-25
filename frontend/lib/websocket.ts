@@ -14,7 +14,10 @@ export class WebSocketManager {
   connect() {
     if (this.ws?.readyState === WebSocket.OPEN) return;
 
-    this.ws = new WebSocket(`${getWsUrl()}/ws/${this.documentId}`);
+    const wsUrl = getWsUrl();
+    if (!wsUrl) return;
+
+    this.ws = new WebSocket(`${wsUrl}/ws/${this.documentId}`);
 
     this.ws.onmessage = (event) => {
       try {
@@ -26,7 +29,9 @@ export class WebSocketManager {
     };
 
     this.ws.onclose = () => {
-      setTimeout(() => this.connect(), 3000);
+      if (getWsUrl()) {
+        setTimeout(() => this.connect(), 3000);
+      }
     };
   }
 

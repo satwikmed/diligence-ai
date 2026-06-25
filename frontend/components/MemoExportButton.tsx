@@ -2,7 +2,6 @@
 
 import { Download } from 'lucide-react';
 import { getMemoDownloadUrl } from '@/lib/api';
-import { shouldUseDemoData } from '@/lib/demo-data';
 
 interface MemoExportButtonProps {
   documentId: string;
@@ -10,12 +9,6 @@ interface MemoExportButtonProps {
 
 export default function MemoExportButton({ documentId }: MemoExportButtonProps) {
   const handleExport = () => {
-    if (shouldUseDemoData()) {
-      alert(
-        'PDF memo export requires the FastAPI backend. Run locally with NEXT_PUBLIC_API_URL=http://localhost:8000 or deploy the backend.'
-      );
-      return;
-    }
     window.open(getMemoDownloadUrl(documentId), '_blank');
   };
 
