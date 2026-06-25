@@ -1,4 +1,5 @@
 # Render Blueprint — https://dashboard.render.com/blueprint/new?repo=https://github.com/satwikmed/diligence-ai
+# Note: free tier has no persistent disk — SQLite/uploads reset on redeploy (OK for demo).
 services:
   - type: web
     name: diligence-ai-api
@@ -7,16 +8,10 @@ services:
     plan: free
     region: oregon
     healthCheckPath: /health
-    disk:
-      name: diligence-data
-      mountPath: /app/data
-      sizeGB: 1
     envVars:
       - key: DEMO_MODE
         value: "true"
       - key: DATABASE_URL
-        value: sqlite:////app/data/diligence.db
+        value: sqlite:///diligence.db
       - key: PYTHONUNBUFFERED
         value: "1"
-      - key: UPLOAD_DIR
-        value: /app/data/uploads

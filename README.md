@@ -210,6 +210,8 @@ docker-compose up --build
 
 After Render deploy, set `NEXT_PUBLIC_API_URL` on Vercel to your Render URL and redeploy. See [docs/DEPLOY.md](docs/DEPLOY.md).
 
+**Free tier note:** no persistent disk — uploaded analyses and SQLite reset when Render redeploys or spins down. Pre-seeded demo companies are re-created on each cold start via `quick_seed`.
+
 ## Tests
 
 ```bash

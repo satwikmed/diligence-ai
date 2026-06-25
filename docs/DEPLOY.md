@@ -49,6 +49,8 @@ Open https://diligence-ai-nine.vercel.app and check:
 4. On **Vercel** → Environment Variables → add `NEXT_PUBLIC_API_URL` = Render URL (no trailing slash).
 5. **Redeploy** Vercel. Upload and WebSocket pipeline then work on the live site.
 
+**Free tier:** no persistent disk — SQLite and uploads are ephemeral (reset on redeploy). Demo companies auto-seed on startup.
+
 Optional GitHub auto-deploy: add repo secrets `RENDER_API_KEY` + `RENDER_SERVICE_ID` (see `.github/workflows/render-deploy.yml`).
 
 ## Regenerate research JSON (after PDF updates)
